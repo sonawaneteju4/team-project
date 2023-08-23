@@ -2,9 +2,7 @@ import React from 'react'
 
 const Test = () => {
   return (
-    <div>
-      Zali Ka Testing
-    </div>
+    <div>Test</div>
   )
 }
 
