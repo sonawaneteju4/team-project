@@ -14,14 +14,13 @@ const Test = () => {
         </button>
       </form>
 
-      <label htmlFor="">Email</label>
+      tmlFor="">Email</label>
         <input type="email" /><br />
         <label htmlFor="">Password</label>
         <input type="password" /><br />
         <button>
           Create User
         </button>
-    
     </div>
   )
 }

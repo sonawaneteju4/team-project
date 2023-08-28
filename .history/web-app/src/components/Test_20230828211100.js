@@ -9,19 +9,9 @@ const Test = () => {
         <input type="email" /><br />
         <label htmlFor="">Password</label>
         <input type="password" /><br />
-        <button>
-          Create User
-        </button>
+
       </form>
 
-      <label htmlFor="">Email</label>
-        <input type="email" /><br />
-        <label htmlFor="">Password</label>
-        <input type="password" /><br />
-        <button>
-          Create User
-        </button>
-    
     </div>
   )
 }
