@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithCredential, signInWithEmailAndPassword, signOut} from 'firebase/auth'
+import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithCredential, signOut} from 'firebase/auth'
 import {auth} from '../firebaseConfig'
 
 const Test = () => {
@@ -16,7 +16,7 @@ const Test = () => {
     try {
       console.log(regUser.email)
       const user = await createUserWithEmailAndPassword(auth,  regUser.email , regUser.password)
-      console.log(user )
+      console.log(user)
     } catch (error) {
       console.log(error.message);
     }
@@ -25,11 +25,10 @@ const Test = () => {
   const login = async() => {
     try {
       console.log(regUser.email)
-      const user = await signInWithEmailAndPassword(auth,  regUser.email , regUser.password)
-      console.log(user )
+      const user = await signInW(auth,  {email: regUser.email} , {password : regUser.password})
+      console.log(user)
     } catch (error) {
-      console.log(error.message);
-      alert(error.message)
+      alert(error)
     }
   };
 

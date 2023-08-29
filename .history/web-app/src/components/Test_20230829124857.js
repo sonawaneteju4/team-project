@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithCredential, signInWithEmailAndPassword, signOut} from 'firebase/auth'
+import {createUserWithEmailAndPassword, onAuthStateChanged, signOut} from 'firebase/auth'
 import {auth} from '../firebaseConfig'
 
 const Test = () => {
@@ -15,47 +15,33 @@ const Test = () => {
     e.preventDefault();
     try {
       console.log(regUser.email)
-      const user = await createUserWithEmailAndPassword(auth,  regUser.email , regUser.password)
-      console.log(user )
+      const user = await createUserWithEmailAndPassword(auth, {email : regUser.email} , {password : regUser.password})
+      console.log("login user "+ user )
     } catch (error) {
       console.log(error.message);
     }
   };
 
-  const login = async() => {
-    try {
-      console.log(regUser.email)
-      const user = await signInWithEmailAndPassword(auth,  regUser.email , regUser.password)
-      console.log(user )
-    } catch (error) {
-      console.log(error.message);
-      alert(error.message)
-    }
-  };
+  const login = () => {};
 
-  const logout =async () => {
-    await signOut(auth)
-    console.log("account LogOut")
-  };
-  const onHandleChange = (e) => {
-    setRegUser({
-      ...regUser,
-      [e.target.name]: e.target.value,
-    });
-  };
-  
+  // const logout =async () => {
+  //   await signOut()
+  // };
+
+ const onHandleChange = (e) => {
+  setRegUser({...regUser,[e.target.name]:[e.target.value]})
+ } 
 
   return (
     <div>
         <label htmlFor="">Email</label>
-        <input type="" name="email" onChange={onHandleChange} />
+        <input type="email" name="email" onChange={onHandleChange} />
         <br />
         <label htmlFor="" >Password</label>
-        <input type="" name="password" onChange={onHandleChange} />
+        <input type="password" name="password" onChange={onHandleChange} />
         <br />
         <button onClick={register}>Create User</button>
-        <button onClick={login}>Login</button>
-        <button onClick={logout}>Log Out</button>
+        {/* <button onClick={logout}>Create User</button> */}
 
 
         <div>

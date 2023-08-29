@@ -29,7 +29,7 @@ const Test = () => {
       console.log(user )
     } catch (error) {
       console.log(error.message);
-      alert(error.message)
+      alert
     }
   };
 
