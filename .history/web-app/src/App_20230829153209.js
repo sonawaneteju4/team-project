@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import User from './components/User';
-import Test from './components/Test';
+
 
 
 function App() {
@@ -9,7 +8,7 @@ function App() {
   <>
   
   <User></User>
-    <Test/> 
+
   </>
   );
 }

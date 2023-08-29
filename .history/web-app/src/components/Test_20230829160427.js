@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut} from 'firebase/auth'
+import React, { useState } from "react";
+import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithCredential, signInWithEmailAndPassword, signOut} from 'firebase/auth'
 import {auth} from '../firebaseConfig'
 import Modal from "./Modal";
 

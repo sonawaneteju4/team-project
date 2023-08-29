@@ -1,23 +1,16 @@
-import React, { useState, useEffect } from "react";
-import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut} from 'firebase/auth'
+import React, { useState } from "react";
+import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithCredential, signInWithEmailAndPassword, signOut} from 'firebase/auth'
 import {auth} from '../firebaseConfig'
 import Modal from "./Modal";
 
 const Test = () => {
   
-  const [regUser, setRegUser] = useState({email :"", password : ""})
-  const [errorMessage, setErrorMessage] = useState('');
+  const [regUser, setRegUser] = useState({email :"", password : ""});
   const [user, setuser] = useState({})
-  const [modalShow, setmodalShow] = useState(false)
 
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
-      setuser(currentUser);
-    });
-
-    // Unsubscribe from the listener when the component unmounts
-    return () => unsubscribe();
-  }, []);
+  // onAuthStateChanged(auth, (currentUser) =>{
+  //   setuser(currentUser);
+  // })
   
   const register = async(e) => {
     e.preventDefault();
@@ -26,8 +19,6 @@ const Test = () => {
       const user = await createUserWithEmailAndPassword(auth,  regUser.email , regUser.password)
       console.log(user )
     } catch (error) {
-      setErrorMessage(error.message);
-      setmodalShow(true);
       console.log(error.message);
     }
   };
@@ -39,12 +30,9 @@ const Test = () => {
       console.log(user )
     } catch (error) {
       console.log(error.message);
-      setErrorMessage(error.message);
-      setmodalShow(true);
+      alert(error.message)
+      return<Modal error/>
     }
-  };
-  const handleCloseModal = () => {
-    setmodalShow(false);
   };
 
   const logout =async () => {
@@ -75,8 +63,6 @@ const Test = () => {
         <div>
           {user?.email}
         </div>
-        {modalShow && <Modal error={errorMessage} onClose={handleCloseModal} />}
-
 
       {/* <br />
       <br />

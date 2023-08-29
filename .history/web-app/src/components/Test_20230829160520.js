@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut} from 'firebase/auth'
+import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithCredential, signInWithEmailAndPassword, signOut} from 'firebase/auth'
 import {auth} from '../firebaseConfig'
 import Modal from "./Modal";
 
@@ -11,7 +11,7 @@ const Test = () => {
   const [modalShow, setmodalShow] = useState(false)
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+    const checkUSer = auth.onAuthStateChanged((currentUser) => {
       setuser(currentUser);
     });
 
