@@ -5,11 +5,11 @@ const Modal = ({ error, onClose }) => {
   return (
     <div className="modal-container">
       <div className="modal-content">
-      <div className="modal-title">
+      <div className="">
           {error 
           && 
-        <h5> Something Went wrong
-          </h5>
+        <h2> Error
+          </h2>
           }
       </div>
         <p>

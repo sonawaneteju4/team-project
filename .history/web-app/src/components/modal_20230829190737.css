@@ -12,34 +12,31 @@
 
 .modal-title {
   text-align: center;
-  margin-bottom: 2px;
+  margin-bottom: 20px;
   background-color: black;
   color: white;
-  padding: 2px;
+  padding: 10px 0;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
 .modal-content{
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   
 }
 .modal-content p{
+  background-color: white;
+  border-radius: 8px;
   padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 300px;
   text-align: center;
 }
 
 .close-button {
-  color: white;
-  background-color: #505050;
+  background-color: #e0e0e0;
   border: none;
   padding: 8px 16px;
   cursor: pointer;
   border-radius: 4px;
   font-weight: bold;
-  margin: 20px auto 0; /* Centering the button horizontally */
-  display: block;
-  margin-bottom: 10px;
+  margin-top: 20px;
 }

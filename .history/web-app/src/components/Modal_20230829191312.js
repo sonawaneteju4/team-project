@@ -8,7 +8,7 @@ const Modal = ({ error, onClose }) => {
       <div className="modal-title">
           {error 
           && 
-        <h5> Something Went wrong
+        <h5> Error
           </h5>
           }
       </div>

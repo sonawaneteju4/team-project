@@ -32,8 +32,7 @@
 }
 
 .close-button {
-  color: white;
-  background-color: #505050;
+  background-color: #e0e0e0;
   border: none;
   padding: 8px 16px;
   cursor: pointer;

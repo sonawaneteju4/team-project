@@ -31,15 +31,12 @@
   text-align: center;
 }
 
-.close-button {
-  color: white;
-  background-color: #505050;
+. .close-button {
+  background-color: #e0e0e0;
   border: none;
   padding: 8px 16px;
   cursor: pointer;
   border-radius: 4px;
   font-weight: bold;
-  margin: 20px auto 0; /* Centering the button horizontally */
-  display: block;
-  margin-bottom: 10px;
+  margin-top: 20px;
 }

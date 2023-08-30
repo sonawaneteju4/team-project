@@ -4,14 +4,9 @@ import "./modal.css";
 const Modal = ({ error, onClose }) => {
   return (
     <div className="modal-container">
+      
       <div className="modal-content">
-      <div className="modal-title">
-          {error 
-          && 
-        <h5> Something Went wrong
-          </h5>
-          }
-      </div>
+        <h2>Error</h2>
         <p>
           {error
             .split("(")[1]
