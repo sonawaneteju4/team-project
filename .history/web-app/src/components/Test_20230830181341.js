@@ -18,7 +18,6 @@ const Test = () => {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(auth,(currentUser) => {
       setuser(currentUser);
-      console.log(currentUser.uid)
 
     });
 

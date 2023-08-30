@@ -16,10 +16,9 @@ const Test = () => {
   const [modalShow, setmodalShow] = useState(false);
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(auth,(currentUser) => {
+    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       setuser(currentUser);
-      console.log(currentUser.uid)
-
+      
     });
 
     // Unsubscribe from the listener when the component unmounts
