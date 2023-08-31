@@ -1,16 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
-import User from './components/User';
+import {BrowserRouter, Route, Routes, Switch} from 'react-router-dom'
+import Index from './components/Index';
+// import User from './components/User';
+import Navbar from './components/Navbar';
 import Test from './components/Test';
+import CreateUser from './components/CreateUser';
 
 
 function App() {
   return (
-  <>
+  <div>
+  <BrowserRouter>
+  <Navbar/>
+  <Routes>
   
-  <User></User>
-    <Test/> 
-  </>
+
+    <Route  path='/' element={<Index/>}></Route>
+    <Route  path='/login' element={<Test/>}></Route>
+    <Route  path='/CreateUser' element={<CreateUser/>}></Route>
+
+  
+  </Routes>
+  </BrowserRouter>  
+  
+  </div>
   );
 }
 
