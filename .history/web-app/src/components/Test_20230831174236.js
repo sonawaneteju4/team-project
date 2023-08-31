@@ -4,7 +4,6 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
-  updateProfile,
 } from "firebase/auth";
 import { auth } from "../firebaseConfig";
 import Modal from "./Modal";
@@ -19,9 +18,9 @@ const Test = () => {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       setuser(currentUser);
-      // const displayName = currentUser.displayName;
-      console.log(currentUser.uid)
-      console.log(currentUser?.displayName)
+      const displayName = user.displayName;
+
+      // console.log(currentUser.uid)
       
     });
 
@@ -38,9 +37,6 @@ const Test = () => {
         regUser.email,
         regUser.password
       );
-      const update = updateProfile(auth.currentUser, {
-        displayName: "Jane Q. User", photoURL: "https://example.com/jane-q-user/profile.jpg",phoneNumber : 9421041540
-      })
       console.log(user);
     } catch (error) {
       setErrorMessage(error.message);

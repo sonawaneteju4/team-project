@@ -39,7 +39,8 @@ const Test = () => {
         regUser.password
       );
       const update = updateProfile(auth.currentUser, {
-        displayName: "Jane Q. User", photoURL: "https://example.com/jane-q-user/profile.jpg",phoneNumber : 9421041540
+        displayName: "Jane Q. User", photoURL: "https://example.com/jane-q-user/profile.jpg",phoneNumber
+
       })
       console.log(user);
     } catch (error) {
