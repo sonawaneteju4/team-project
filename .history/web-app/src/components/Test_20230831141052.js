@@ -84,15 +84,11 @@ const Test = () => {
           <input type="" name="password" onChange={onHandleChange} />
           {/* <button onClick={register}>Create User</button> */}
           <div>
-          <button onClick={register}>Register</button>
+          <button onClick={login}>Login</button>
 
           </div>
-          <div>
           <button onClick={login}>Login</button>
-          </div>
-          <div>
-          <button onClick={logout}>logout</button>
-          </div>
+          <div></div>
           {/* <button onClick={logout}>Log Out</button> */}
 
           <div>{user?.email}</div>

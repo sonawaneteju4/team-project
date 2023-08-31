@@ -90,9 +90,6 @@ const Test = () => {
           <div>
           <button onClick={login}>Login</button>
           </div>
-          <div>
-          <button onClick={logout}>logout</button>
-          </div>
           {/* <button onClick={logout}>Log Out</button> */}
 
           <div>{user?.email}</div>

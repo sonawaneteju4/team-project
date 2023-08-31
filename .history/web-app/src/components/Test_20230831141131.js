@@ -91,7 +91,7 @@ const Test = () => {
           <button onClick={login}>Login</button>
           </div>
           <div>
-          <button onClick={logout}>logout</button>
+          <button onClick={login}>Login</button>
           </div>
           {/* <button onClick={logout}>Log Out</button> */}
 
