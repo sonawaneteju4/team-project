@@ -89,12 +89,9 @@ const Test = () => {
 
   const handleState = () => {
     setloginModal(true);
-    setregModal(false)
   };
   const handleStateC = () => {
     setregModal(true);
-    setloginModal(false);
-
   };
 
   return (
@@ -103,30 +100,30 @@ const Test = () => {
         <h2>Login Form</h2>
 
         <div className="form">
-        {!regModal && (
-            <>
+          {!regModal && (
+            <div>
               <button onClick={handleStateC}>Crete New Account</button>
-            </>
+            </div>
           )}
           {! loginModal && (
-            <>
+            <div>
                         <button onClick={handleState}>Log in </button>
-            </>
+            </div>
           )}
 
 
           {loginModal && (
-            <>
+            <div>
               <label htmlFor="">Email</label>
               <input type="" name="email" onChange={onHandleChange} />
               <label htmlFor="">Password</label>
               <input type="" name="password" onChange={onHandleChange} />
               <button onClick={login}>Login</button>
-            </>
+            </div>
           )}
 
           {regModal && (
-            <>
+            <div>
               <label htmlFor="">Email</label>
               <input type="" name="email" onChange={onHandleChange} />
               <label htmlFor="">Password</label>
@@ -136,7 +133,7 @@ const Test = () => {
               <label htmlFor="">phone</label>
               <input type="" name="phoneNumber" onChange={onHandleChange} />
               <button onClick={register}>Register</button>
-            </>
+            </div>
           )}
           {/* <button onClick={register}>Create User</button> */}
 
@@ -157,7 +154,6 @@ const Test = () => {
     <button>Create User</button> */}
       </div>
       {modalShow && <Modal error={errorMessage} onClose={handleCloseModal} />}
-    
     </div>
   );
 };

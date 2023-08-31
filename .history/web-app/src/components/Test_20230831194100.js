@@ -103,16 +103,7 @@ const Test = () => {
         <h2>Login Form</h2>
 
         <div className="form">
-        {!regModal && (
-            <>
-              <button onClick={handleStateC}>Crete New Account</button>
-            </>
-          )}
-          {! loginModal && (
-            <>
-                        <button onClick={handleState}>Log in </button>
-            </>
-          )}
+        
 
 
           {loginModal && (
@@ -158,7 +149,6 @@ const Test = () => {
       </div>
       {modalShow && <Modal error={errorMessage} onClose={handleCloseModal} />}
     
-    </div>
   );
 };
 

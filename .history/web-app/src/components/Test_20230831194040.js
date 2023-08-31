@@ -103,26 +103,17 @@ const Test = () => {
         <h2>Login Form</h2>
 
         <div className="form">
-        {!regModal && (
-            <>
-              <button onClick={handleStateC}>Crete New Account</button>
-            </>
-          )}
-          {! loginModal && (
-            <>
-                        <button onClick={handleState}>Log in </button>
-            </>
-          )}
+        
 
 
           {loginModal && (
-            <>
+            <div>
               <label htmlFor="">Email</label>
               <input type="" name="email" onChange={onHandleChange} />
               <label htmlFor="">Password</label>
               <input type="" name="password" onChange={onHandleChange} />
               <button onClick={login}>Login</button>
-            </>
+            </div>
           )}
 
           {regModal && (
@@ -157,7 +148,16 @@ const Test = () => {
     <button>Create User</button> */}
       </div>
       {modalShow && <Modal error={errorMessage} onClose={handleCloseModal} />}
-    
+      {!regModal && (
+            <div>
+              <button onClick={handleStateC}>Crete New Account</button>
+            </div>
+          )}
+          {! loginModal && (
+            <div>
+                        <button onClick={handleState}>Log in </button>
+            </div>
+          )}
     </div>
   );
 };

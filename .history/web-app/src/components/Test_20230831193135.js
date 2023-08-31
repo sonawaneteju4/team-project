@@ -11,12 +11,7 @@ import Modal from "./Modal";
 import "./login.css";
 
 const Test = () => {
-  const [regUser, setRegUser] = useState({
-    email: "",
-    password: "",
-    displayName: "",
-    phoneNumber: "",
-  });
+  const [regUser, setRegUser] = useState({ email: "", password: "" ,displayName : "" , phoneNumber :""});
   const [loginModal, setloginModal] = useState(false);
   const [regModal, setregModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -47,7 +42,7 @@ const Test = () => {
       const update = updateProfile(auth.currentUser, {
         displayName: regUser.displayName,
         photoURL: "https://example.com/jane-q-user/profile.jpg",
-        phoneNumber: regUser.phoneNumber,
+        phoneNumber: reg,
       });
       console.log(user);
     } catch (error) {
@@ -87,46 +82,26 @@ const Test = () => {
     });
   };
 
-  const handleState = () => {
-    setloginModal(true);
-    setregModal(false)
-  };
-  const handleStateC = () => {
-    setregModal(true);
-    setloginModal(false);
-
-  };
-
   return (
     <div className="container">
       <div className="card">
         <h2>Login Form</h2>
 
         <div className="form">
-        {!regModal && (
-            <>
-              <button onClick={handleStateC}>Crete New Account</button>
-            </>
-          )}
-          {! loginModal && (
-            <>
-                        <button onClick={handleState}>Log in </button>
-            </>
-          )}
 
-
-          {loginModal && (
-            <>
+          {
+            loginModal && (
+              <div>
               <label htmlFor="">Email</label>
               <input type="" name="email" onChange={onHandleChange} />
               <label htmlFor="">Password</label>
               <input type="" name="password" onChange={onHandleChange} />
-              <button onClick={login}>Login</button>
-            </>
-          )}
+              </div>
+            )
+          }
 
-          {regModal && (
-            <>
+          {regModal&&(
+            <div>
               <label htmlFor="">Email</label>
               <input type="" name="email" onChange={onHandleChange} />
               <label htmlFor="">Password</label>
@@ -135,15 +110,20 @@ const Test = () => {
               <input type="" name="displayName" onChange={onHandleChange} />
               <label htmlFor="">phone</label>
               <input type="" name="phoneNumber" onChange={onHandleChange} />
-              <button onClick={register}>Register</button>
-            </>
+
+            </div>
           )}
           {/* <button onClick={register}>Create User</button> */}
+
+          <button onClick={register}>Register</button>
+
+          <button onClick={login}>Login</button>
 
           <button onClick={logout}>logout</button>
           {/* <button onClick={logout}>Log Out</button> */}
 
           <div>{user?.email}</div>
+         
         </div>
 
         {/* <br />
@@ -156,8 +136,9 @@ const Test = () => {
       <br />
     <button>Create User</button> */}
       </div>
-      {modalShow && <Modal error={errorMessage} onClose={handleCloseModal} />}
-    
+      {modalShow && (
+            <Modal error={errorMessage} onClose={handleCloseModal} />
+          )}
     </div>
   );
 };

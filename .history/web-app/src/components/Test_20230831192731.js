@@ -11,14 +11,9 @@ import Modal from "./Modal";
 import "./login.css";
 
 const Test = () => {
-  const [regUser, setRegUser] = useState({
-    email: "",
-    password: "",
-    displayName: "",
-    phoneNumber: "",
-  });
+  const [regUser, setRegUser] = useState({ email: "", password: "" });
   const [loginModal, setloginModal] = useState(false);
-  const [regModal, setregModal] = useState(false);
+  useState
   const [errorMessage, setErrorMessage] = useState("");
   const [user, setuser] = useState({});
   const [modalShow, setmodalShow] = useState(false);
@@ -27,8 +22,9 @@ const Test = () => {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       setuser(currentUser);
       // const displayName = currentUser.displayName;
-      console.log(currentUser.uid);
-      console.log(currentUser?.displayName);
+      console.log(currentUser.uid)
+      console.log(currentUser?.displayName)
+      
     });
 
     // Unsubscribe from the listener when the component unmounts
@@ -45,10 +41,8 @@ const Test = () => {
         regUser.password
       );
       const update = updateProfile(auth.currentUser, {
-        displayName: regUser.displayName,
-        photoURL: "https://example.com/jane-q-user/profile.jpg",
-        phoneNumber: regUser.phoneNumber,
-      });
+        displayName: "Jane Q. User", photoURL: "https://example.com/jane-q-user/profile.jpg",phoneNumber : 9421041540
+      })
       console.log(user);
     } catch (error) {
       setErrorMessage(error.message);
@@ -87,63 +81,29 @@ const Test = () => {
     });
   };
 
-  const handleState = () => {
-    setloginModal(true);
-    setregModal(false)
-  };
-  const handleStateC = () => {
-    setregModal(true);
-    setloginModal(false);
-
-  };
-
   return (
     <div className="container">
       <div className="card">
         <h2>Login Form</h2>
-
         <div className="form">
-        {!regModal && (
-            <>
-              <button onClick={handleStateC}>Crete New Account</button>
-            </>
-          )}
-          {! loginModal && (
-            <>
-                        <button onClick={handleState}>Log in </button>
-            </>
-          )}
-
-
-          {loginModal && (
-            <>
-              <label htmlFor="">Email</label>
-              <input type="" name="email" onChange={onHandleChange} />
-              <label htmlFor="">Password</label>
-              <input type="" name="password" onChange={onHandleChange} />
-              <button onClick={login}>Login</button>
-            </>
-          )}
-
-          {regModal && (
-            <>
-              <label htmlFor="">Email</label>
-              <input type="" name="email" onChange={onHandleChange} />
-              <label htmlFor="">Password</label>
-              <input type="" name="password" onChange={onHandleChange} />
-              <label htmlFor="">Name</label>
-              <input type="" name="displayName" onChange={onHandleChange} />
-              <label htmlFor="">phone</label>
-              <input type="" name="phoneNumber" onChange={onHandleChange} />
-              <button onClick={register}>Register</button>
-            </>
-          )}
+          <label htmlFor="">Email</label>
+          <input type="" name="email" onChange={onHandleChange} />
+          <label htmlFor="">Password</label>
+          <input type="" name="password" onChange={onHandleChange} />
           {/* <button onClick={register}>Create User</button> */}
+          
+          <button onClick={register}>Register</button>
 
+          
+          <button onClick={login}>Login</button>
+          
           <button onClick={logout}>logout</button>
           {/* <button onClick={logout}>Log Out</button> */}
 
           <div>{user?.email}</div>
+          {modalShow && (
+            <Modal error={errorMessage} onClose={handleCloseModal} />
+          )}
         </div>
 
         {/* <br />
@@ -156,8 +116,6 @@ const Test = () => {
       <br />
     <button>Create User</button> */}
       </div>
-      {modalShow && <Modal error={errorMessage} onClose={handleCloseModal} />}
-    
     </div>
   );
 };
