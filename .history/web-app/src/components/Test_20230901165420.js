@@ -27,7 +27,7 @@ const Test = () => {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       setuser(currentUser);
       // const displayName = currentUser.displayName;
-      console.log(currentUser ?.uid);
+      console.log(currentUser className='button'?.uid);
       console.log(currentUser?.displayName);
     });
 
@@ -105,12 +105,12 @@ const Test = () => {
         <div className="form">
         {!regModal && (
             <>
-              <button className="button" onClick={handleStateC}>Crete New Account</button>
+              <button onClick={handleStateC}>Crete New Account</button>
             </>
           )}
           {! loginModal && (
             <>
-                        <button className="button" onClick={handleState}>Log in </button>
+                        <button onClick={handleState}>Log in </button>
             </>
           )}
 

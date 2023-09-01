@@ -105,7 +105,7 @@ const Test = () => {
         <div className="form">
         {!regModal && (
             <>
-              <button className="button" onClick={handleStateC}>Crete New Account</button>
+              <button onClick={handleStateC}>Crete New Account</button>
             </>
           )}
           {! loginModal && (

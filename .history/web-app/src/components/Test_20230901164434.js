@@ -27,7 +27,7 @@ const Test = () => {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       setuser(currentUser);
       // const displayName = currentUser.displayName;
-      console.log(currentUser ?.uid);
+      console.log(currentUser.uid);
       console.log(currentUser?.displayName);
     });
 
@@ -105,12 +105,12 @@ const Test = () => {
         <div className="form">
         {!regModal && (
             <>
-              <button className="button" onClick={handleStateC}>Crete New Account</button>
+              <button className="button1"onClick={handleStateC}>Crete New Account</button>
             </>
           )}
           {! loginModal && (
             <>
-                        <button className="button" onClick={handleState}>Log in </button>
+                        <button className="button1"onClick={handleState}>Log in </button>
             </>
           )}
 
@@ -121,7 +121,7 @@ const Test = () => {
               <input type="" name="email" onChange={onHandleChange} />
               <label htmlFor="">Password</label>
               <input type="" name="password" onChange={onHandleChange} />
-              <button className='button' onClick={login}>Login</button>
+              <button className="button1"onClick={login}>Login</button>
             </>
           )}
 
@@ -135,13 +135,13 @@ const Test = () => {
               <input type="" name="displayName" onChange={onHandleChange} />
               <label htmlFor="">phone</label>
               <input type="" name="phoneNumber" onChange={onHandleChange} />
-              <button className='button' onClick={register}>Register</button>
+              <button className="button1"onClick={register}>Register</button>
             </>
           )}
-          {/* <button onClick={register}>Create User</button> */}
+          {/* <button className="button1"onClick={register}>Create User</button> */}
 
-          <button className='button' onClick={logout}>logout</button>
-          {/* <button onClick={logout}>Log Out</button> */}
+          <button className="button1"onClick={logout}>logout</button>
+          {/* <button className="button1"onClick={logout}>Log Out</button> */}
 
           <div>{user?.email}</div>
         </div>

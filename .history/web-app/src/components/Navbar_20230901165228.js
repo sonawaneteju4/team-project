@@ -17,7 +17,7 @@ const Navbar = () => {
           <i className="fa fa-caret-down"></i>
         </button>
         <div className="dropdown-content">
-          <Link  to="/login">Login</Link >
+          <Link  to="#">Login</Link >
           <Link  to="#">Register 2</Link >
         </div>
       </div>

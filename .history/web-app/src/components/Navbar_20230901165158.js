@@ -9,7 +9,7 @@ const Navbar = () => {
         <Link to="/">About</Link>
       </div>
       <div>
-        <Link  to="#news">Search Blood</Link >
+        <Link  href="#news">Search Blood</Link >
       </div>
       <div className="dropdown">
         <button className="dropbtn">
@@ -17,8 +17,8 @@ const Navbar = () => {
           <i className="fa fa-caret-down"></i>
         </button>
         <div className="dropdown-content">
-          <Link  to="/login">Login</Link >
-          <Link  to="#">Register 2</Link >
+          <Link  href="#">Login</Link >
+          <Link  href="#">Register 2</Link >
         </div>
       </div>
       <div className="dropdown">
@@ -27,8 +27,8 @@ const Navbar = () => {
           <i className="fa fa-caret-down"></i>
         </button>
         <div className="dropdown-content">
-          <Link  to="#">Login</Link >
-          <Link  to="#">Register 2</Link >
+          <Link  href="#">Login</Link >
+          <Link  href="#">Register 2</Link >
         </div>
       </div>
       <div className="dropdown">
@@ -37,8 +37,8 @@ const Navbar = () => {
           <i className="fa fa-caret-down"></i>
         </button>
         <div className="dropdown-content">
-          <Link  to="#">Login</Link >
-          <Link  to="#">Register 2</Link >
+          <Link  href="#">Login</Link >
+          <Link  href="#">Register 2</Link >
         </div>
       </div>
     </div>

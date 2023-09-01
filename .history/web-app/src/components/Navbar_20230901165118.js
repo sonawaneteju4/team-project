@@ -6,10 +6,10 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="div">
-        <Link to="/">About</Link>
+        <L href="#home">About</L>
       </div>
       <div>
-        <Link  to="#news">Search Blood</Link >
+        <a href="#news">Search Blood</a>
       </div>
       <div className="dropdown">
         <button className="dropbtn">
@@ -17,8 +17,8 @@ const Navbar = () => {
           <i className="fa fa-caret-down"></i>
         </button>
         <div className="dropdown-content">
-          <Link  to="/login">Login</Link >
-          <Link  to="#">Register 2</Link >
+          <a href="#">Login</a>
+          <a href="#">Register 2</a>
         </div>
       </div>
       <div className="dropdown">
@@ -27,8 +27,8 @@ const Navbar = () => {
           <i className="fa fa-caret-down"></i>
         </button>
         <div className="dropdown-content">
-          <Link  to="#">Login</Link >
-          <Link  to="#">Register 2</Link >
+          <a href="#">Login</a>
+          <a href="#">Register 2</a>
         </div>
       </div>
       <div className="dropdown">
@@ -37,8 +37,8 @@ const Navbar = () => {
           <i className="fa fa-caret-down"></i>
         </button>
         <div className="dropdown-content">
-          <Link  to="#">Login</Link >
-          <Link  to="#">Register 2</Link >
+          <a href="#">Login</a>
+          <a href="#">Register 2</a>
         </div>
       </div>
     </div>
