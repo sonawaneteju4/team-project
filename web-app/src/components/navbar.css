@@ -1,9 +1,9 @@
 /* Navbar container */
-.navbar {
+.navbar {  
   overflow: hidden;
   background-color:#983d3d;
-  font-family: Arial;
-display: flex;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
 justify-content: end;
 padding-right: 40px;
 
@@ -36,6 +36,7 @@ padding-right: 40px;
 /* Add a red background color to navbar links on hover */
 .navbar a:hover, .dropdown:hover .dropbtn {
   background-color: rgb(240, 217, 217);
+  color: black;
 }
 
 /* Dropdown content (hidden by default) */
