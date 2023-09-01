@@ -10,8 +10,6 @@ import { auth } from "../firebaseConfig";
 import Modal from "./Modal";
 import "./login.css";
 import { useLocation } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
-
 
 const Test = () => {
   const [pageInfo, setpageInfo] = useState("");
@@ -20,11 +18,8 @@ const Test = () => {
   console.log(location.pathname.slice(1));
   useEffect(() => {
     setpageInfo(location.pathname.slice(1));
-    console.log(location.pathname.slice(1));
-  }, [location.pathname]);
+  }, []);
   
-
-    
   const [regUser, setRegUser] = useState({
     email: "",
     password: "",
@@ -110,22 +105,10 @@ const Test = () => {
     setloginModal(false);
   };
 
-  const getPageTitle = (pageInfo) => {
-    switch (pageInfo) {
-      case "bankLogin":
-        return "Bank Login";
-      case "donnarLogin":
-        return "Donner Login";
-      case "hosptialLogin":
-        return "Hospital Login";
-      default:
-        return "Unknown Page";
-    }
-  };
   return (
     <div className="container">
       <div className="card">
-        <h2>{getPageTitle(pageInfo).toUpperCase()}</h2>
+        <h2>{pageInfo.toUpperCase()}</h2>
 
         <div className="form">
           {!regModal && (

@@ -114,9 +114,9 @@ const Test = () => {
     switch (pageInfo) {
       case "bankLogin":
         return "Bank Login";
-      case "donnarLogin":
+      case "donnrLogin":
         return "Donner Login";
-      case "hosptialLogin":
+      case "hospitalLogin":
         return "Hospital Login";
       default:
         return "Unknown Page";

@@ -114,9 +114,9 @@ const Test = () => {
     switch (pageInfo) {
       case "bankLogin":
         return "Bank Login";
-      case "donnarLogin":
+      case "donnrLogin":
         return "Donner Login";
-      case "hosptialLogin":
+      case "hospitalLogin":
         return "Hospital Login";
       default:
         return "Unknown Page";
@@ -125,7 +125,7 @@ const Test = () => {
   return (
     <div className="container">
       <div className="card">
-        <h2>{getPageTitle(pageInfo).toUpperCase()}</h2>
+        <h2>{pageInfo.toUpperCase()}</h2>
 
         <div className="form">
           {!regModal && (

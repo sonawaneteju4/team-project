@@ -10,21 +10,21 @@ import { auth } from "../firebaseConfig";
 import Modal from "./Modal";
 import "./login.css";
 import { useLocation } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
-
 
 const Test = () => {
-  const [pageInfo, setpageInfo] = useState("");
-
-  const location = useLocation();
-  console.log(location.pathname.slice(1));
-  useEffect(() => {
-    setpageInfo(location.pathname.slice(1));
-    console.log(location.pathname.slice(1));
-  }, [location.pathname]);
   
+  const [pageInfo, setpageInfo] = useState('')
+  
+  
+  const location = useLocation();
+console.log()
+useEffect(() => {
+  const clocation = location.pathname
+  setpageInfo(clocation)
+  console.log(clocation);
+}, [])
 
-    
+
   const [regUser, setRegUser] = useState({
     email: "",
     password: "",
@@ -41,7 +41,7 @@ const Test = () => {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       setuser(currentUser);
       // const displayName = currentUser.displayName;
-      console.log(currentUser?.uid);
+      console.log(currentUser ?.uid);
       console.log(currentUser?.displayName);
     });
 
@@ -103,45 +103,31 @@ const Test = () => {
 
   const handleState = () => {
     setloginModal(true);
-    setregModal(false);
+    setregModal(false)
   };
   const handleStateC = () => {
     setregModal(true);
     setloginModal(false);
+
   };
 
-  const getPageTitle = (pageInfo) => {
-    switch (pageInfo) {
-      case "bankLogin":
-        return "Bank Login";
-      case "donnarLogin":
-        return "Donner Login";
-      case "hosptialLogin":
-        return "Hospital Login";
-      default:
-        return "Unknown Page";
-    }
-  };
   return (
     <div className="container">
       <div className="card">
-        <h2>{getPageTitle(pageInfo).toUpperCase()}</h2>
+        <h2>Login Form</h2>
 
         <div className="form">
-          {!regModal && (
+        {!regModal && (
             <>
-              <button className="button" onClick={handleStateC}>
-                Crete New Account
-              </button>
+              <button className="button" onClick={handleStateC}>Crete New Account</button>
             </>
           )}
-          {!loginModal && (
+          {! loginModal && (
             <>
-              <button className="button" onClick={handleState}>
-                Log in{" "}
-              </button>
+                        <button className="button" onClick={handleState}>Log in </button>
             </>
           )}
+
 
           {loginModal && (
             <>
@@ -149,9 +135,7 @@ const Test = () => {
               <input type="" name="email" onChange={onHandleChange} />
               <label htmlFor="">Password</label>
               <input type="" name="password" onChange={onHandleChange} />
-              <button className="button" onClick={login}>
-                Login
-              </button>
+              <button className='button' onClick={login}>Login</button>
             </>
           )}
 
@@ -165,16 +149,12 @@ const Test = () => {
               <input type="" name="displayName" onChange={onHandleChange} />
               <label htmlFor="">phone</label>
               <input type="" name="phoneNumber" onChange={onHandleChange} />
-              <button className="button" onClick={register}>
-                Register
-              </button>
+              <button className='button' onClick={register}>Register</button>
             </>
           )}
           {/* <button onClick={register}>Create User</button> */}
 
-          <button className="button" onClick={logout}>
-            logout
-          </button>
+          <button className='button' onClick={logout}>logout</button>
           {/* <button onClick={logout}>Log Out</button> */}
 
           <div>{user?.email}</div>
@@ -191,6 +171,7 @@ const Test = () => {
     <button>Create User</button> */}
       </div>
       {modalShow && <Modal error={errorMessage} onClose={handleCloseModal} />}
+    
     </div>
   );
 };

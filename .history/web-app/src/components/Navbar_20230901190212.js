@@ -1,9 +1,9 @@
-import React,{useState} from "react";
+import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./navbar.css";
 
 const Navbar = () => {
-
+  const [first, setfirst] = useState(second)
   return (
     <div className="navbar">
       <div>

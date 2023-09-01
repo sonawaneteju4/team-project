@@ -21,9 +21,15 @@ const Test = () => {
   useEffect(() => {
     setpageInfo(location.pathname.slice(1));
     console.log(location.pathname.slice(1));
-  }, [location.pathname]);
+  }, []);
   
-
+    return () => {
+      unlisten(); // Cleanup when the component unmounts
+    };
+  }, [history]);
+  
+  // Make sure to import 'useHistory' from 'react-router-dom'
+  const history = useHistory();
     
   const [regUser, setRegUser] = useState({
     email: "",
@@ -110,22 +116,10 @@ const Test = () => {
     setloginModal(false);
   };
 
-  const getPageTitle = (pageInfo) => {
-    switch (pageInfo) {
-      case "bankLogin":
-        return "Bank Login";
-      case "donnarLogin":
-        return "Donner Login";
-      case "hosptialLogin":
-        return "Hospital Login";
-      default:
-        return "Unknown Page";
-    }
-  };
   return (
     <div className="container">
       <div className="card">
-        <h2>{getPageTitle(pageInfo).toUpperCase()}</h2>
+        <h2>{pageInfo.toUpperCase()}</h2>
 
         <div className="form">
           {!regModal && (
