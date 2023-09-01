@@ -10,8 +10,9 @@ import { auth } from "../firebaseConfig";
 import Modal from "./Modal";
 import "./login.css";
 import { useLocation } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
-
+export 'useHistory' (imported as 'useHistory') was not found in 'react-router-dom' (possible exports: AbortedDeferredError, Await, BrowserRouter, Form, HashRouter, Link, MemoryRouter, NavLink, Navigate, NavigationType, Outlet, Route, Router, RouterProvider, Routes, ScrollRestoration, UNSAFE_DataRouterContext, UNSAFE_DataRouterStateContext, UNSAFE_LocationContext, UNSAFE_NavigationContext, UNSAFE_RouteContext, UNSAFE_useRouteId, UNSAFE_useScrollRestoration, createBrowserRouter, createHashRouter, createMemoryRouter, createPath, createRoutesFromChildren, createRoutesFromElements, createSearchParams, defer, generatePath, isRouteErrorResponse, json, matchPath, matchRoutes, parsePath, redirect, redirectDocument, renderMatches, resolvePath, unstable_HistoryRouter, unstable_useBlocker, unstable_usePrompt, useActionData, useAsyncError, useAsyncValue, useBeforeUnload, useFetcher, useFetchers, useFormAction, useHref, useInRouterContext, useLinkClickHandler, useLoaderData, useLocation, useMatch, useMatches, useNavigate, useNavigation, useNavigationType, useOutlet, useOutletContext, useParams, useResolvedPath, useRevalidator, useRouteError, useRouteLoaderData, useRoutes, useSearchParams, useSubmit)
+ERROR in ./src/components/Test.js 282:23-33
+export 'useHistory' (imported as 'useHistory') was not found in 'react-router-dom' (possible exports: AbortedDeferredError, Await, BrowserRouter, Form, HashRouter, Link, MemoryRouter, NavLink, Navigate, NavigationType, Outlet, Route, Router, RouterProvider, Routes, ScrollRestoration, UNSAFE_DataRouterContext, UNSAFE_DataRouterStateContext, UNSAFE_LocationContext, UNSAFE_NavigationContext, UNSAFE_RouteContext, UNSAFE_useRouteId, UNSAFE_useScrollRestoration, createBrowserRouter, createHashRouter, createMemoryRouter, createPath, createRoutesFromChildren, createRoutesFromElements, createSearchParams, defer, generatePath, isRouteErrorResponse, json, matchPath, matchRoutes, parsePath, redirect, redirectDocument, renderMatches, resolvePath, unstable_HistoryRouter, unstable_useBlocker, unstable_usePrompt, useActionData, useAsyncError, useAsyncValue, useBeforeUnload, useFetcher, useFetchers, useFormAction, useHref, useInRouterContext, useLinkClickHandler, useLoaderData, useLocation, useMatch, useMatches, useNavigate, useNavigation, useNavigationType, useOutlet, useOutletContext, useParams, useResolvedPath, useRevalidator, useRouteError, useRou
 
 const Test = () => {
   const [pageInfo, setpageInfo] = useState("");
@@ -19,11 +20,17 @@ const Test = () => {
   const location = useLocation();
   console.log(location.pathname.slice(1));
   useEffect(() => {
-    setpageInfo(location.pathname.slice(1));
-    console.log(location.pathname.slice(1));
-  }, [location.pathname]);
+    const unlisten = history.listen((newLocation) => {
+      setpageInfo(newLocation.pathname.slice(1));
+    });
   
-
+    return () => {
+      unlisten(); // Cleanup when the component unmounts
+    };
+  }, [history]);
+  
+  // Make sure to import 'useHistory' from 'react-router-dom'
+  const history = useHistory();
     
   const [regUser, setRegUser] = useState({
     email: "",
@@ -110,22 +117,10 @@ const Test = () => {
     setloginModal(false);
   };
 
-  const getPageTitle = (pageInfo) => {
-    switch (pageInfo) {
-      case "bankLogin":
-        return "Bank Login";
-      case "donnarLogin":
-        return "Donner Login";
-      case "hosptialLogin":
-        return "Hospital Login";
-      default:
-        return "Unknown Page";
-    }
-  };
   return (
     <div className="container">
       <div className="card">
-        <h2>{getPageTitle(pageInfo).toUpperCase()}</h2>
+        <h2>{pageInfo.toUpperCase()}</h2>
 
         <div className="form">
           {!regModal && (

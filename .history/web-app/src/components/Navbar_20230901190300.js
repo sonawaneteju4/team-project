@@ -3,13 +3,12 @@ import { Link, NavLink } from "react-router-dom";
 import "./navbar.css";
 
 const Navbar = () => {
+  const [handleLogin, sethandleLogin] = useState("")
+
+  const 
+
 
   return (
-    <div div className="navbar">
-      <img src="./image/logo1.png"></img>
-      <div className="div">
-        <Link to="/">About</Link>
-      </div>
     <div className="navbar">
       <div>
         <Link  to="">Search Blood</Link >
@@ -47,7 +46,6 @@ const Navbar = () => {
       <div className="div">
         <Link to="/">About</Link>
       </div>
-    </div>
     </div>
   );
 };

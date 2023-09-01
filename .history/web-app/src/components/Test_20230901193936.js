@@ -116,7 +116,7 @@ const Test = () => {
         return "Bank Login";
       case "donnarLogin":
         return "Donner Login";
-      case "hosptialLogin":
+      case "hospitalLogin":
         return "Hospital Login";
       default:
         return "Unknown Page";
