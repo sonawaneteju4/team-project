@@ -10,20 +10,31 @@ import { auth } from "../firebaseConfig";
 import Modal from "./Modal";
 import "./login.css";
 import { useLocation } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import { addDoc, collection } from "firebase/firestore";
-import { db } from "../firebaseConfig";
+import {db} from '../firebaseConfig'
 
 const Test = () => {
+  
   //setUser
   const usersCollectionRef = collection(db, "users");
   const [userType, setuserType] = useState([]);
-  useEffect(() => {
-    const getUsers = async () => {};
-    getUsers();
-  }, []);
+  useEffect(()=>{
 
+    const getUsers = async () =>{
+
+    } 
+    getUsers()
+  },[])
+  
+  
+  
   const [pageInfo, setpageInfo] = useState("");
+
+
+
+
+
 
   const location = useLocation();
   console.log(location.pathname.slice(1));
@@ -31,7 +42,9 @@ const Test = () => {
     setpageInfo(location.pathname.slice(1));
     console.log(location.pathname.slice(1));
   }, [location.pathname]);
+  
 
+    
   const [regUser, setRegUser] = useState({
     email: "",
     password: "",
@@ -56,7 +69,7 @@ const Test = () => {
     return () => unsubscribe();
   }, []);
 
-  const register = async (e) => {
+  const register = async () => {
     try {
       console.log(regUser.email);
       const userCredential = await createUserWithEmailAndPassword(
@@ -64,19 +77,21 @@ const Test = () => {
         regUser.email,
         regUser.password
       );
-      const user = userCredential.user; // Get the user object from the userCredential
+      const user = userCredential.user;
+       // Get the user object from the userCredential
 
       const update = updateProfile(auth.currentUser, {
         displayName: regUser.displayName,
         photoURL: "https://example.com/jane-q-user/profile.jpg",
         phoneNumber: regUser.phoneNumber,
       });
+      try {
+       const userType =  await addDoc(usersCollectionRef, {type: pageInfo}, {uId: user.uid},{email:regUser.email});
+       console.log(userType)
+      } catch (error) {
+        console.log(error)
+      }
 
-      await addDoc(usersCollectionRef, {
-        type: pageInfo,
-        uId: user.uid,
-        email: user.email,
-      });
 
       console.log(user);
     } catch (error) {
@@ -86,6 +101,7 @@ const Test = () => {
     }
   };
 
+ 
   const login = async () => {
     try {
       console.log(regUser.email);

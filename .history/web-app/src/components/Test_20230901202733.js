@@ -56,7 +56,7 @@ const Test = () => {
     return () => unsubscribe();
   }, []);
 
-  const register = async (e) => {
+  const register = async () => {
     try {
       console.log(regUser.email);
       const userCredential = await createUserWithEmailAndPassword(
@@ -72,18 +72,22 @@ const Test = () => {
         phoneNumber: regUser.phoneNumber,
       });
 
-      await addDoc(usersCollectionRef, {
-        type: pageInfo,
-        uId: user.uid,
-        email: user.email,
-      });
-
       console.log(user);
     } catch (error) {
       setErrorMessage(error.message);
       setmodalShow(true);
       console.log(error.message);
     }
+    regUserType
+  };
+
+  const regUserType = async () => {
+    await addDoc(
+      usersCollectionRef,
+      { type: pageInfo },
+      { uId: user.uid },
+      { email: user.email }
+    );
   };
 
   const login = async () => {
