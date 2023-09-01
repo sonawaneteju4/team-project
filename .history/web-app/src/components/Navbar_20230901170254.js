@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./navbar.css";
 
 const Navbar = () => {
@@ -17,7 +17,7 @@ const Navbar = () => {
           <i className="fa fa-caret-down"></i>
         </button>
         <div className="dropdown-content">
-          <NavLink  to="/login" loginFor={"bloodBank"} >Login</NavLink >
+          <Link  to="/login"  >Login</Link >
           <Link  to="#">Register 2</Link >
         </div>
       </div>
