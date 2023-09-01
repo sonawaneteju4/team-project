@@ -10,7 +10,22 @@ const CreateUser = () => {
 
   const register = async() => {
     try {
-      const user = await createUserWithEmailAndPassword(auth , reg.email , reg.password);
+      const user = await 
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      (auth , reg.email , reg.password);
       console.log(user)
     } catch (error) {
       console.log(error.message)
