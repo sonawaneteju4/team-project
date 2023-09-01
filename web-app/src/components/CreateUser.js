@@ -12,19 +12,6 @@ const CreateUser = () => {
     try {
       const user = await 
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
       (auth , reg.email , reg.password);
       console.log(user)
     } catch (error) {

@@ -1,7 +1,7 @@
 /* Navbar container */
 .navbar {
   overflow: hidden;
-  background-color: #333;
+  background-color:#983d3d;
   font-family: Arial;
 display: flex;
 justify-content: end;
@@ -35,7 +35,7 @@ padding-right: 40px;
 
 /* Add a red background color to navbar links on hover */
 .navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+  background-color: rgb(240, 217, 217);
 }
 
 /* Dropdown content (hidden by default) */
@@ -51,7 +51,7 @@ padding-right: 40px;
 /* Links inside the dropdown */
 .dropdown-content a {
   float: none;
-  color: black;
+  color: rgb(13, 12, 12);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -60,7 +60,7 @@ padding-right: 40px;
 
 /* Add a grey background color to dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #efdcdc;
 }
 
 /* Show the dropdown menu on hover */
