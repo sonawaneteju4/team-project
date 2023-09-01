@@ -1,0 +1,18 @@
+nav{
+    background-color: #f5d4d4;
+}
+
+ul{
+    display: flex;
+    justify-content: end;
+}
+
+li{
+    list-style: none;
+    padding-right: 10px;
+}
+
+ li ul{
+    border: none;
+    background-color: transparent;
+}

@@ -6,16 +6,25 @@ import { AppComponent } from './app.component';
 import {AngularFireModule} from '@angular/fire/compat'
 import { environment } from 'src/environments/environment';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LoginCompComponent } from './login-comp/login-comp.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { RegisterComponent } from './register/register.component';
+import { LandingpageComponent } from './landingpage/landingpage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginCompComponent,
+    DashboardComponent,
+    RegisterComponent,
+    LandingpageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    // AngularFireModule.initializeApp(environment.firebase),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
