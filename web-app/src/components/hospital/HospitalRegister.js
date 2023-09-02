@@ -53,7 +53,8 @@ const HospitalRegister = () => {
 
   return (
     <>
-      <div>HospitalRegister</div>
+    <div className="hospital">
+      <div>Hospital Register</div>
 
       <div>
         <label htmlFor="">email</label>
@@ -84,6 +85,7 @@ const HospitalRegister = () => {
         <input type="pincode" name="pincode" onChange={handleChange} />
       </div>
       <button onClick={register}>Register</button>
+      </div>
     </>
   );
 };
