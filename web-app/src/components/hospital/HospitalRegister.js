@@ -79,6 +79,7 @@ const HospitalRegister = () => {
     <label htmlFor="">pincode</label>
         <input type="pincode" name="pincode" onChange={handleChange} />
         </div>
+        <button onClick={register}>Register</button>
       
     </>
       
