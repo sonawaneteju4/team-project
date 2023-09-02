@@ -16,17 +16,15 @@ const LoginUser = () => {
   const location = useLocation();
   const nav = useNavigate();
 
-  onAuthStateChanged(
-    auth,
-    (user) => {
-      if (user) {
-        const uid = user.uid;
 
-        nav("/dashboard");
-      }
-    },
-    []
-  );
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      const uid = user.uid;
+  
+      nav('/dashboard')
+    }
+  },[]);
   useEffect(() => {
     setpageInfo(location.pathname.slice(1));
     console.log(location.pathname.slice(1));
@@ -35,13 +33,18 @@ const LoginUser = () => {
   const Login = async () => {
     try {
       console.log(loginUser.email);
-      const userCredential = await signInWithEmailAndPassword(
+      const user = await signInWithEmailAndPassword(
         auth,
         loginUser.email,
         loginUser.password
       );
-      const user = userCredential.user;
-      nav("/dashboard");
+      
+
+      console.log(heruser.uid);
+        
+      localStorage.setItem('userId', user.uid);
+      nav('/dashboard')
+      
     } catch (error) {
       console.log(error.message);
       setErrorMessage(error.message);

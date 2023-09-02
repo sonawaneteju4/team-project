@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import {  db } from "../firebaseConfig";
+import { auth, db } from "../firebaseConfig";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { collection, getDoc, getDocs, query, where } from "firebase/firestore";
+import { setUserId } from "firebase/analytics";
 
 const UserDash = () => {
   const auth = getAuth();
@@ -29,11 +30,10 @@ const UserDash = () => {
 
   useEffect(() => {
     const getUsers = async () => {
-      const q = query(usersCollectionRef, where("uId", "==", userId));
       const q2 = query(usersDataRef, where("uId", "==", userId));
+      const q3 = query(usersCollectionRef, where("uId", "==", userId));
       try {
         const data = await getDocs(q2);
-        const userInfo = await getDocs(q);
         setuserData(data);
         console.log(data);
       } catch (error) {

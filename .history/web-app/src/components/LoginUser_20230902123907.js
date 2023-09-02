@@ -41,6 +41,8 @@ const LoginUser = () => {
         loginUser.password
       );
       const user = userCredential.user;
+
+      console.log("here uid" + user.uid);
       nav("/dashboard");
     } catch (error) {
       console.log(error.message);

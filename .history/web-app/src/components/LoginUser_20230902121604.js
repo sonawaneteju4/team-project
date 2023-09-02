@@ -16,17 +16,15 @@ const LoginUser = () => {
   const location = useLocation();
   const nav = useNavigate();
 
-  onAuthStateChanged(
-    auth,
-    (user) => {
-      if (user) {
-        const uid = user.uid;
 
-        nav("/dashboard");
-      }
-    },
-    []
-  );
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      const uid = user.uid;
+  
+      nav('/dashboard')
+    }
+  },[]);
   useEffect(() => {
     setpageInfo(location.pathname.slice(1));
     console.log(location.pathname.slice(1));
@@ -41,7 +39,12 @@ const LoginUser = () => {
         loginUser.password
       );
       const user = userCredential.user;
-      nav("/dashboard");
+
+      console.log("here uid     "+user.uid);
+        
+      localStorage.setItem('userId', user.uid);
+      nav('/dashboard')
+      
     } catch (error) {
       console.log(error.message);
       setErrorMessage(error.message);

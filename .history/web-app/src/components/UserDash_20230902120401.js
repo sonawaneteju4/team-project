@@ -1,43 +1,50 @@
 import React, { useEffect, useState } from "react";
-import {  db } from "../firebaseConfig";
+import { auth, db } from "../firebaseConfig";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { collection, getDoc, getDocs, query, where } from "firebase/firestore";
+import { setUserId } from "firebase/analytics";
 
 const UserDash = () => {
   const auth = getAuth();
   const [currUser, setcurrUser] = useState([]);
-  const [userId, setuserId] = useState("w0kNFBnKWLdHifLGpdnYKH8yJHu2");
+  const [userId, setuserId] = useState("w0kNFBnKWLdHifLGpdnYKH8yJHu2")
   const [userData, setuserData] = useState([]);
   const navigate = useNavigate();
   const usersCollectionRef = collection(db, "users");
   const usersDataRef = collection(db, "donnarInfo");
 
+
+  useEffect(() => {
+    
+   
+  }, [])
+  
   onAuthStateChanged(
     auth,
     (user) => {
       if (user) {
         const uid = user.uid;
         setcurrUser(user);
-        setuserId(user.uid);
+        setuserId(user.uid)
+        console.log(user.uid)
       } else {
         navigate("/");
       }
     },
-    [currUser, userId]
+    [currUser]
   );
-
+  
   useEffect(() => {
     const getUsers = async () => {
-      const q = query(usersCollectionRef, where("uId", "==", userId));
-      const q2 = query(usersDataRef, where("uId", "==", userId));
+      const q = query(usersDataRef, where("uId", "==", userId));
       try {
-        const data = await getDocs(q2);
-        const userInfo = await getDocs(q);
+        const data = await getDocs(q);
         setuserData(data);
         console.log(data);
+        
       } catch (error) {
-        alert(error.message);
+        alert(error.message)
       }
     };
     getUsers();
