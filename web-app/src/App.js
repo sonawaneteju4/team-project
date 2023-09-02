@@ -27,7 +27,7 @@ function App() {
     <Route  path='/bankLogin' element={<LoginUser/>}></Route>
     <Route  path='/donnarLogin' element={<LoginUser/>}></Route>
     <Route  path='/hosptialLogin' element={<LoginUser/>}></Route>
-    <Route  path='/donnar' element={<Test/>}></Route>
+    <Route  path='/donnr' element={<Test/>}></Route>
     <Route  path='/CreateUsXer' element={<CreateUser/>}></Route>
     <Route  path='/dashboard' element={<UserDash/>}></Route>
     <Route  path='/donarReg' element={<DonnarReg/>}></Route>

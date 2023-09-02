@@ -38,7 +38,7 @@ const Navbar = () => {
       </div>
       <div className="dropdown">
         <button className="dropbtn">
-          Donar
+          Donor
           <i className="fa fa-caret-down"></i>
         </button>
         <div className="dropdown-content">

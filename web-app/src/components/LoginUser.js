@@ -64,7 +64,7 @@ const LoginUser = () => {
       case "bankLogin":
         return "Bank Login";
       case "donnarLogin":
-        return "Donner Login";
+        return "Donnar Login";
       case "hosptialLogin":
         return "Hospital Login";
       default:
@@ -83,6 +83,9 @@ const LoginUser = () => {
           <input type="" name="password" onChange={onHandleChange} />
           <button className="button" onClick={Login}>
             Login
+          </button>
+          <button className="button">
+            Reset Password
           </button>
         </div>
       </div>
