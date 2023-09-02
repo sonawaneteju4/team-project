@@ -28,7 +28,7 @@ const DonnarReg = () => {
   const handleChange = (e) => {
     setregUser({ ...regUser, [e.target.name]: e.target.value });
   };
-  
+
   const register = async () => {
     try {
       const userCredential = await createUserWithEmailAndPassword(
@@ -94,15 +94,13 @@ const DonnarReg = () => {
       </div>
       <div>
         <label htmlFor="">bloodGroup</label>
-        <input type="text" name="bloodGroup" onChange={handleChange} />
+        <input type="number" name="bloodGroup" onChange={handleChange} />
       </div>
       <div>
         <label htmlFor="">gender</label>
-        {/* <input type="text" name="gender"/> */}
-        <select name="gender"  onChange={handleChange}  id="">
-        <option value="male">male</option>
-        <option value="female">female</option>
-        <option value="other">other</option>
+        <input type="text" name="gender" onChange={handleChange} />
+        <select name="" id="">
+        <option value=""></option>
         </select>
       </div>
       <div>

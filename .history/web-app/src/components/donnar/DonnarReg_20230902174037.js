@@ -28,7 +28,7 @@ const DonnarReg = () => {
   const handleChange = (e) => {
     setregUser({ ...regUser, [e.target.name]: e.target.value });
   };
-  
+  c
   const register = async () => {
     try {
       const userCredential = await createUserWithEmailAndPassword(

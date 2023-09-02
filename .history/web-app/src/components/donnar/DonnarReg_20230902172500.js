@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { auth, db } from "../../firebaseConfig";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import'./DReg.css'
 
 const DonnarReg = () => {
   const [regUser, setregUser] = useState({
@@ -28,7 +29,7 @@ const DonnarReg = () => {
   const handleChange = (e) => {
     setregUser({ ...regUser, [e.target.name]: e.target.value });
   };
-  
+
   const register = async () => {
     try {
       const userCredential = await createUserWithEmailAndPassword(
@@ -70,10 +71,10 @@ const DonnarReg = () => {
   // https://firebase.google.com/docs/firestore/query-data/queries?hl=en&authuser=0&_gl=1*cebiw7*_ga*ODAxMjEzNzYuMTY5Mjg1NDU5NA..*_ga_CW55HF8NVT*MTY5MzU5MTQ5Ny4xNy4xLjE2OTM1OTMxOTYuMC4wLjA.
 
   return (
-    <div className="">
+    <div>
       DonnarReg
       <div>
-        <label htmlFor="">Email</label>
+        <label htmlFor="">email</label>
         <input type="email" name="email" onChange={handleChange} />
       </div>
       <div>
@@ -94,16 +95,11 @@ const DonnarReg = () => {
       </div>
       <div>
         <label htmlFor="">bloodGroup</label>
-        <input type="text" name="bloodGroup" onChange={handleChange} />
+        <input type="number" name="bloodGroup" onChange={handleChange} />
       </div>
       <div>
         <label htmlFor="">gender</label>
-        {/* <input type="text" name="gender"/> */}
-        <select name="gender"  onChange={handleChange}  id="">
-        <option value="male">male</option>
-        <option value="female">female</option>
-        <option value="other">other</option>
-        </select>
+        <input type="text" name="gender" onChange={handleChange} />
       </div>
       <div>
         <label htmlFor="">mobile</label>

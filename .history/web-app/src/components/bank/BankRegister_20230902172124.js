@@ -66,7 +66,7 @@ const BankRegister = () => {
     <div>
       <div>BankReg</div>
       <div>
-        <label  htmlFor="">email</label>
+        <label style={{display}} htmlFor="">email</label>
         <input type="email" name="email" onChange={handleChange} />
       </div>
       <div>
