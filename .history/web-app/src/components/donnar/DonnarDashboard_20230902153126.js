@@ -1,0 +1,24 @@
+import React from 'react'
+
+const DonnarDashboard = () => {
+    onAuthStateChanged(
+    authh,
+    (user) => {
+      if (user) {
+        const uid = user.uid;
+        setcurrUser(user);
+        setuserId(user.uid);
+      } else {
+        navigate("/");
+      }
+    },
+    [currUser, userId]
+  );
+
+
+  return (
+    <div>DonnarDashboard</div>
+  )
+}
+
+export default DonnarDashboard

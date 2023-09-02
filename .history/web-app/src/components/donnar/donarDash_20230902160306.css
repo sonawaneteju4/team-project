@@ -1,0 +1,14 @@
+.logNav {
+  background-color: darkgrey;
+  padding: 10px;
+}
+.logoutBtn {
+  border: none;
+  
+  border-radius: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: cursive;
+}
