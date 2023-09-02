@@ -53,7 +53,7 @@ const DonnarDashboard = () => {
         </button>
       </div>
 
-      <div className="pageContaint">
+      <div>
         
       </div>
 

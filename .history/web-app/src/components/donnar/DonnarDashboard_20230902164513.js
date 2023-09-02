@@ -52,12 +52,6 @@ const DonnarDashboard = () => {
           logout
         </button>
       </div>
-
-      <div className="pageContaint">
-        
-      </div>
-
-
     </div>
   );
 };
