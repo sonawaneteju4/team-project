@@ -55,11 +55,10 @@ const DonnarDashboard = () => {
       </div>
 
       <div className="pageContaint">
-          <div className="sideBar">
-            <SideBar></SideBar>
-          </div>
-          <div className="sidePage">
-          SidePage
+          <div className="sidbar">
+            <SideBar>
+              
+            </SideBar>
           </div>
       </div>
 

@@ -59,7 +59,7 @@ const DonnarDashboard = () => {
             <SideBar></SideBar>
           </div>
           <div className="sidePage">
-          SidePage
+          {/* SidePage */}
           </div>
       </div>
 
