@@ -3,24 +3,13 @@ import React, { useState } from "react";
 import { auth, db } from "../../firebaseConfig";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import importedData from './../../json/states.json'
+import states from './../../json/states.json'
 
 
 const DonnarReg = () => {
   const [selectedState, setSelectedState] = useState('');
   const [selectedDistrict, setSelectedDistrict] = useState('');
-  const states = importedData.states;
 
-  const handleStateChange = (event) => {
-    const newState = event.target.value;
-    setSelectedState(newState);
-    setSelectedDistrict(''); // Reset the district when the state changes
-  };
-
-  const handleDistrictChange = (event) => {
-    const newDistrict = event.target.value;
-    setSelectedDistrict(newDistrict);
-  };
 
   const [regUser, setregUser] = useState({
     email: "",

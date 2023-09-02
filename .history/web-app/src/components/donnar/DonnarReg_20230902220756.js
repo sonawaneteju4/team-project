@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { auth, db } from "../../firebaseConfig";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import importedData from './../../json/states.json'
+import states from './../../json/states.json'
 
 
 const DonnarReg = () => {

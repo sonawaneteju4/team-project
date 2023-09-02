@@ -3,24 +3,14 @@ import React, { useState } from "react";
 import { auth, db } from "../../firebaseConfig";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import importedData from './../../json/states.json'
+import states from './../../json/states.json'
 
 
 const DonnarReg = () => {
   const [selectedState, setSelectedState] = useState('');
   const [selectedDistrict, setSelectedDistrict] = useState('');
-  const states = importedData.states;
 
-  const handleStateChange = (event) => {
-    const newState = event.target.value;
-    setSelectedState(newState);
-    setSelectedDistrict(''); // Reset the district when the state changes
-  };
-
-  const handleDistrictChange = (event) => {
-    const newDistrict = event.target.value;
-    setSelectedDistrict(newDistrict);
-  };
+  console.log("states"+states.states.state[.])
 
   const [regUser, setregUser] = useState({
     email: "",
@@ -147,29 +137,6 @@ const DonnarReg = () => {
         <input type="number" name="pincode" onChange={handleChange} />
       </div>
       <button onClick={register}>Register</button>
-      <div>
-      <label>Select a State:</label>
-      <select onChange={handleStateChange} value={selectedState}>
-        <option value="">Select a State</option>
-        {states.map((stateData, index) => (
-          <option key={index} value={stateData.state}>
-            {stateData.state}
-          </option>
-        ))}
-      </select>
-
-      <label>Select a District:</label>
-      <select onChange={handleDistrictChange} value={selectedDistrict}>
-        <option value="">Select a District</option>
-        {states
-          .find((stateData) => stateData.state === selectedState)
-          ?.districts.map((district, index) => (
-            <option key={index} value={district}>
-              {district}
-            </option>
-          ))}
-      </select>
-      </div>
     </div>
   );
 };
