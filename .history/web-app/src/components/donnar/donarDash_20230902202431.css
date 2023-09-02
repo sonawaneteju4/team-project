@@ -31,9 +31,6 @@ display: flex;
 .sidePage{
   width: 80%;
 }
-.donarInfo{
+.donorInfo{
   display: flex;
-}
-.info1{
-  margin-left: 100px;
 }

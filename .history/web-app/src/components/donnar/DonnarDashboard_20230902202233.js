@@ -61,9 +61,7 @@ const DonnarDashboard = () => {
         <div className="sidePage">
           <h3>User Info</h3>
           <hr />
-          <div className="donarInfo">
-
-          <div className="info1">
+          <div>
             <div>Name: {userData.userName}</div>
             <div>Aadhar: {userData.aadhar}</div>
             <div>Address: {userData.address}</div>
@@ -71,13 +69,12 @@ const DonnarDashboard = () => {
             <div>Blood Group: {userData.bloodGroup}</div>
             <div>Weight :{userData.weight} Kg</div>
           </div>
-          <div className="info1">
+          <div>
             <div>Mobile :{userData.mobile}</div>
             <div>Gender :{userData.gender}</div>
             <div>Pincode :{userData.pincode}</div>
             <div>Dist :{userData.dist}</div>
             <div>State :{userData.state}</div>
-          </div>
           </div>
           <hr />
         </div>
