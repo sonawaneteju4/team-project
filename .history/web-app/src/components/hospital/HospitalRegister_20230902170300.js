@@ -65,7 +65,7 @@ const HospitalRegister = () => {
         </div>
         <div>
     <label htmlFor="">hospName</label>
-        <input type="text" name="hospName" onChange={handleChange} />
+        <input type="hospName" name="hospName" onChange={handleChange} />
         </div>
         <div>
     <label htmlFor="">type</label>
