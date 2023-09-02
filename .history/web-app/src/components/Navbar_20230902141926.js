@@ -43,7 +43,7 @@ const Navbar = () => {
         </button>
         <div className="dropdown-content">
           <Link  to="donnarLogin">Login</Link >
-          <Link  to="donarReg">Register </Link >
+          <Link  to="donarReg">Register 2</Link >
         </div>
       </div>
       </div>
