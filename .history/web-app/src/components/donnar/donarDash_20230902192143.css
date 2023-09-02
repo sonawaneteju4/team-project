@@ -24,10 +24,10 @@ display: flex;
 }
 
 .sideBar{
-  width: 20%;
-  background-color: lavender;
+  width: 30%;
+  background-color: thistle;
   height: 100vh;
 }
 .sidePage{
-  width: 80%;
+  width: ;
 }

@@ -3,9 +3,9 @@ import React from 'react'
 const SideBar = () => {
   return (
     <div>
-      <div>Donate Blood</div>
-      <div>Reports</div>
-      <div>Precaution Before Blood Donnation</div>
+      <div>Dona</div>
+      <div></div>
+      <div></div>
     </div>
   )
 }

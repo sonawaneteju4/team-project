@@ -5,7 +5,7 @@ const SideBar = () => {
     <div>
       <div>Donate Blood</div>
       <div>Reports</div>
-      <div>Precaution Before Blood Donnation</div>
+      <div>Pre </div>
     </div>
   )
 }

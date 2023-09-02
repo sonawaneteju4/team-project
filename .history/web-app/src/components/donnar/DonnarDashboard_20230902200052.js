@@ -55,25 +55,24 @@ const DonnarDashboard = () => {
       </div>
 
       <div className="pageContaint">
-        <div className="sideBar">
-          <SideBar></SideBar>
-        </div>
-        <div className="sidePage">
-          <h3>User Info</h3>
-          <div>Name: {userData.userName}</div>
-          <div>Aadhar: {userData.aadhar}</div>
-          <div>Address: {userData.address}</div>
-          <div>Age :{userData.age}</div>
-          <div>Blood Group: {userData.bloodGroup}</div>
-          <div>Weight :{userData.weight} Kg</div>
-          <div>Mobile :{userData.mobile}</div>
-          <div>Gender :{userData.gender}</div>
-          <div>Pincode :{userData.pincode}</div>
-          <div>Dist :{userData.dist}</div>
-          <div>State :{userData.state}</div>
-          <hr />
-        </div>
+          <div className="sideBar">
+            <SideBar></SideBar>
+          </div>
+          <div className="sidePage">
+            <div>
+              {userData.userName}
+              {userData.aadar}
+              {userData.address}
+              {userData.age}
+              {userData.bloodGroup}
+              {userData.dist}
+              {userData.mobile}
+              {userData.gender}
+            </div>
+          </div>
       </div>
+
+
     </div>
   );
 };

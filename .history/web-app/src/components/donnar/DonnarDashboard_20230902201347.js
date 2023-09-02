@@ -59,7 +59,7 @@ const DonnarDashboard = () => {
           <SideBar></SideBar>
         </div>
         <div className="sidePage">
-          <h3>User Info</h3>
+        <h3>User Info</h3>
           <div>Name: {userData.userName}</div>
           <div>Aadhar: {userData.aadhar}</div>
           <div>Address: {userData.address}</div>
@@ -71,8 +71,8 @@ const DonnarDashboard = () => {
           <div>Pincode :{userData.pincode}</div>
           <div>Dist :{userData.dist}</div>
           <div>State :{userData.state}</div>
-          <hr />
         </div>
+      <hr />
       </div>
     </div>
   );
