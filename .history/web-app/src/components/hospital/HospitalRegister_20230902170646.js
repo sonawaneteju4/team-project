@@ -72,12 +72,12 @@ const HospitalRegister = () => {
         <input type="type" name="type" onChange={handleChange} />
       </div>
       <div>
-        <label htmlFor="">contact</label>
-        <input type="number" name="contact" onChange={handleChange} />
+        <label htmlFor="">address</label>
+        <input type="address" name="address" onChange={handleChange} />
       </div>
       <div>
         <label htmlFor="">address</label>
-        <input type="text" name="address" onChange={handleChange} />
+        <input type="address" name="address" onChange={handleChange} />
       </div>
       <div>
         <label htmlFor="">pincode</label>

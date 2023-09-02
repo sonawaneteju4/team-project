@@ -73,11 +73,11 @@ const HospitalRegister = () => {
       </div>
       <div>
         <label htmlFor="">contact</label>
-        <input type="number" name="contact" onChange={handleChange} />
+        <input type="address" name="contact" onChange={handleChange} />
       </div>
       <div>
         <label htmlFor="">address</label>
-        <input type="text" name="address" onChange={handleChange} />
+        <input type="address" name="address" onChange={handleChange} />
       </div>
       <div>
         <label htmlFor="">pincode</label>
