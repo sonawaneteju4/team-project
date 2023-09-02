@@ -44,7 +44,6 @@ const UserDash = () => {
   }, [setuserData]);
 
   const logout = async () => {
-    localStorage.removeItem('userId')
     await signOut(auth);
     console.log("account LogOut");
     navigate("/");

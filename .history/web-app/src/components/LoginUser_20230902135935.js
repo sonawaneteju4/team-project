@@ -41,7 +41,7 @@ const LoginUser = () => {
         loginUser.password
       );
       const user = userCredential.user;
-      localStorage.setItem('userId', user.uid);
+      localStorage.getItem('userId')
       nav("/dashboard");
     } catch (error) {
       console.log(error.message);

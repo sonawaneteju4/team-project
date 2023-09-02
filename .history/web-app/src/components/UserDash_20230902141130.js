@@ -29,8 +29,11 @@ const UserDash = () => {
 
   useEffect(() => {
     const getUsers = async () => {
+      
+      const storedUserId = localStorage.getItem('userId');
+      setuserId(storedUserId);
       const q = query(usersCollectionRef, where("uId", "==", localStorage.getItem('userId')));
-      const q2 = query(usersDataRef, where("uId", "==", localStorage.getItem('userId')));
+      const q2 = query(usersDataRef, where("uId", "==", userId));
       try {
         const data = await getDocs(q2);
         const userInfo = await getDocs(q);
@@ -44,7 +47,6 @@ const UserDash = () => {
   }, [setuserData]);
 
   const logout = async () => {
-    localStorage.removeItem('userId')
     await signOut(auth);
     console.log("account LogOut");
     navigate("/");
