@@ -5,9 +5,7 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
 const DonnarReg = () => {
-  const usersCollectionRef = collection(db, "users");
-  const usersDataRef = collection(db, "donnarInfo");
-  const navigate = useNavigate();
+  
   const [regUser, setregUser] = useState({
     email: "",
     password: "",
@@ -23,6 +21,9 @@ const DonnarReg = () => {
     dist: "",
     pincode: "",
   });
+  const usersCollectionRef = collection(db, "users");
+  const usersDataRef = collection(db, "donnarInfo");
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setregUser({ ...regUser, [e.target.name]: e.target.value });
@@ -41,7 +42,7 @@ const DonnarReg = () => {
         displayName: regUser.userName,
       });
       await addDoc(usersCollectionRef, {
-        type: "donnar",
+        type: "donar",
         uId: user.uid,
         email: user.email,
       });
