@@ -12,7 +12,6 @@ import DonnarDashboard from './components/donnar/DonnarDashboard';
 import BankDashboard from './components/bank/BankDashboard';
 import HospitalDashboard from './components/hospital/HospitalDashboard';
 import HospitalRegister from './components/hospital/HospitalRegister';
-import BankRegister from './components/bank/BankRegister';
 
 
 function App() {
@@ -32,7 +31,7 @@ function App() {
     <Route  path='/dashboard' element={<UserDash/>}></Route>
     <Route  path='/donarReg' element={<DonnarReg/>}></Route>
     <Route  path='/hosptialReg' element={<HospitalRegister/>}></Route>
-    <Route  path='/bankReg' element={<BankRegister/>}></Route>
+    <Route  path='/bankReg' element={<DonnarReg/>}></Route>
     <Route  path='/donarDash' element={<DonnarDashboard/>}></Route>
     <Route  path='/bankDash' element={<BankDashboard />}></Route>
     <Route  path='/hospitalDash' element={<HospitalDashboard />}></Route>
