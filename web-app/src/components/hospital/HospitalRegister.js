@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { auth, db } from '../../firebaseConfig';
 import { addDoc, collection } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword} from "firebase/auth";
 
 const HospitalRegister = () => {
   const [regUser, setregUser] = useState({
@@ -41,7 +41,6 @@ const HospitalRegister = () => {
         uId: user.uid,
         hospName: regUser.userName,
         type: regUser.type,
-        gender: regUser.gender,
         contact: regUser.contact,
         address: regUser.address,
         pincode: regUser.pincode,
@@ -53,15 +52,35 @@ const HospitalRegister = () => {
   };
 
   return (
-    <div>
+    <>
     <div>HospitalRegister</div>
-    <div>
 
-    <label htmlFor="">email</label>
+    <div>
+      <label htmlFor="">email</label>
         <input type="email" name="email" onChange={handleChange} />
-      </div>
-     
+    </div>
+    <div>
+    <label htmlFor="">password</label>
+        <input type="password" name="password" onChange={handleChange} />
+        </div>
+        <div>
+    <label htmlFor="">hospName</label>
+        <input type="hospName" name="hospName" onChange={handleChange} />
+        </div>
+        <div>
+    <label htmlFor="">type</label>
+        <input type="type" name="type" onChange={handleChange} />
+        </div>
+        <div>
+    <label htmlFor="">address</label>
+        <input type="address" name="address" onChange={handleChange} />
+        </div>
+        <div>
+    <label htmlFor="">pincode</label>
+        <input type="pincode" name="pincode" onChange={handleChange} />
+        </div>
       
+    </>
       
   );
 };
