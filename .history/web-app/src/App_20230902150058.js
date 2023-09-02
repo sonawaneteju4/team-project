@@ -8,9 +8,6 @@ import CreateUser from './components/CreateUser';
 import LoginUser from './components/LoginUser';
 import UserDash from './components/UserDash';
 import DonnarReg from './components/donnar/DonnarReg';
-import DonnarDashboard from './components/donnar/DonnarDashboard';
-import BankDashboard from './components/bank/BankDashboard';
-import HospitalDashboard from './components/hospital/HospitalDashboard';
 
 
 function App() {
@@ -29,9 +26,7 @@ function App() {
     <Route  path='/CreateUsXer' element={<CreateUser/>}></Route>
     <Route  path='/dashboard' element={<UserDash/>}></Route>
     <Route  path='/donarReg' element={<DonnarReg/>}></Route>
-    <Route  path='/dashboard/donarDash' element={<DonnarDashboard/>}></Route>
-    <Route  path='/dashboard/bankDash' element={<BankDashboard />}></Route>
-    <Route  path='/dashboard/hospitalDash' element={<HospitalDashboard />}></Route>
+    <Route  path='/dashboard/userDash' element={<Donn/>}></Route>
 
   
   </Routes>
