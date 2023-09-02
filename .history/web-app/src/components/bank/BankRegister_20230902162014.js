@@ -1,7 +1,7 @@
 import { addDoc, collection } from "firebase/firestore";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/firestore";
 import { auth, db } from "../../firebaseConfig";
 
 const BankRegister = () => {
