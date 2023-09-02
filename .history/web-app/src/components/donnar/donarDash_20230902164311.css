@@ -4,9 +4,6 @@
   display: flex;
   justify-content: space-between;
 }
-.uName{
-  padding-top: 8px;
-}
 .logoutBtn {
   border: none;
   cursor: pointer;

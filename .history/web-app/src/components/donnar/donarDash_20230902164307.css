@@ -2,10 +2,7 @@
   background-color: darkgrey;
   padding: 8px;
   display: flex;
-  justify-content: space-between;
-}
-.uName{
-  padding-top: 8px;
+  justify-content: ;
 }
 .logoutBtn {
   border: none;

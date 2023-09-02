@@ -31,11 +31,11 @@ const DonnarDashboard = () => {
       data.forEach((item) => {
         console.log(item.data());
         setuserData(item.data());
-        console.log("userData  " + userData);
+        console.log("userData  "  +userData)
       });
     };
     getUserDetails();
-  }, []);
+  },);
   const logout = async () => {
     localStorage.removeItem("userId");
     await signOut(auth);
@@ -46,18 +46,14 @@ const DonnarDashboard = () => {
   return (
     <div>
       <div className="logNav">
-        <div className="uName">{userData.userName}</div>
-        <div></div>
         <button className="logoutBtn" onClick={logout}>
           logout
         </button>
       </div>
+        <div>
 
-      <div className="pageContaint">
-        
-      </div>
-
-
+        ++++ {userData.userName}
+        </div>
     </div>
   );
 };
