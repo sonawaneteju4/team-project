@@ -23,7 +23,7 @@ const Navbar = () => {
         </button>
         <div className="dropdown-content">
           <NavLink  to="/bankLogin" loginFor={"bloodBank"} >Login</NavLink >
-          <Link  to="#">Register 2</Link >
+          <Link  to="#">Register </Link >
         </div>
       </div>
       <div className="dropdown">
@@ -33,24 +33,22 @@ const Navbar = () => {
         </button>
         <div className="dropdown-content">
           <Link  to="hosptialLogin">Login</Link >
-          <Link  to="#">Register 2</Link >
+          <Link  to="#">Register</Link >
         </div>
       </div>
       <div className="dropdown">
         <button className="dropbtn">
-          Donnar
+          Donar
           <i className="fa fa-caret-down"></i>
         </button>
         <div className="dropdown-content">
           <Link  to="donnarLogin">Login</Link >
-          <Link  to="#">Register 2</Link >
+          <Link  to="#">Register As New Donar</Link >
         </div>
       </div>
-      <div className="div">
-        <Link to="/">About</Link>
       </div>
     </div>
-    </div>
+    
   );
 };
 
