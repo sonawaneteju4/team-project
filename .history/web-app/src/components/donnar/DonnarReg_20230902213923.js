@@ -8,7 +8,13 @@ const DonnarReg = () => {
   const [selectedState, setSelectedState] = useState('');
   const [selectedDistrict, setSelectedDistrict] = useState('');
 
-  
+  useEffect(() => {
+    // Fetch the JSON data from your data.json file
+    fetch('/states.json') // Adjust the path to your data.json file as needed
+      .then((response) => response.json())
+      .then((jsonData) => setData(jsonData))
+      .catch((error) => console.error('Error fetching data:', error));
+  }, []);
 
   const [regUser, setregUser] = useState({
     email: "",

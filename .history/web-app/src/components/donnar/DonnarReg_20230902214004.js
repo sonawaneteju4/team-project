@@ -5,10 +5,27 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
 const DonnarReg = () => {
-  const [selectedState, setSelectedState] = useState('');
-  const [selectedDistrict, setSelectedDistrict] = useState('');
+  const [selectedState, setSelectedState] = useState("");
+  const [selectedDistrict, setSelectedDistrict] = useState("");
 
-  
+  useEffect(() => {
+    // Fetch the JSON data from your data.json file
+    fetch("/states.json") // Adjust the path to your data.json file as needed
+      .then((response) => response.json())
+      .then((jsonData) => setData(jsonData))
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
+  const handleStateChange = (event) => {
+    const newState = event.target.value;
+    setSelectedState(newState);
+    setSelectedDistrict(""); // Reset the district when the state changes
+  };
+
+  const handleDistrictChange = (event) => {
+    const newDistrict = event.target.value;
+    setSelectedDistrict(newDistrict);
+  };
 
   const [regUser, setregUser] = useState({
     email: "",
@@ -33,7 +50,7 @@ const DonnarReg = () => {
   const handleChange = (e) => {
     setregUser({ ...regUser, [e.target.name]: e.target.value });
   };
-  
+
   const register = async () => {
     try {
       const userCredential = await createUserWithEmailAndPassword(
@@ -104,10 +121,10 @@ const DonnarReg = () => {
       <div>
         <label htmlFor="">gender</label>
         {/* <input type="text" name="gender"/> */}
-        <select name="gender"  onChange={handleChange}  id="">
-        <option value="male">male</option>
-        <option value="female">female</option>
-        <option value="other">other</option>
+        <select name="gender" onChange={handleChange} id="">
+          <option value="male">male</option>
+          <option value="female">female</option>
+          <option value="other">other</option>
         </select>
       </div>
       <div>
@@ -133,6 +150,29 @@ const DonnarReg = () => {
       <div>
         <label htmlFor="">pincode</label>
         <input type="number" name="pincode" onChange={handleChange} />
+      </div>
+      <div>
+        <label>Select a State:</label>
+        <select onChange={handleStateChange} value={selectedState}>
+          <option value="">Select a State</option>
+          {data.map((stateData, index) => (
+            <option key={index} value={stateData.state}>
+              {stateData.state}
+            </option>
+          ))}
+        </select>
+
+        <label>Select a District:</label>
+        <select onChange={handleDistrictChange} value={selectedDistrict}>
+          <option value="">Select a District</option>
+          {data
+            .find((stateData) => stateData.state === selectedState)
+            ?.districts.map((district, index) => (
+              <option key={index} value={district}>
+                {district}
+              </option>
+            ))}
+        </select>
       </div>
       <button onClick={register}>Register</button>
     </div>

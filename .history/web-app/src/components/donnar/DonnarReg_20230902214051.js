@@ -8,7 +8,24 @@ const DonnarReg = () => {
   const [selectedState, setSelectedState] = useState('');
   const [selectedDistrict, setSelectedDistrict] = useState('');
 
-  
+  useEffect(() => {
+    // Fetch the JSON data from your data.json file
+    fetch('/states.json') // Adjust the path to your data.json file as needed
+      .then((response) => response.json())
+      .then((jsonData) => setData(jsonData))
+      .catch((error) => console.error('Error fetching data:', error));
+  }, []);
+
+  const handleStateChange = (event) => {
+    const newState = event.target.value;
+    setSelectedState(newState);
+    setSelectedDistrict(''); // Reset the district when the state changes
+  };
+
+  const handleDistrictChange = (event) => {
+    const newDistrict = event.target.value;
+    setSelectedDistrict(newDistrict);
+  };
 
   const [regUser, setregUser] = useState({
     email: "",
@@ -134,6 +151,7 @@ const DonnarReg = () => {
         <label htmlFor="">pincode</label>
         <input type="number" name="pincode" onChange={handleChange} />
       </div>
+      
       <button onClick={register}>Register</button>
     </div>
   );

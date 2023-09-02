@@ -8,7 +8,24 @@ const DonnarReg = () => {
   const [selectedState, setSelectedState] = useState('');
   const [selectedDistrict, setSelectedDistrict] = useState('');
 
-  
+  useEffect(() => {
+    // Fetch the JSON data from your data.json file
+    fetch('/states.json') // Adjust the path to your data.json file as needed
+      .then((response) => response.json())
+      .then((jsonData) => setData(jsonData))
+      .catch((error) => console.error('Error fetching data:', error));
+  }, []);
+
+  const handleStateChange = (event) => {
+    const newState = event.target.value;
+    setSelectedState(newState);
+    setSelectedDistrict(''); // Reset the district when the state changes
+  };
+
+  const handleDistrictChange = (event) => {
+    const newDistrict = event.target.value;
+    setSelectedDistrict(newDistrict);
+  };
 
   const [regUser, setregUser] = useState({
     email: "",
@@ -134,6 +151,29 @@ const DonnarReg = () => {
         <label htmlFor="">pincode</label>
         <input type="number" name="pincode" onChange={handleChange} />
       </div>
+      <div>
+      <label>Select a State:</label>
+      <select onChange={handleStateChange} value={selectedState}>
+        <option value="">Select a State</option>
+        {data.map((stateData, index) => (
+          <option key={index} value={stateData.state}>
+            {stateData.state}
+          </option>
+        ))}
+      </select>
+
+      <label>Select a District:</label>
+      <select onChange={handleDistrictChange} value={selectedDistrict}>
+        <option value="">Select a District</option>
+        {data
+          .find((stateData) => stateData.state === selectedState)
+          ?.districts.map((district, index) => (
+            <option key={index} value={district}>
+              {district}
+            </option>
+          ))}
+      </select>
+    </div>
       <button onClick={register}>Register</button>
     </div>
   );

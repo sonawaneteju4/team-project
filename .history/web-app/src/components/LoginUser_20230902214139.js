@@ -64,7 +64,7 @@ const LoginUser = () => {
       case "bankLogin":
         return "Bank Login";
       case "donarLogin":
-        return "Donar Login";
+        return "Donnar Login";
       case "hosptialLogin":
         return "Hospital Login";
       default:

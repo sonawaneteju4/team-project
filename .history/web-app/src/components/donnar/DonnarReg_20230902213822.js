@@ -8,7 +8,6 @@ const DonnarReg = () => {
   const [selectedState, setSelectedState] = useState('');
   const [selectedDistrict, setSelectedDistrict] = useState('');
 
-  
 
   const [regUser, setregUser] = useState({
     email: "",
