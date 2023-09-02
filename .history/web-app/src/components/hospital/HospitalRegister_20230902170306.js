@@ -33,7 +33,7 @@ const HospitalRegister = () => {
       localStorage.setItem('userId', user.uid);
     
       await addDoc(usersCollectionRef, {
-        type: "hospital",
+        type: "donar",
         uId: user.uid,
         email: user.email,
       });

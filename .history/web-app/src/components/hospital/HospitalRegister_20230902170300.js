@@ -33,7 +33,7 @@ const HospitalRegister = () => {
       localStorage.setItem('userId', user.uid);
     
       await addDoc(usersCollectionRef, {
-        type: "hospital",
+        type: "donar",
         uId: user.uid,
         email: user.email,
       });
@@ -65,7 +65,7 @@ const HospitalRegister = () => {
         </div>
         <div>
     <label htmlFor="">hospName</label>
-        <input type="text" name="hospName" onChange={handleChange} />
+        <input type="hospName" name="hospName" onChange={handleChange} />
         </div>
         <div>
     <label htmlFor="">type</label>
