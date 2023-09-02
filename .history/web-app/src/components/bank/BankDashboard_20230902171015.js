@@ -3,7 +3,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../../firebaseConfig';
 
-const HospitalDashboard = () => {
+const BankDashboard = () => {
   const navigate = useNavigate()
   const logout = async () => {
     localStorage.removeItem("userId");
@@ -13,10 +13,11 @@ const HospitalDashboard = () => {
 
   };
   return (
-    <div>HospitalDashboard
-            <button onClick={logout}>Logout</button>
+    <div>BankDashboard
+
+      <button onClick={logout}>Logout</button>
     </div>
   )
 }
 
-export default HospitalDashboard
+export default BankDashboard

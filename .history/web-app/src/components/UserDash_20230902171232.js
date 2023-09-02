@@ -36,7 +36,7 @@ const UserDash = () => {
           }else if(item.data().type == 'hospital'){
             navigate('/hospitalDash')
           }else if(item.data().type == 'bank'){
-            navigate('/bankDash')
+            navigate('/dashboard/bankDash')
           }else{
             navigate('/')
           }

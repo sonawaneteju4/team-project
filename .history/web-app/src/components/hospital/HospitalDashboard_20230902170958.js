@@ -1,7 +1,6 @@
 import { signOut } from 'firebase/auth';
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import { auth } from '../../firebaseConfig';
 
 const HospitalDashboard = () => {
   const navigate = useNavigate()
