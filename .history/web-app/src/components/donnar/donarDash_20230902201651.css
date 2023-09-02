@@ -26,14 +26,7 @@ display: flex;
 .sideBar{
   width: 20%;
   background-color: lavender;
-  height: 80vh;
 }
 .sidePage{
   width: 80%;
-}
-.donarInfo{
-  display: flex;
-}
-.info1{
-  margin-left: 100px;
 }

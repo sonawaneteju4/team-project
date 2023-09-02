@@ -33,7 +33,8 @@ display: flex;
 }
 .donarInfo{
   display: flex;
+  margin: 5%;
 }
 .info1{
-  margin-left: 100px;
+  margin: 50px;
 }
