@@ -29,7 +29,6 @@
     .form {
       display: flex;
       flex-direction: column;
-      margin: 15px;
     }
     
     label {
@@ -38,7 +37,6 @@
     }
     
     input {
-      padding: 10px;
       margin-bottom: 10px;
       border: 1px solid #ddd;
       border-radius: 5px;

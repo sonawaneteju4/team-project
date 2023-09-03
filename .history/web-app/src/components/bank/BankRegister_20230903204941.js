@@ -90,6 +90,7 @@ const BankRegister = () => {
   return (
     <div className="bankReg">
       <div className="heading">Bank Registration</div>
+      <hr />
       <div className="formOfBank">
         <div className="">
           <label htmlFor="">email</label>

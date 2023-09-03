@@ -1,0 +1,12 @@
+.bankReg{
+    margin: auto;
+    width: 50%;
+}
+label{
+    
+}
+input{
+    width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+}

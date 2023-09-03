@@ -90,6 +90,7 @@ const BankRegister = () => {
   return (
     <div className="bankReg">
       <div className="heading">Bank Registration</div>
+      <hr />
       <div className="formOfBank">
         <div className="">
           <label htmlFor="">email</label>
@@ -115,7 +116,7 @@ const BankRegister = () => {
               ))}
             </select>
           </div>
-          <div className="distcss">
+          <div>
             <label>Select a District:</label>
             <select onChange={handleDistrictChange} value={selectedDistrict}>
               <option value="">Select a District</option>

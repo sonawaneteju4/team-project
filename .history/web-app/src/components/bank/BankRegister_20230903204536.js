@@ -89,7 +89,7 @@ const BankRegister = () => {
 
   return (
     <div className="bankReg">
-      <div className="heading">Bank Registration</div>
+      <div className="heading">BankReg</div>
       <div className="formOfBank">
         <div className="">
           <label htmlFor="">email</label>
@@ -103,31 +103,29 @@ const BankRegister = () => {
           <label htmlFor="">address</label>
           <input type="text" name="address" onChange={handleChange} />
         </div>
-        <div className="statesAndDist">
-          <div>
-            <label>Select a State:</label>
-            <select onChange={handleStateChange} value={selectedState}>
-              <option value="">Select a State</option>
-              {states.map((stateData, index) => (
-                <option key={index} value={stateData.state}>
-                  {stateData.state}
+        <div>
+          <label>Select a State:</label>
+          <select onChange={handleStateChange} value={selectedState}>
+            <option value="">Select a State</option>
+            {states.map((stateData, index) => (
+              <option key={index} value={stateData.state}>
+                {stateData.state}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label>Select a District:</label>
+          <select onChange={handleDistrictChange} value={selectedDistrict}>
+            <option value="">Select a District</option>
+            {states
+              .find((stateData) => stateData.state === selectedState)
+              ?.districts.map((district, index) => (
+                <option key={index} value={district}>
+                  {district}
                 </option>
               ))}
-            </select>
-          </div>
-          <div className="distcss">
-            <label>Select a District:</label>
-            <select onChange={handleDistrictChange} value={selectedDistrict}>
-              <option value="">Select a District</option>
-              {states
-                .find((stateData) => stateData.state === selectedState)
-                ?.districts.map((district, index) => (
-                  <option key={index} value={district}>
-                    {district}
-                  </option>
-                ))}
-            </select>
-          </div>
+          </select>
         </div>
         <div>
           <label htmlFor="">city</label>
