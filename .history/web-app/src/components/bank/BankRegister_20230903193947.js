@@ -10,25 +10,6 @@ const BankRegister = () => {
   const [selectedDistrict, setSelectedDistrict] = useState('');
   const states = importedData.states;
 
-  const [regUser, setregUser] = useState({
-    email: " ",
-    password: " ",
-    address: " ",
-    state: " ",
-    district: " ",
-    city: " ",
-    name: " ",
-    category: " ",
-    contact: " ",
-    pincode: " ",
-    componentfac: " ",
-    apheresisfac: " ",
-  });
-  const usersCollectionRef = collection(db, "users");
-  const usersDataRef = collection(db, "bankInfo");
-  const navigate = useNavigate();
-
-  
   const handleStateChange = (event) => {
     const newState = event.target.value;
     setSelectedState(newState);
@@ -47,6 +28,23 @@ const BankRegister = () => {
       dist: newDistrict,
     });
   };
+  const [regUser, setregUser] = useState({
+    email: " ",
+    password: " ",
+    address: " ",
+    state: " ",
+    district: " ",
+    city: " ",
+    name: " ",
+    category: " ",
+    contact: " ",
+    pincode: " ",
+    componentfac: " ",
+    apheresisfac: " ",
+  });
+  const usersCollectionRef = collection(db, "users");
+  const usersDataRef = collection(db, "bankInfo");
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setregUser({ ...regUser, [e.target.name]: e.target.value });
@@ -102,29 +100,13 @@ const BankRegister = () => {
         <label htmlFor="">address</label>
         <input type="text" name="address" onChange={handleChange} />
       </div>
-     <div>
-      <label>Select a State:</label>
-      <select onChange={handleStateChange} value={selectedState}>
-        <option value="">Select a State</option>
-        {states.map((stateData, index) => (
-          <option key={index} value={stateData.state}>
-            {stateData.state}
-          </option>
-        ))}
-      </select>
+      <div>
+        <label htmlFor="">state</label>
+        <input type="text" name="state" onChange={handleChange} />
       </div>
       <div>
-      <label>Select a District:</label>
-      <select onChange={handleDistrictChange} value={selectedDistrict}>
-        <option value="">Select a District</option>
-        {states
-          .find((stateData) => stateData.state === selectedState)
-          ?.districts.map((district, index) => (
-            <option key={index} value={district}>
-              {district}
-            </option>
-          ))}
-      </select>
+        <label htmlFor="">district</label>
+        <input type="text" name="district" onChange={handleChange} />
       </div>
       <div>
         <label htmlFor="">city</label>

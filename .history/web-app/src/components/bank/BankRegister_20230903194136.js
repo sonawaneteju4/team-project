@@ -44,7 +44,7 @@ const BankRegister = () => {
     setSelectedDistrict(newDistrict);
     setregUser({
       ...regUser,
-      dist: newDistrict,
+      district: newDistrict,
     });
   };
 
