@@ -1,9 +1,6 @@
 .bankReg {
-    /* background-image: url('./../../../public/pexels-shafifotumcatcher-2378278.jpg'); */
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
   margin: auto;
-  width: 60%;
+  width: 70%;
   padding: 40px;
   border-radius: 20px;
   background: white;
@@ -11,7 +8,7 @@
   margin-bottom: 3%;
 }
 input {
-  background-color: rgb(230, 230, 230);
+  background-color: rgb(235, 233, 233);
   min-width: 100%;
   border: none;
   appearance: none;
@@ -53,6 +50,6 @@ select {
   border-radius: 8px;
   padding: 12px;
 }
-.regBtn {
-  text-align: center;
+.regBtn{
+    text-align: center;
 }

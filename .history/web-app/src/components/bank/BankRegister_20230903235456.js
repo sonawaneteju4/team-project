@@ -158,7 +158,7 @@ const BankRegister = () => {
             <div className="distcss">
               <label htmlFor="">pincode</label>
               <input
-                className="pin"
+                // className="pin"
                 type="number"
                 name="pincode"
                 onChange={handleChange}

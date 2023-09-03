@@ -177,7 +177,7 @@ const BankRegister = () => {
         </div>
       </div>
       <div  className="regBtn">
-      <button className="button" onClick={register}>Register</button>
+      <button c onClick={register}>Register</button>
       </div>
     </div>
   );

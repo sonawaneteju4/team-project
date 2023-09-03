@@ -91,7 +91,7 @@ const BankRegister = () => {
     <div className="bankReg">
       <div className="heading">Bank Registration</div>
       <div className="formOfBank">
-        <div className="formDiff">
+        <div>
           <div className="">
             <label htmlFor="">email</label>
             <input type="email" name="email" onChange={handleChange} />
@@ -114,7 +114,7 @@ const BankRegister = () => {
             <input type="number" name="contact" onChange={handleChange} />
           </div>
         </div>
-        <div className="formDiff">
+        <div>
           <div>
             <label htmlFor="">address</label>
             <input type="text" name="address" onChange={handleChange} />
@@ -145,27 +145,10 @@ const BankRegister = () => {
               </select>
             </div>
           </div>
-          <div className="statesAndDist">
-            <div>
-              <label htmlFor="">city</label>
-              <input
-                className=""
-                type="text"
-                name="city"
-                onChange={handleChange}
-              />
-            </div>
-            <div className="distcss">
-              <label htmlFor="">pincode</label>
-              <input
-                className="pin"
-                type="number"
-                name="pincode"
-                onChange={handleChange}
-              />
-            </div>
+          <div>
+            <label htmlFor="">city</label>
+            <input type="text" name="city" onChange={handleChange} />
           </div>
-
           <div>
             <label htmlFor="">componentfac</label>
             <input type="text" name="componentfac" onChange={handleChange} />
@@ -174,11 +157,13 @@ const BankRegister = () => {
             <label htmlFor="">apheresisfac</label>
             <input type="text" name="apheresisfac" onChange={handleChange} />
           </div>
+          <div>
+            <label htmlFor="">pincode</label>
+            <input type="number" name="pincode" onChange={handleChange} />
+          </div>
         </div>
       </div>
-      <div  className="regBtn">
-      <button className="button" onClick={register}>Register</button>
-      </div>
+      <button onClick={register}>Register</button>
     </div>
   );
 };

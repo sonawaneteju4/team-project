@@ -91,16 +91,16 @@ const BankRegister = () => {
     <div className="bankReg">
       <div className="heading">Bank Registration</div>
       <div className="formOfBank">
-        <div className="formDiff">
-          <div className="">
-            <label htmlFor="">email</label>
-            <input type="email" name="email" onChange={handleChange} />
-          </div>
-          <div>
-            <label htmlFor="">password</label>
-            <input type="password" name="password" onChange={handleChange} />
-          </div>
-
+        <div>
+        <div className="">
+          <label htmlFor="">email</label>
+          <input type="email" name="email" onChange={handleChange} />
+        </div>
+        <div>
+          <label htmlFor="">password</label>
+          <input type="password" name="password" onChange={handleChange} />
+        </div>
+        <div>
           <div>
             <label htmlFor="">name</label>
             <input type="text" name="name" onChange={handleChange} />
@@ -113,71 +113,11 @@ const BankRegister = () => {
             <label htmlFor="">contact</label>
             <input type="number" name="contact" onChange={handleChange} />
           </div>
-        </div>
-        <div className="formDiff">
-          <div>
-            <label htmlFor="">address</label>
-            <input type="text" name="address" onChange={handleChange} />
-          </div>
-          <div className="statesAndDist">
-            <div>
-              <label>Select a State:</label>
-              <select onChange={handleStateChange} value={selectedState}>
-                <option value="">Select a State</option>
-                {states.map((stateData, index) => (
-                  <option key={index} value={stateData.state}>
-                    {stateData.state}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="distcss">
-              <label>Select a District:</label>
-              <select onChange={handleDistrictChange} value={selectedDistrict}>
-                <option value="">Select a District</option>
-                {states
-                  .find((stateData) => stateData.state === selectedState)
-                  ?.districts.map((district, index) => (
-                    <option key={index} value={district}>
-                      {district}
-                    </option>
-                  ))}
-              </select>
-            </div>
-          </div>
-          <div className="statesAndDist">
-            <div>
-              <label htmlFor="">city</label>
-              <input
-                className=""
-                type="text"
-                name="city"
-                onChange={handleChange}
-              />
-            </div>
-            <div className="distcss">
-              <label htmlFor="">pincode</label>
-              <input
-                className="pin"
-                type="number"
-                name="pincode"
-                onChange={handleChange}
-              />
-            </div>
-          </div>
 
-          <div>
-            <label htmlFor="">componentfac</label>
-            <input type="text" name="componentfac" onChange={handleChange} />
-          </div>
-          <div>
-            <label htmlFor="">apheresisfac</label>
-            <input type="text" name="apheresisfac" onChange={handleChange} />
-          </div>
         </div>
-      </div>
-      <div  className="regBtn">
-      <button className="button" onClick={register}>Register</button>
+        
+          
+        <button onClick={register}>Register</button>
       </div>
     </div>
   );

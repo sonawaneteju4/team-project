@@ -91,7 +91,7 @@ const BankRegister = () => {
     <div className="bankReg">
       <div className="heading">Bank Registration</div>
       <div className="formOfBank">
-        <div className="formDiff">
+        <div>
           <div className="">
             <label htmlFor="">email</label>
             <input type="email" name="email" onChange={handleChange} />
@@ -100,21 +100,21 @@ const BankRegister = () => {
             <label htmlFor="">password</label>
             <input type="password" name="password" onChange={handleChange} />
           </div>
+          <div>
+            <div>
+              <label htmlFor="">name</label>
+              <input type="text" name="name" onChange={handleChange} />
+            </div>
+            <div>
+              <label htmlFor="">category</label>
+              <input type="text" name="category" onChange={handleChange} />
+            </div>
+            <div>
+              <label htmlFor="">contact</label>
+              <input type="number" name="contact" onChange={handleChange} />
+            </div>
+          </div>
 
-          <div>
-            <label htmlFor="">name</label>
-            <input type="text" name="name" onChange={handleChange} />
-          </div>
-          <div>
-            <label htmlFor="">category</label>
-            <input type="text" name="category" onChange={handleChange} />
-          </div>
-          <div>
-            <label htmlFor="">contact</label>
-            <input type="number" name="contact" onChange={handleChange} />
-          </div>
-        </div>
-        <div className="formDiff">
           <div>
             <label htmlFor="">address</label>
             <input type="text" name="address" onChange={handleChange} />
@@ -145,27 +145,16 @@ const BankRegister = () => {
               </select>
             </div>
           </div>
-          <div className="statesAndDist">
-            <div>
+          <div className="stateAndDist">
+            <div className="">
               <label htmlFor="">city</label>
-              <input
-                className=""
-                type="text"
-                name="city"
-                onChange={handleChange}
-              />
+              <input type="text" name="city" onChange={handleChange} />
             </div>
-            <div className="distcss">
+            <div>
               <label htmlFor="">pincode</label>
-              <input
-                className="pin"
-                type="number"
-                name="pincode"
-                onChange={handleChange}
-              />
+              <input type="number" name="pincode" onChange={handleChange} />
             </div>
           </div>
-
           <div>
             <label htmlFor="">componentfac</label>
             <input type="text" name="componentfac" onChange={handleChange} />
@@ -176,9 +165,8 @@ const BankRegister = () => {
           </div>
         </div>
       </div>
-      <div  className="regBtn">
-      <button className="button" onClick={register}>Register</button>
-      </div>
+      
+        <button onClick={register}>Register</button>
     </div>
   );
 };

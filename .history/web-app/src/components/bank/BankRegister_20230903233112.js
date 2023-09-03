@@ -1,0 +1,132 @@
+import { addDoc, collection } from "firebase/firestore";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth, db } from "../../firebaseConfig";
+import importedData from "./../../json/states.json";
+import "./bankReg.css";
+
+const BankRegister = () => {
+  const [selectedState, setSelectedState] = useState("");
+  const [selectedDistrict, setSelectedDistrict] = useState("");
+  const states = importedData.states;
+
+  const [regUser, setregUser] = useState({
+    email: " ",
+    password: " ",
+    address: " ",
+    state: " ",
+    district: " ",
+    city: " ",
+    name: " ",
+    category: " ",
+    contact: " ",
+    pincode: " ",
+    componentfac: " ",
+    apheresisfac: " ",
+  });
+  const usersCollectionRef = collection(db, "users");
+  const usersDataRef = collection(db, "bankInfo");
+  const navigate = useNavigate();
+
+  const handleStateChange = (event) => {
+    const newState = event.target.value;
+    setSelectedState(newState);
+    setregUser({
+      ...regUser,
+      state: newState,
+    });
+    setSelectedDistrict(""); // Reset the district when the state changes
+  };
+
+  const handleDistrictChange = (event) => {
+    const newDistrict = event.target.value;
+    setSelectedDistrict(newDistrict);
+    setregUser({
+      ...regUser,
+      dist: newDistrict,
+    });
+  };
+
+  const handleChange = (e) => {
+    setregUser({ ...regUser, [e.target.name]: e.target.value });
+  };
+
+  const register = async () => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        regUser.email,
+        regUser.password
+      );
+      const user = userCredential.user;
+      localStorage.setItem("userId", user.uid);
+      await addDoc(usersCollectionRef, {
+        type: "bank",
+        uId: user.uid,
+        email: user.email,
+      });
+      await addDoc(usersDataRef, {
+        uId: user.uid,
+        email: regUser.email,
+        password: regUser.password,
+        address: regUser.address,
+        state: regUser.state,
+        district: regUser.district,
+        city: regUser.city,
+        name: regUser.name,
+        category: regUser.category,
+        contact: regUser.contact,
+        pincode: regUser.pincode,
+        componentfac: regUser.componentfac,
+        apheresisfac: regUser.apheresisfac,
+      });
+      navigate("/bankDash");
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
+  return (
+    <div className="bankReg">
+      <div className="heading">Bank Registration</div>
+      <div className="formOfBank">
+<div>
+
+
+<div className="">
+          <label htmlFor="">email</label>
+          <input type="email" name="email" onChange={handleChange} />
+        </div>
+        <div>
+          <label htmlFor="">password</label>
+          <input type="password" name="password" onChange={handleChange} />
+        </div>
+
+<div>
+          <label htmlFor="">name</label>
+          <input type="text" name="name" onChange={handleChange} />
+        </div>
+        <div>
+          <label htmlFor="">category</label>
+          <input type="text" name="category" onChange={handleChange} />
+        </div>
+        <div>
+          <label htmlFor="">contact</label>
+          <input type="number" name="contact" onChange={handleChange} />
+        </div>
+        
+</div>
+<div>
+  
+</div>
+
+
+       
+        <button onClick={register}>Register</button>
+      </div>
+    </div>
+  );
+};
+
+export default BankRegister;

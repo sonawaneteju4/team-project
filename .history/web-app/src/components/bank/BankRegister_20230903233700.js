@@ -146,26 +146,16 @@ const BankRegister = () => {
             </div>
           </div>
           <div className="statesAndDist">
-            <div>
-              <label htmlFor="">city</label>
-              <input
-                className=""
-                type="text"
-                name="city"
-                onChange={handleChange}
-              />
-            </div>
-            <div className="distcss">
-              <label htmlFor="">pincode</label>
-              <input
-                className="pin"
-                type="number"
-                name="pincode"
-                onChange={handleChange}
-              />
-            </div>
+          <div>
+            <label htmlFor="">city</label>
+            <input   type="text" name="city" onChange={handleChange} />
           </div>
-
+          <div className="distcss">
+            <label htmlFor="">pincode</label>
+            <input type="number" name="pincode" onChange={handleChange} />
+          </div>
+          </div>
+         
           <div>
             <label htmlFor="">componentfac</label>
             <input type="text" name="componentfac" onChange={handleChange} />
@@ -174,11 +164,10 @@ const BankRegister = () => {
             <label htmlFor="">apheresisfac</label>
             <input type="text" name="apheresisfac" onChange={handleChange} />
           </div>
+          
         </div>
       </div>
-      <div  className="regBtn">
-      <button className="button" onClick={register}>Register</button>
-      </div>
+      <button onClick={register}>Register</button>
     </div>
   );
 };
