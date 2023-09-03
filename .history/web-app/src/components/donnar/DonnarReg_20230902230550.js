@@ -32,26 +32,7 @@ const DonnarReg = () => {
   const usersCollectionRef = collection(db, "users");
   const usersDataRef = collection(db, "donnarInfo");
   const navigate = useNavigate();
-  console.log(regUser.state)
-  
-  const handleStateChange = (event) => {
-    const newState = event.target.value;
-    setSelectedState(newState);
-    setregUser({
-      ...regUser,
-      state: newState,
-    });
-    setSelectedDistrict(''); // Reset the district when the state changes
-  };
-  
-  const handleDistrictChange = (event) => {
-    const newDistrict = event.target.value;
-    setSelectedDistrict(newDistrict);
-    setregUser({
-      ...regUser,
-      dist: newDistrict,
-    });
-  };
+
   const handleChange = (e) => {
     setregUser({ ...regUser, [e.target.name]: e.target.value });
   };
@@ -147,6 +128,19 @@ const DonnarReg = () => {
         <input type="text" name="address" onChange={handleChange} />
       </div>
       <div>
+        <label htmlFor="">state</label>
+        <input type="text" name="state" onChange={handleChange} />
+      </div>
+      <div>
+        <label htmlFor="">dist</label>
+        <input type="text" name="dist" onChange={handleChange} />
+      </div>
+      <div>
+        <label htmlFor="">pincode</label>
+        <input type="number" name="pincode" onChange={handleChange} />
+      </div>
+      <button onClick={register}>Register</button>
+      <div>
       <label>Select a State:</label>
       <select onChange={handleStateChange} value={selectedState}>
         <option value="">Select a State</option>
@@ -156,8 +150,7 @@ const DonnarReg = () => {
           </option>
         ))}
       </select>
-      </div>
-      <div>
+
       <label>Select a District:</label>
       <select onChange={handleDistrictChange} value={selectedDistrict}>
         <option value="">Select a District</option>
@@ -170,12 +163,6 @@ const DonnarReg = () => {
           ))}
       </select>
       </div>
-      <div>
-        <label htmlFor="">pincode</label>
-        <input type="number" name="pincode" onChange={handleChange} />
-      </div>
-      <button onClick={register}>Register</button>
-      
     </div>
   );
 };

@@ -147,6 +147,19 @@ const DonnarReg = () => {
         <input type="text" name="address" onChange={handleChange} />
       </div>
       <div>
+        <label htmlFor="">state</label>
+        <input type="text" name="state" value={regUser.state} onChange={handleChange} />
+      </div>
+      <div>
+        <label htmlFor="">dist</label>
+        <input type="text" name="dist" re onChange={handleChange} />
+      </div>
+      <div>
+        <label htmlFor="">pincode</label>
+        <input type="number" name="pincode" onChange={handleChange} />
+      </div>
+      <button onClick={register}>Register</button>
+      <div>
       <label>Select a State:</label>
       <select onChange={handleStateChange} value={selectedState}>
         <option value="">Select a State</option>
@@ -156,8 +169,7 @@ const DonnarReg = () => {
           </option>
         ))}
       </select>
-      </div>
-      <div>
+
       <label>Select a District:</label>
       <select onChange={handleDistrictChange} value={selectedDistrict}>
         <option value="">Select a District</option>
@@ -170,12 +182,6 @@ const DonnarReg = () => {
           ))}
       </select>
       </div>
-      <div>
-        <label htmlFor="">pincode</label>
-        <input type="number" name="pincode" onChange={handleChange} />
-      </div>
-      <button onClick={register}>Register</button>
-      
     </div>
   );
 };

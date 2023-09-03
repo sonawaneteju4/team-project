@@ -169,13 +169,16 @@ const DonnarReg = () => {
             </option>
           ))}
       </select>
-      </div>
       <div>
         <label htmlFor="">pincode</label>
         <input type="number" name="pincode" onChange={handleChange} />
       </div>
       <button onClick={register}>Register</button>
-      
+      <div>
+     
+
+     
+      </div>
     </div>
   );
 };

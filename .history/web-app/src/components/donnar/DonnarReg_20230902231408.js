@@ -175,7 +175,11 @@ const DonnarReg = () => {
         <input type="number" name="pincode" onChange={handleChange} />
       </div>
       <button onClick={register}>Register</button>
+      <div>
       
+
+     
+      </div>
     </div>
   );
 };

@@ -158,24 +158,19 @@ const DonnarReg = () => {
       </select>
       </div>
       <div>
-      <label>Select a District:</label>
-      <select onChange={handleDistrictChange} value={selectedDistrict}>
-        <option value="">Select a District</option>
-        {states
-          .find((stateData) => stateData.state === selectedState)
-          ?.districts.map((district, index) => (
-            <option key={index} value={district}>
-              {district}
-            </option>
-          ))}
-      </select>
+        <label htmlFor="">dist</label>
+        <input type="text" name="dist" onChange={handleChange} />
       </div>
       <div>
         <label htmlFor="">pincode</label>
         <input type="number" name="pincode" onChange={handleChange} />
       </div>
       <button onClick={register}>Register</button>
+      <div>
       
+
+     
+      </div>
     </div>
   );
 };
