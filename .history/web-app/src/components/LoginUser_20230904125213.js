@@ -64,7 +64,7 @@ const LoginUser = () => {
       nav("/bankReg");
     } else if (location.pathname.slice(1) === "donarLogin") {
       nav("/donarReg");
-    } else  {
+    } else if(location.pathname.slice(1) == "hospitalLogin") {
       nav("/hosptialReg");
     }
   };

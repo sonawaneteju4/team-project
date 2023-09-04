@@ -8,11 +8,8 @@ body {
 .container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: -50px;
-  height: 100vh; /* Optional: Makes the container fill the entire viewport height */
+  alinc
 }
-
 
 .card {
   width: 300px;

@@ -6,13 +6,14 @@ body {
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: -50px;
-  height: 100vh; /* Optional: Makes the container fill the entire viewport height */
+  /* display: flex; */
+  /* justify-content: center; */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: 50%;
+  /* height: 100vh; */
 }
-
 
 .card {
   width: 300px;

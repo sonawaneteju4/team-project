@@ -41,7 +41,7 @@ const LoginUser = () => {
         loginUser.password
       );
       const user = userCredential.user;
-      localStorage.setItem("userId", user.uid);
+      localStorage.setItem('userId', user.uid);
       nav("/dashboard");
     } catch (error) {
       console.log(error.message);
@@ -59,15 +59,21 @@ const LoginUser = () => {
   const handleCloseModal = () => {
     setmodalShow(false);
   };
-  const handleCreateAccount = () => {
-    if (location.pathname.slice(1) === "bankLogin") {
-      nav("/bankReg");
-    } else if (location.pathname.slice(1) === "donarLogin") {
-      nav("/donarReg");
-    } else  {
-      nav("/hosptialReg");
+  const handleCreateAccount = (pageInfo) => {
+
+    if(pageInfo == "bankLogin"){
+      nav('/bankReg')
+
+    } else if(pageInfo == "donarLogin"){
+      nav('/donarReg')
+    }else
+    switch (pageInfo) {
+      case "bankLogin":
+      case "donarLogin":
+      case "hosptialLogin":
+         nav('/hosptialReg');
     }
-  };
+  }
   const getPageTitle = (pageInfo) => {
     switch (pageInfo) {
       case "bankLogin":
@@ -80,29 +86,30 @@ const LoginUser = () => {
         return "Unknown Page";
     }
   };
-
+ 
   return (
     <div className="body">
-      <div className="container">
-        <div className="card">
-          <h2>{getPageTitle(pageInfo).toUpperCase()}</h2>
 
-          <div className="form">
-            <label htmlFor="">Email</label>
-            <input type="" name="email" onChange={onHandleChange} />
-            <label htmlFor="">Password</label>
-            <input type="" name="password" onChange={onHandleChange} />
-            <button className="button" onClick={Login}>
-              Login
-            </button>
-            <button className="button" onClick={handleCreateAccount}>
-              Create New Account
-            </button>
-          </div>
-          <h5>Forget Password... click here</h5>
+    <div className="container">
+      <div className="card">
+        <h2>{getPageTitle(pageInfo).toUpperCase()}</h2>
+
+        <div className="form">
+          <label htmlFor="">Email</label>
+          <input type="" name="email" onChange={onHandleChange} />
+          <label htmlFor="">Password</label>
+          <input type="" name="password" onChange={onHandleChange} />
+          <button className="button" onClick={Login}>
+            Login
+          </button>
+          <button className="button" onClick={handleCreateAccount}>
+            Create New Account  
+          </button>
         </div>
-        {modalShow && <Modal error={errorMessage} onClose={handleCloseModal} />}
+        <h5>Forget Password... click here</h5>
       </div>
+      {modalShow && <Modal error={errorMessage} onClose={handleCloseModal} />}
+    </div>
     </div>
   );
 };

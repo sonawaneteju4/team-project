@@ -59,12 +59,12 @@ const LoginUser = () => {
   const handleCloseModal = () => {
     setmodalShow(false);
   };
-  const handleCreateAccount = () => {
-    if (location.pathname.slice(1) === "bankLogin") {
+  const handleCreateAccount = (pageInfo) => {
+    if (pageInfo == "bankLogin") {
       nav("/bankReg");
-    } else if (location.pathname.slice(1) === "donarLogin") {
+    } else if (pageInfo == "donarLogin") {
       nav("/donarReg");
-    } else  {
+    } else {
       nav("/hosptialReg");
     }
   };
