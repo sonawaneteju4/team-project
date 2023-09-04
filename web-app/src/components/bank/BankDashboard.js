@@ -47,7 +47,7 @@ const BankDashboard = () => {
       <div>District:{bankData.district}</div>
       <div>City:{bankData.city}</div>
       <div>Contact:{bankData.contact}</div>
-      <div>Cotegory :{bankData.category}</div>
+      <div>Category :{bankData.category}</div>
       <button onClick={logout}>Logout</button>
     </div>
   );
