@@ -82,7 +82,7 @@ const DonateBlood = () => {
             <p>{item.data().state}</p>
             <p>{item.data().district}</p>
             <p>{item.data().pincode}</p>
-            <button >Donate Blood Request</button>
+            <button>Donate Blood Request</button>
           </div>
       ))}
     </div>
