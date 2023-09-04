@@ -12,18 +12,18 @@ const BankRegister = () => {
   const states = importedData.states;
 
   const [regUser, setregUser] = useState({
-    email: " ",
-    password: " ",
-    address: " ",
-    state: " ",
-    district: " ",
-    city: " ",
-    name: " ",
+    email: "",
+    password: "",
+    address: "",
+    state: "",
+    district: "",
+    city: "",
+    name: "",
     category: "",
-    contact: " ",
-    pincode: " ",
-    componentfac: " ",
-    apheresisfac: " ",
+    contact: "",
+    pincode: "",
+    componentfac: "",
+    apheresisfac: "",
   });
   const usersCollectionRef = collection(db, "users");
   const usersDataRef = collection(db, "bankInfo");

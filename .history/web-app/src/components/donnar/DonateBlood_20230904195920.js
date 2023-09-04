@@ -1,0 +1,16 @@
+import React from 'react'
+import importedData from "./../../json/states.json";
+const states = importedData.states;
+
+
+const DonateBlood = () => {
+    const [selectedState, setSelectedState] = useState("");
+    const [selectedDistrict, setSelectedDistrict] = useState("");
+  return (
+    <div>
+        <div>Serch Blood Bank To Donate Blood</div>
+    </div>
+  )
+}
+
+export default DonateBlood
