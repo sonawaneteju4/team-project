@@ -97,7 +97,7 @@ const DonnarReg = () => {
 
   return (
     <div className="bankReg">
-      <div className="heading">Donar Registration</div>
+      <div className="heading">Donor Registration</div>
 
       <div className="formOfBank">
         <div className="formDiff">
@@ -110,7 +110,7 @@ const DonnarReg = () => {
             <input type="password" name="password" onChange={handleChange} />
           </div>
           <div>
-            <label htmlFor="">userName</label>
+            <label htmlFor="">Name</label>
             <input type="text" name="userName" onChange={handleChange} />
           </div>
           <div className="statesAndDist">
@@ -130,7 +130,7 @@ const DonnarReg = () => {
               <input type="text" name="bloodGroup" onChange={handleChange} />
             </div>
             <div className="distcss">
-              <label htmlFor="">gender</label>
+              <label htmlFor="">Gender</label>
               {/* <input type="text" name="gender"/> */}
               <select name="gender" onChange={handleChange} id="">
                 <option value="male">male</option>
@@ -142,22 +142,22 @@ const DonnarReg = () => {
         </div>
         <div className="formDiff">
         <div>
-        <label htmlFor="">mobile</label>
+        <label htmlFor="">Contact Number</label>
         <input type="number" name="mobile" onChange={handleChange} />
       </div>
       <div>
-        <label htmlFor="">aadhar</label>
+        <label htmlFor="">Aadhar number</label>
         <input type="number" name="aadhar" onChange={handleChange} />
       </div>
       <div>
-        <label htmlFor="">address</label>
+        <label htmlFor="">Address</label>
         <input type="text" name="address" onChange={handleChange} />
       </div>
       <div className="statesAndDist">
         <div>
-          <label>Select a State:</label>
+          <label>State:</label>
           <select onChange={handleStateChange} value={selectedState}>
-            <option value="">Select a State</option>
+            <option value="">Select State</option>
             {states.map((stateData, index) => (
               <option key={index} value={stateData.state}>
                 {stateData.state}
@@ -166,9 +166,9 @@ const DonnarReg = () => {
           </select>
         </div>
         <div className="distcss">
-          <label>Select a District:</label>
+          <label>District:</label>
           <select onChange={handleDistrictChange} value={selectedDistrict}>
-            <option value="">Select a District</option>
+            <option value="">Select District</option>
             {states
               .find((stateData) => stateData.state === selectedState)
               ?.districts.map((district, index) => (
@@ -180,7 +180,7 @@ const DonnarReg = () => {
         </div>
       </div>
       <div>
-        <label htmlFor="">pincode</label>
+        <label htmlFor="">Pincode</label>
         <input type="number" name="pincode" onChange={handleChange} />
       </div>
         </div>

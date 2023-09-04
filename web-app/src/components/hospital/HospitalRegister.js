@@ -169,10 +169,7 @@ const HospitalRegister = () => {
               />
             </div>
           </div>
-      <div >
-        <label htmlFor="">Pincode</label>
-        <input type="pincode" name="pincode" onChange={handleChange} />
-      </div>
+      
       <div  className="regBtn">
       <button className="button" onClick={register}>Register</button>
       </div>
