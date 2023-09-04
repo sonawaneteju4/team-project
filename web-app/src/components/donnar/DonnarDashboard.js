@@ -73,11 +73,15 @@ const DonnarDashboard = () => {
             <div>Weight :{userData.weight} Kg</div>
           </div>
           <div className="info1">
-            <div>Mobile :{userData.mobile}</div>
+          <div>Name:{userData.userName}</div>
+            <div>Contact :{userData.mobile}</div>
             <div>Gender :{userData.gender}</div>
-            <div>Pincode :{userData.pincode}</div>
-            <div>Dist :{userData.dist}</div>
+            <div>Weight:{userData.weight}</div>
+            <div>Age:{userData.age}</div>
+            <div>Blood Group :{userData.bloodGroup}</div>
+            <div>District :{userData.dist}</div>
             <div>State :{userData.state}</div>
+            <div>Pincode :{userData.pincode}</div>
           </div>
           </div>
           <hr />

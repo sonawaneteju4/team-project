@@ -41,12 +41,16 @@ const HospitalDashboard = () => {
 
   return (
     <div>HospitalDashboard
-      <div>{hospData.email}</div>
-      <div>{hospData.uId}</div>
-      <div>{hospData.address}</div>
-      <div>{hospData.city}</div>
-      <div>{hospData.contact}</div>
-      <div>{hospData.district}</div>
+      <div>Hospital Name :{hospData.hospName}</div>
+      <div>Email :{hospData.email}</div>
+      <div>Id :{hospData.uId}</div>
+      <div>Category :{hospData.type}</div>
+      <div>Address:{hospData.address}</div>
+      <div>Contact:{hospData.contact}</div>
+      <div>State :{hospData.state}</div>
+      <div>City:{hospData.city}</div>
+      <div>District :{hospData.district}</div>
+      <div>pincode :{hospData.pincode}</div>
 
             <button onClick={logout}>Logout</button>
     </div>

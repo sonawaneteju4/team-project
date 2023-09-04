@@ -39,9 +39,15 @@ const BankDashboard = () => {
   return (
     <div>
       BankDashboard
-      <div>{bankData.email}</div>
-      <div>{bankData.uId}</div>
-      <div>{bankData.address}</div>
+      <div>Email :{bankData.email}</div>
+      <div>Name : {bankData.name}</div>
+      <div>Id :{bankData.uId}</div>
+      <div>Address: {bankData.address}</div>
+      <div>State :{bankData.state}</div>
+      <div>District:{bankData.district}</div>
+      <div>City:{bankData.city}</div>
+      <div>Contact:{bankData.contact}</div>
+      <div>Cotegory :{bankData.category}</div>
       <button onClick={logout}>Logout</button>
     </div>
   );
