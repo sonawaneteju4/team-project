@@ -62,9 +62,9 @@ const LoginUser = () => {
   const getPageTitle = (pageInfo) => {
     switch (pageInfo) {
       case "bankLogin":
-        return "Bank Login";
+        return " Blood Bank Login";
       case "donarLogin":
-        return "Donar Login";
+        return "Donor Login";
       case "hosptialLogin":
         return "Hospital Login";
       default:
