@@ -73,6 +73,7 @@ const DonateBlood = () => {
       <button onClick={HandleSearch}>Search Bank</button>
       {bbData.map((item, index) => (
         <div style={{display :"flex"}} key={index}>
+          <div>
             <p>{item.data().address}</p>
             <p>{item.data().uId}</p>
             <p>{item.data().category}</p>
@@ -82,8 +83,10 @@ const DonateBlood = () => {
             <p>{item.data().state}</p>
             <p>{item.data().district}</p>
             <p>{item.data().pincode}</p>
-          </div>
-      ))}
+          </div>{" "}
+          // Adjust this line to match your data structure
+        </div>
+      ))}{" "}
     </div>
   );
 };

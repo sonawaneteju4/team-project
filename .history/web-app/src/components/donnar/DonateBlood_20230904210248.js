@@ -73,15 +73,15 @@ const DonateBlood = () => {
       <button onClick={HandleSearch}>Search Bank</button>
       {bbData.map((item, index) => (
         <div style={{display :"flex"}} key={index}>
-            <p>{item.data().address}</p>
-            <p>{item.data().uId}</p>
-            <p>{item.data().category}</p>
-            <p>{item.data().city}</p>
-            <p>{item.data().type}</p>
-            <p>{item.data().email}</p>
-            <p>{item.data().state}</p>
-            <p>{item.data().district}</p>
-            <p>{item.data().pincode}</p>
+            <div>{item.data().address}</div>
+            <div>{item.data().uId}</div>
+            <div>{item.data().category}</div>
+            <div>{item.data().city}</div>
+            <div>{item.data().type}</div>
+            <div>{item.data().email}</div>
+            <div>{item.data().state}</div>
+            <div>{item.data().district}</div>
+            <div>{item.data().pincode}</div>
           </div>
       ))}
     </div>

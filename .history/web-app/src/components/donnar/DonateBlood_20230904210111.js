@@ -82,8 +82,8 @@ const DonateBlood = () => {
             <p>{item.data().state}</p>
             <p>{item.data().district}</p>
             <p>{item.data().pincode}</p>
-          </div>
-      ))}
+          </div>{" "}
+      ))}{" "}
     </div>
   );
 };

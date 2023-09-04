@@ -1,48 +1,45 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 import importedData from "./../../json/states.json";
-import { collection, getDoc, getDocs, query, where } from "firebase/firestore";
-import { db } from "../../firebaseConfig";
+import { collection, getDoc, getDocs, query, where } from 'firebase/firestore';
+import { db } from '../../firebaseConfig';
 const states = importedData.states;
 
+
 const DonateBlood = () => {
-  const [selectedState, setSelectedState] = useState("");
-  const [selectedDistrict, setSelectedDistrict] = useState("");
-  const [bbData, setbbData] = useState([]);
-  const BankDataRef = collection(db, "bankInfo");
-  const handleStateChange = (event) => {
-    const newState = event.target.value;
-    setSelectedState(newState);
-    setSelectedDistrict(""); // Reset the district when the state changes
-  };
-
-  const handleDistrictChange = (event) => {
-    const newDistrict = event.target.value;
-    setSelectedDistrict(newDistrict);
-  };
-  //Query For Handle Bank Search
-  const SerchBankQ = query(
-    BankDataRef,
-    where("state", "==", selectedState),
-    where("district", "==", selectedDistrict)
-  );
-
-  const HandleSearch = async () => {
-    try {
-      const data = await getDocs(SerchBankQ);
-      console.log(data);
-      setbbData(data.docs);
-      // data.forEach((item) => {
-      //     console.log(item.data());
-      //   });
-    } catch (error) {
-      console.error(error);
+    const [selectedState, setSelectedState] = useState("");
+    const [selectedDistrict, setSelectedDistrict] = useState("");
+    const [bbData, setbbData] = useState([])
+    const BankDataRef = collection(db, "bankInfo");
+    const handleStateChange = (event) => {
+        const newState = event.target.value;
+        setSelectedState(newState);
+        setSelectedDistrict(""); // Reset the district when the state changes
+      };
+    
+      const handleDistrictChange = (event) => {
+        const newDistrict = event.target.value;
+        setSelectedDistrict(newDistrict);
+      };
+    //Query For Handle Bank Search
+    const SerchBankQ = query(BankDataRef, where("state", "==" , selectedState ),where("district","==", selectedDistrict))
+      
+    const HandleSearch = async() =>{
+        try {
+            const data = await getDocs(SerchBankQ);
+            console.log(data)
+            setbbData(data.docs);
+            // data.forEach((item) => {
+            //     console.log(item.data());
+            //   });
+        } catch (error) {
+            console.error(error);
+        }
     }
-  };
-
+      
   return (
     <div>
-      <div>Serch Blood Bank To Donate Blood</div>
-      <div className="statesAndDist">
+        <div>Serch Blood Bank To Donate Blood</div>
+        <div className="statesAndDist">
         <div>
           <label>State:</label>
           <select onChange={handleStateChange} value={selectedState}>
@@ -71,8 +68,10 @@ const DonateBlood = () => {
       <div>{selectedState}</div>
       <div>{selectedDistrict}</div>
       <button onClick={HandleSearch}>Search Bank</button>
+
+
       {bbData.map((item, index) => (
-        <div style={{display :"flex"}} key={index}>
+        <p key={index}>
             <p>{item.data().address}</p>
             <p>{item.data().uId}</p>
             <p>{item.data().category}</p>
@@ -82,10 +81,9 @@ const DonateBlood = () => {
             <p>{item.data().state}</p>
             <p>{item.data().district}</p>
             <p>{item.data().pincode}</p>
-          </div>
-      ))}
-    </div>
-  );
-};
+        </p> // Adjust this line to match your data structure
+      ))}    </div>
+  )
+}
 
-export default DonateBlood;
+export default DonateBlood
