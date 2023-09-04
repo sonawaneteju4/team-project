@@ -30,6 +30,7 @@ const UserDash = () => {
       const q = query(usersCollectionRef, where("uId", "==", localStorage.getItem('userId')));
       try {
         const userInfo = await getDocs(q);
+        console.log(userInfo)
         userInfo.forEach(item => {
           if(item.data().type === "donar"){
             navigate('/donarDash')
