@@ -1,5 +1,5 @@
 .bankReg {
-    /* background-image: url('./../../../public/pexels-shafifotumcatcher-2378278.jpg'); */
+  /* background-image: url('./../../../public/pexels-shafifotumcatcher-2378278.jpg'); */
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   margin: auto;
@@ -16,6 +16,13 @@ input {
   border: none;
   appearance: none;
   transition: all 0.2s;
+}
+
+select{
+  width: 100%;
+}
+option{
+  width: 100%;
 }
 input:active {
   border: none;

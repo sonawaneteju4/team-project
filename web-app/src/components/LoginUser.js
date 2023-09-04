@@ -32,7 +32,8 @@ const LoginUser = () => {
     console.log(location.pathname.slice(1));
   }, [location.pathname]);
 
-  const Login = async () => {
+  const Login = async (e) => {
+    e.preventDefault();
     try {
       console.log(loginUser.email);
       const userCredential = await signInWithEmailAndPassword(
@@ -87,18 +88,18 @@ const LoginUser = () => {
         <div className="card">
           <h2>{getPageTitle(pageInfo).toUpperCase()}</h2>
 
-          <div className="form">
+          <form className="form" onSubmit={Login}>
             <label htmlFor="">Email</label>
-            <input type="" name="email" onChange={onHandleChange} />
+            <input type="" name="email" onChange={onHandleChange} required/>
             <label htmlFor="">Password</label>
-            <input type="" name="password" onChange={onHandleChange} />
-            <button className="button" onClick={Login}>
+            <input type="" name="password" onChange={onHandleChange} required/>
+            <button className="button" >
               Login
             </button>
             <button className="button" onClick={handleCreateAccount}>
               Create New Account
             </button>
-          </div>
+          </form>
           <h5>Forget Password... click here</h5>
         </div>
         {modalShow && <Modal error={errorMessage} onClose={handleCloseModal} />}

@@ -31,11 +31,11 @@ const UserDash = () => {
       try {
         const userInfo = await getDocs(q);
         userInfo.forEach(item => {
-          if(item.data().type == "donar"){
+          if(item.data().type === "donar"){
             navigate('/donarDash')
-          }else if(item.data().type == 'hospital'){
+          }else if(item.data().type === 'hospital'){
             navigate('/hospitalDash')
-          }else if(item.data().type == 'bank'){
+          }else if(item.data().type === 'bank'){
             navigate('/bankDash')
           }else{
             navigate('/')
@@ -48,7 +48,7 @@ const UserDash = () => {
       }
     };
     getUsers();
-  }, []);
+  }, [navigate,usersCollectionRef]);
 
   const logout = async () => {
     localStorage.removeItem('userId')
@@ -57,11 +57,7 @@ const UserDash = () => {
     navigate("/");
   };
 
-  return (
-    <>
-     
-    </>
-  );
+  return null;
 };
 
 export default UserDash;
