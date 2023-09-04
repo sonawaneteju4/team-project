@@ -72,7 +72,7 @@ const BankRegister = () => {
       });
       await addDoc(usersDataRef, {
         uId: user.uid,
-        email: regUser.email,
+        email: user.email,
         password: regUser.password,
         address: regUser.address,
         state: regUser.state,

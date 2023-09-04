@@ -41,6 +41,7 @@ const BankDashboard = () => {
       BankDashboard
       <div>{bankData.email}</div>
       <div>{bankData.uId}</div>
+      <div>{bankData.address}</div>
       <button onClick={logout}>Logout</button>
     </div>
   );
