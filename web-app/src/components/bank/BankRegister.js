@@ -121,7 +121,7 @@ const BankRegister = () => {
           </div>
           <div className="statesAndDist">
             <div>
-              <label>Select a State:</label>
+              <label>State:</label>
               <select onChange={handleStateChange} value={selectedState}>
                 <option value="">Select a State</option>
                 {states.map((stateData, index) => (
@@ -132,7 +132,7 @@ const BankRegister = () => {
               </select>
             </div>
             <div className="distcss">
-              <label>Select a District:</label>
+              <label>District:</label>
               <select onChange={handleDistrictChange} value={selectedDistrict}>
                 <option value="">Select a District</option>
                 {states
@@ -167,11 +167,11 @@ const BankRegister = () => {
           </div>
 
           <div>
-            <label htmlFor="">componentfac</label>
+            <label htmlFor="">Component Facility</label>
             <input type="text" name="componentfac" onChange={handleChange} />
           </div>
           <div>
-            <label htmlFor="">apheresisfac</label>
+            <label htmlFor="">Apheresis Facility</label>
             <input type="text" name="apheresisfac" onChange={handleChange} />
           </div>
         </div>
