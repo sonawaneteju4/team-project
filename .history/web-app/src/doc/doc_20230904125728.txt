@@ -15,7 +15,7 @@ onAuthStateChanged(auth, (user) => {
 
 
 
-auto genrated password
+auto gen
 
 import { getAuth, updatePassword } from "firebase/auth";
 

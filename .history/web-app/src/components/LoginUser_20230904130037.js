@@ -53,10 +53,9 @@ const LoginUser = () => {
   const resetPass= async() =>{
     try {
       const reset = sendPasswordResetEmail(auth, loginUser.email)
-      alert("Password Reset Link Send To Your Email")
-
+      alert(reset)
     } catch (error) {
-      alert(error.message)
+      alert(errorMessage)
     }
   }
   const onHandleChange = (e) => {
@@ -109,7 +108,7 @@ const LoginUser = () => {
             </button>
           </div>
           <h5>Forget Password... 
-            <span onClick={resetPass}>
+            <span>
             click here
             </span>
             </h5>

@@ -51,13 +51,7 @@ const LoginUser = () => {
   };
 
   const resetPass= async() =>{
-    try {
-      const reset = sendPasswordResetEmail(auth, loginUser.email)
-      alert("Password Reset Link Send To Your Email")
-
-    } catch (error) {
-      alert(error.message)
-    }
+    const reset = sendPasswordResetEmail(auth, )
   }
   const onHandleChange = (e) => {
     setloginUser({
@@ -108,11 +102,7 @@ const LoginUser = () => {
               Create New Account
             </button>
           </div>
-          <h5>Forget Password... 
-            <span onClick={resetPass}>
-            click here
-            </span>
-            </h5>
+          <h5>Forget Password... click here</h5>
         </div>
         {modalShow && <Modal error={errorMessage} onClose={handleCloseModal} />}
       </div>

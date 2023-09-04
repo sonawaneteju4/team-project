@@ -53,8 +53,8 @@ const LoginUser = () => {
   const resetPass= async() =>{
     try {
       const reset = sendPasswordResetEmail(auth, loginUser.email)
-      alert("Password Reset Link Send To Your Email")
-
+      alert(reset)
+      
     } catch (error) {
       alert(error.message)
     }

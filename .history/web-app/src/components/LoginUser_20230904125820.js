@@ -1,4 +1,4 @@
-import { onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
+import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import "./login.css";
 import { auth } from "../firebaseConfig";
@@ -50,15 +50,7 @@ const LoginUser = () => {
     }
   };
 
-  const resetPass= async() =>{
-    try {
-      const reset = sendPasswordResetEmail(auth, loginUser.email)
-      alert("Password Reset Link Send To Your Email")
-
-    } catch (error) {
-      alert(error.message)
-    }
-  }
+  r
   const onHandleChange = (e) => {
     setloginUser({
       ...loginUser,
@@ -108,11 +100,7 @@ const LoginUser = () => {
               Create New Account
             </button>
           </div>
-          <h5>Forget Password... 
-            <span onClick={resetPass}>
-            click here
-            </span>
-            </h5>
+          <h5>Forget Password... click here</h5>
         </div>
         {modalShow && <Modal error={errorMessage} onClose={handleCloseModal} />}
       </div>
