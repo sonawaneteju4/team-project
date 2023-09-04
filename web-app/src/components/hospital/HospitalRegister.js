@@ -44,10 +44,9 @@ const HospitalRegister = () => {
     setSelectedDistrict(newDistrict);
     setregUser({
       ...regUser,
-      dist: newDistrict,
+      district: newDistrict,
     });
   };
-
 
   const handleChange = (e) => {
     setregUser({ ...regUser, [e.target.name]: e.target.value });
@@ -87,98 +86,101 @@ const HospitalRegister = () => {
 
   return (
     <>
-    <div className="hospReg">
-      <div className="heading">Hospital Register</div>
-      <div className="formOfBank">
-        <div className="formDiff">
-      <div className=" ">
-        <label htmlFor="">Email </label>
-        <input type="email" name="email" onChange={handleChange} />
-      </div>
-
-      <div>
-        <label htmlFor="">Password </label>
-        <input type="password" name="password" onChange={handleChange} />
-      </div>
-
-      <div>
-        <label htmlFor="">Hospital Name</label>
-        <input type="text" name="hospName" onChange={handleChange} />
-      </div>
-
-      <div>
-        <label htmlFor="">Hospital Type</label>
-        <input type="type" name="type" onChange={handleChange} />
-      </div>
-      </div>
-
-      <div className="formDiff">
-      <div>
-        <label htmlFor="">Contact number</label>
-        <input type="number" name="contact" onChange={handleChange} />
-      </div>
-
-      <div>
-        <label htmlFor="">Address</label>
-        <input type="text" name="address" onChange={handleChange} />
-      </div>
-
-      <div className="statesAndDist">
-            <div>
-              <label>State </label>
-              <select onChange={handleStateChange} value={selectedState}>
-                <option value="">Select a State</option>
-                {states.map((stateData, index) => (
-                  <option key={index} value={stateData.state}>
-                    {stateData.state}
-                  </option>
-                ))}
-              </select>
+      <div className="hospReg">
+        <div className="heading">Hospital Register</div>
+        <div className="formOfBank">
+          <div className="formDiff">
+            <div className=" ">
+              <label htmlFor="">Email </label>
+              <input type="email" name="email" onChange={handleChange} />
             </div>
-            <div className="distcss">
-              <label>District:</label>
-              <select onChange={handleDistrictChange} value={selectedDistrict}>
-                <option value="">Select a District</option>
-                {states
-                  .find((stateData) => stateData.state === selectedState)
-                  ?.districts.map((district, index) => (
-                    <option key={index} value={district}>
-                      {district}
+
+            <div>
+              <label htmlFor="">Password </label>
+              <input type="password" name="password" onChange={handleChange} />
+            </div>
+
+            <div>
+              <label htmlFor="">Hospital Name</label>
+              <input type="text" name="hospName" onChange={handleChange} />
+            </div>
+
+            <div>
+              <label htmlFor="">Hospital Type</label>
+              <input type="type" name="type" onChange={handleChange} />
+            </div>
+          </div>
+
+          <div className="formDiff">
+            <div>
+              <label htmlFor="">Contact number</label>
+              <input type="number" name="contact" onChange={handleChange} />
+            </div>
+
+            <div>
+              <label htmlFor="">Address</label>
+              <input type="text" name="address" onChange={handleChange} />
+            </div>
+
+            <div className="statesAndDist">
+              <div>
+                <label>State </label>
+                <select onChange={handleStateChange} value={selectedState}>
+                  <option value="">Select a State</option>
+                  {states.map((stateData, index) => (
+                    <option key={index} value={stateData.state}>
+                      {stateData.state}
                     </option>
                   ))}
-              </select>
+                </select>
+              </div>
+              <div className="distcss">
+                <label>District:</label>
+                <select
+                  onChange={handleDistrictChange}
+                  value={selectedDistrict}
+                >
+                  <option value="">Select a District</option>
+                  {states
+                    .find((stateData) => stateData.state === selectedState)
+                    ?.districts.map((district, index) => (
+                      <option key={index} value={district}>
+                        {district}
+                      </option>
+                    ))}
+                </select>
+              </div>
+            </div>
+            <div className="statesAndDist">
+              <div>
+                <label htmlFor="">city</label>
+                <input
+                  className=""
+                  type="text"
+                  name="city"
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="distcss">
+                <label htmlFor="">pincode</label>
+                <input
+                  className="pin"
+                  type="number"
+                  name="pincode"
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+
+            <div className="regBtn">
+              <button className="button" onClick={register}>
+                Register
+              </button>
             </div>
           </div>
-          <div className="statesAndDist">
-            <div>
-              <label htmlFor="">city</label>
-              <input
-                className=""
-                type="text"
-                name="city"
-                onChange={handleChange}
-              />
-            </div>
-            <div className="distcss">
-              <label htmlFor="">pincode</label>
-              <input
-                className="pin"
-                type="number"
-                name="pincode"
-                onChange={handleChange}
-              />
-            </div>
-          </div>
-      
-      <div  className="regBtn">
-      <button className="button" onClick={register}>Register</button>
+        </div>
       </div>
-      </div>
-      </div>
-      </div>
-    
     </>
-  
   );
 };
 

@@ -19,7 +19,7 @@ const BankRegister = () => {
     district: " ",
     city: " ",
     name: " ",
-    category: " ",
+    category: "",
     contact: " ",
     pincode: " ",
     componentfac: " ",
@@ -44,7 +44,7 @@ const BankRegister = () => {
     setSelectedDistrict(newDistrict);
     setregUser({
       ...regUser,
-      dist: newDistrict,
+      district: newDistrict,
     });
   };
 
@@ -53,6 +53,10 @@ const BankRegister = () => {
   };
 
   const register = async () => {
+    if(regUser.category == ""){
+      alert("select Something")
+      
+    }
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
@@ -91,7 +95,7 @@ const BankRegister = () => {
     <div className="bankReg">
       <div className="heading">Bank Registration</div>
       <div className="formOfBank">
-        <div className="formDiff">
+        <div  onSubmit={register} className="formDiff">
           <div className="">
             <label htmlFor="">email</label>
             <input type="email" name="email" onChange={handleChange} />
@@ -102,16 +106,25 @@ const BankRegister = () => {
           </div>
 
           <div>
-            <label htmlFor="">name</label>
-            <input type="text" name="name" onChange={handleChange} />
+            <label htmlFor="" >name</label>
+            <input type="text" name="name" onChange={handleChange} required />
           </div>
-          <div>
-            <label htmlFor="">category</label>
-            <input type="text" name="category" onChange={handleChange} />
-          </div>
-          <div>
-            <label htmlFor="">contact</label>
-            <input type="number" name="contact" onChange={handleChange} />
+          <div className="statesAndDist">
+            <div>
+              <label htmlFor="">contact</label>
+              <input type="number" name="contact" onChange={handleChange} />
+            </div>
+            <div className="distcss">
+              <label htmlFor="">category</label>
+              <select onChange={handleChange} name="category" required>
+              <option selected disabled>Select</option>
+                <option  value="Government">Government</option>
+                <option  value="Private">Private</option>
+                <option value="Charitable">Charitable</option>
+                <option value="Private">Private</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
           </div>
         </div>
         <div className="formDiff">
@@ -121,9 +134,9 @@ const BankRegister = () => {
           </div>
           <div className="statesAndDist">
             <div>
-              <label>State:</label>
+              <label>State</label>
               <select onChange={handleStateChange} value={selectedState}>
-                <option value="">Select a State</option>
+                <option value="">Select State</option>
                 {states.map((stateData, index) => (
                   <option key={index} value={stateData.state}>
                     {stateData.state}
@@ -134,7 +147,7 @@ const BankRegister = () => {
             <div className="distcss">
               <label>District:</label>
               <select onChange={handleDistrictChange} value={selectedDistrict}>
-                <option value="">Select a District</option>
+                <option value="">Select District</option>
                 {states
                   .find((stateData) => stateData.state === selectedState)
                   ?.districts.map((district, index) => (
@@ -165,19 +178,31 @@ const BankRegister = () => {
               />
             </div>
           </div>
+          <div className="statesAndDist">
+            <div>
+              <label htmlFor="">Component Facility</label>
+              <select onChange={handleChange} name="componentfac" required>
+              <option selected disabled>Select</option>
+                <option  value="Yes">Yes</option>
 
-          <div>
-            <label htmlFor="">Component Facility</label>
-            <input type="text" name="componentfac" onChange={handleChange} />
-          </div>
-          <div>
-            <label htmlFor="">Apheresis Facility</label>
-            <input type="text" name="apheresisfac" onChange={handleChange} />
+                <option value="No">No</option>
+              </select>
+            </div>
+            <div className="distcss">
+              <label htmlFor="">Apheresis Facility</label>
+              <select onChange={handleChange} name="componentfac" required>
+              <option selected disabled>Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
-      <div  className="regBtn">
-      <button className="button" onClick={register}>Register</button>
+      <div className="regBtn">
+        <button className="button" onClick={register}>
+          Register
+        </button>
       </div>
     </div>
   );
