@@ -5,8 +5,6 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import importedData from "./../../json/states.json";
 
-
-
 const DonnarReg = () => {
   const [selectedState, setSelectedState] = useState("");
   const [selectedDistrict, setSelectedDistrict] = useState("");
@@ -97,7 +95,7 @@ const DonnarReg = () => {
 
   return (
     <div className="bankReg">
-      <div className="heading">Donar Registration</div>
+      <div className="heading">DonarReg</div>
 
       <div className="formOfBank">
         <div className="formDiff">
@@ -124,24 +122,25 @@ const DonnarReg = () => {
               <input type="number" name="weight" onChange={handleChange} />
             </div>
           </div>
-          <div className="statesAndDist">
-            <div>
-              <label htmlFor="">bloodGroup</label>
-              <input type="text" name="bloodGroup" onChange={handleChange} />
-            </div>
-            <div className="distcss">
-              <label htmlFor="">gender</label>
-              {/* <input type="text" name="gender"/> */}
-              <select name="gender" onChange={handleChange} id="">
-                <option value="male">male</option>
-                <option value="female">female</option>
-                <option value="other">other</option>
-              </select>
-            </div>
-          </div>
+          
         </div>
-        <div className="formDiff">
-        <div>
+        <div className="formDiff"></div>
+      </div>
+
+      <div>
+        <label htmlFor="">bloodGroup</label>
+        <input type="text" name="bloodGroup" onChange={handleChange} />
+      </div>
+      <div>
+        <label htmlFor="">gender</label>
+        {/* <input type="text" name="gender"/> */}
+        <select name="gender" onChange={handleChange} id="">
+          <option value="male">male</option>
+          <option value="female">female</option>
+          <option value="other">other</option>
+        </select>
+      </div>
+      <div>
         <label htmlFor="">mobile</label>
         <input type="number" name="mobile" onChange={handleChange} />
       </div>
@@ -153,42 +152,35 @@ const DonnarReg = () => {
         <label htmlFor="">address</label>
         <input type="text" name="address" onChange={handleChange} />
       </div>
-      <div className="statesAndDist">
-        <div>
-          <label>Select a State:</label>
-          <select onChange={handleStateChange} value={selectedState}>
-            <option value="">Select a State</option>
-            {states.map((stateData, index) => (
-              <option key={index} value={stateData.state}>
-                {stateData.state}
+      <div>
+        <label>Select a State:</label>
+        <select onChange={handleStateChange} value={selectedState}>
+          <option value="">Select a State</option>
+          {states.map((stateData, index) => (
+            <option key={index} value={stateData.state}>
+              {stateData.state}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label>Select a District:</label>
+        <select onChange={handleDistrictChange} value={selectedDistrict}>
+          <option value="">Select a District</option>
+          {states
+            .find((stateData) => stateData.state === selectedState)
+            ?.districts.map((district, index) => (
+              <option key={index} value={district}>
+                {district}
               </option>
             ))}
-          </select>
-        </div>
-        <div className="distcss">
-          <label>Select a District:</label>
-          <select onChange={handleDistrictChange} value={selectedDistrict}>
-            <option value="">Select a District</option>
-            {states
-              .find((stateData) => stateData.state === selectedState)
-              ?.districts.map((district, index) => (
-                <option key={index} value={district}>
-                  {district}
-                </option>
-              ))}
-          </select>
-        </div>
+        </select>
       </div>
       <div>
         <label htmlFor="">pincode</label>
         <input type="number" name="pincode" onChange={handleChange} />
       </div>
-        </div>
-      </div>
-
-      <div className="regBtn">
-      <button className="button" onClick={register}>Register</button>
-      </div>
+      <button onClick={register}>Register</button>
     </div>
   );
 };

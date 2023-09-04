@@ -5,8 +5,6 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import importedData from "./../../json/states.json";
 
-
-
 const DonnarReg = () => {
   const [selectedState, setSelectedState] = useState("");
   const [selectedDistrict, setSelectedDistrict] = useState("");
@@ -97,7 +95,7 @@ const DonnarReg = () => {
 
   return (
     <div className="bankReg">
-      <div className="heading">Donar Registration</div>
+      <div className="heading">DonarReg</div>
 
       <div className="formOfBank">
         <div className="formDiff">
@@ -140,8 +138,10 @@ const DonnarReg = () => {
             </div>
           </div>
         </div>
-        <div className="formDiff">
-        <div>
+        <div className="formDiff"></div>
+      </div>
+
+      <div>
         <label htmlFor="">mobile</label>
         <input type="number" name="mobile" onChange={handleChange} />
       </div>
@@ -153,7 +153,7 @@ const DonnarReg = () => {
         <label htmlFor="">address</label>
         <input type="text" name="address" onChange={handleChange} />
       </div>
-      <div className="statesAndDist">
+      <div className="">
         <div>
           <label>Select a State:</label>
           <select onChange={handleStateChange} value={selectedState}>
@@ -165,7 +165,7 @@ const DonnarReg = () => {
             ))}
           </select>
         </div>
-        <div className="distcss">
+        <div>
           <label>Select a District:</label>
           <select onChange={handleDistrictChange} value={selectedDistrict}>
             <option value="">Select a District</option>
@@ -183,12 +183,7 @@ const DonnarReg = () => {
         <label htmlFor="">pincode</label>
         <input type="number" name="pincode" onChange={handleChange} />
       </div>
-        </div>
-      </div>
-
-      <div className="regBtn">
-      <button className="button" onClick={register}>Register</button>
-      </div>
+      <button onClick={register}>Register</button>
     </div>
   );
 };

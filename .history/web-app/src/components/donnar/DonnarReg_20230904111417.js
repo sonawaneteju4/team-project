@@ -5,8 +5,6 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import importedData from "./../../json/states.json";
 
-
-
 const DonnarReg = () => {
   const [selectedState, setSelectedState] = useState("");
   const [selectedDistrict, setSelectedDistrict] = useState("");
@@ -97,7 +95,7 @@ const DonnarReg = () => {
 
   return (
     <div className="bankReg">
-      <div className="heading">Donar Registration</div>
+      <div className="heading">DonarReg</div>
 
       <div className="formOfBank">
         <div className="formDiff">
@@ -187,7 +185,8 @@ const DonnarReg = () => {
       </div>
 
       <div className="regBtn">
-      <button className="button" onClick={register}>Register</button>
+
+      <button onClick={register}>Register</button>
       </div>
     </div>
   );
