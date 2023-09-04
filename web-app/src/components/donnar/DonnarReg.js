@@ -75,6 +75,7 @@ const DonnarReg = () => {
 
       await addDoc(usersDataRef, {
         uId: user.uid,
+        email:regUser.email,
         userName: regUser.userName,
         age: regUser.age,
         weight: regUser.weight,

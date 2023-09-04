@@ -69,6 +69,7 @@ const HospitalRegister = () => {
       });
       await addDoc(usersDataRef, {
         uId: user.uid,
+        email:regUser.email,
         hospName: regUser.hospName,
         type: regUser.type,
         contact: regUser.contact,
