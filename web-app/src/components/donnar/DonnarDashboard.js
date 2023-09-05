@@ -48,14 +48,8 @@ const DonnarDashboard = () => {
 
   return (
     <div>
-      <div className="logNav">
-        <div className="uName">{userData.userName}</div>
-        <div></div>
-        <button className="logoutBtn" onClick={logout}>
-          logout
-        </button>
-
-      </div>
+     
+     
 
       <div className="pageContaint">
         <div className="sideBar">
