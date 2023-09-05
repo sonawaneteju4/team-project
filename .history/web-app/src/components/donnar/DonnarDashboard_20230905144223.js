@@ -32,7 +32,7 @@ const DonnarDashboard = () => {
       setuserData(data)
       data.forEach((item) => {
         console.log(item.data());
-        // setuserData(item.data());
+        setuserData(item.data());
         console.log("userData  " + userData);
       });
     };

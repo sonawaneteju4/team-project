@@ -29,16 +29,15 @@ const DonnarDashboard = () => {
     );
     const getUserDetails = async () => {
       const data = await getDocs(q2);
-      setuserData(data)
       data.forEach((item) => {
         console.log(item.data());
-        // setuserData(item.data());
+        setuserData(item.data());
         console.log("userData  " + userData);
       });
     };
     getUserDetails();
   }, []);
-  console.log(userData)
+  console.log(user)
   const logout = async () => {
     localStorage.removeItem("userId");
     await signOut(auth);

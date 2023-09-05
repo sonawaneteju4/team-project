@@ -131,22 +131,23 @@ const DonnarReg = () => {
           <div className="statesAndDist">
             <div>
               <label htmlFor="">bloodGroup</label>
-              <select name="bloodGroup" onChange={handleChange} id="" required>
+              <select name="bloodGroup" onChange={handleChange} id="">
                 <option value="">Select Blood Group</option>
                 <option value="A+ve">A+ve</option>
                 <option value="A-ve">A-ve</option>
                 <option value="B+ve">B+ve</option>
-                <option value="B-ve">B-ve</option>
-                <option value="O+ve">O+ve</option>
-                <option value="O-ve">O-ve</option>
-                <option value="AB+ve">AB+ve</option>
-                <option value="AB-ve">AB-ve</option>
+                <option value="">B-ve</option>
+                <option value="">O+ve</option>
+                <option value="">O-ve</option>
+                <option value="">AB+ve</option>
+                <option value="">AB-ve</option>
               </select>
+              <input type="text" name="bloodGroup" onChange={handleChange} />
             </div>
             <div className="distcss">
               <label htmlFor="">Gender</label>
               {/* <input type="text" name="gender"/> */}
-              <select name="gender" onChange={handleChange} id="" >
+              <select name="gender" onChange={handleChange} id="">
                 <option value="male">male</option>
                 <option value="female">female</option>
                 <option value="other">other</option>
