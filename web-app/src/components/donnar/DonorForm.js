@@ -1,7 +1,6 @@
 import { addDoc, collection } from "firebase/firestore";
 import React, { useState } from "react";
-import { auth, db } from "../../firebaseConfig";
-import importedData from "./../../json/states.json";
+import { db } from "../../firebaseConfig";
 import { useNavigate } from "react-router-dom";
 
 const DonorForm = () => {
