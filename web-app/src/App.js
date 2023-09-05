@@ -15,7 +15,7 @@ import HospitalRegister from './components/hospital/HospitalRegister';
 import BankRegister from './components/bank/BankRegister';
 import DonateBlood from './components/donnar/DonateBlood';
 import BloodReport from './components/bank/BloodReport';
-import LogoutBar from './components/hospital/LogoutBar';
+import LogoutBar from './components/LogoutBar';
 
 
 function App() {

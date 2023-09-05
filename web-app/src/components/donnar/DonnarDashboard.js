@@ -29,15 +29,15 @@ const DonnarDashboard = () => {
     );
     const getUserDetails = async () => {
       const data = await getDocs(q2);
-      setuserData(data)
+      // setuserData(data)
       data.forEach((item) => {
         console.log(item.data());
-        // setuserData(item.data());
+        setuserData(item.data());
         console.log("userData  " + userData);
       });
     };
     getUserDetails();
-  }, []);
+  }, [usersDataRef]);
   console.log(userData)
   const logout = async () => {
     localStorage.removeItem("userId");
@@ -47,15 +47,8 @@ const DonnarDashboard = () => {
   };
 
   return (
-    <div>
+    <div className="userInfo">
      
-     
-
-      <div className="pageContaint">
-        <div className="sideBar">
-          <SideBar></SideBar>
-        </div>
-        <div className="sidePage">
           <h3>User Info</h3>
           <hr />
           <div className="donarInfo">
@@ -67,14 +60,13 @@ const DonnarDashboard = () => {
             <div>Age :{userData.age}</div>
             <div>Blood Group: {userData.bloodGroup}</div>
             <div>Weight :{userData.weight} Kg</div>
+            <div>Blood Group :{userData.bloodGroup}</div>
           </div>
           <div className="info1">
-          <div>Name:{userData.userName}</div>
             <div>Contact :{userData.mobile}</div>
             <div>Gender :{userData.gender}</div>
             <div>Weight:{userData.weight}</div>
             <div>Age:{userData.age}</div>
-            <div>Blood Group :{userData.bloodGroup}</div>
             <div>District :{userData.dist}</div>
             <div>State :{userData.state}</div>
             <div>Pincode :{userData.pincode}</div>
@@ -83,8 +75,7 @@ const DonnarDashboard = () => {
           <hr />
         <Link to='/donateBlood'>Donate Blood</Link>
         </div>
-      </div>
-    </div>
+      
   );
 };
 

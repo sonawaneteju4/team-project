@@ -1,39 +1,4 @@
-.logNav {
-  background-color: darkgrey;
-  padding: 8px;
+.userInfo{
   display: flex;
-  justify-content: space-between;
-}
-.uName{
-  padding-top: 8px;
-}
-.logoutBtn {
-  border: none;
-  cursor: pointer;
-  border-radius: 25px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-family: cursive;
-  margin-right: 20px;
-}
-
- .pageContaint{
-display: flex;
-}
-
-.sideBar{
-  width: 20%;
-  background-color: lavender;
-  height: 80vh;
-}
-.sidePage{
-  width: 80%;
-}
-.donarInfo{
-  display: flex;
-}
-.info1{
-  margin-left: 100px;
+justify-content: center;
 }
