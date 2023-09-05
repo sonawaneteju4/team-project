@@ -75,15 +75,15 @@ const DonnarDashboard = () => {
       <div className="donorInfo">
         <div>
           <Link to="/donateBlood">
-            <img src="./image/blood-extraction.png" alt="blood" />
+            <img  height={"200px"} style={{backgroundColor:"white", borderRadius:"20px", margin:'20px'}} src="./image/blood-extraction.png" alt="blood" />
             Donate Blood
           </Link>
         </div>
         <div>
-          <img src="./image/test.png" alt="bank"></img>
+          <img height={"200px"} style={{backgroundColor:"white", borderRadius:"20px", margin:'20px'}}  src="./image/test.png" alt="bank"></img>
         </div>
         <div>
-          <img src="./image/donationprecaution.png" alt=""></img>
+          <img height={"200px"} style={{backgroundColor:"white", borderRadius:"20px", margin:'20px'}}  src="./image/donationprecaution.png" alt=""></img>
         </div>
         <div>
           <img src="" alt=""></img>

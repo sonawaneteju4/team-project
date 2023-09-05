@@ -90,6 +90,7 @@ const DonateBlood = () => {
           <td>componentfac</td>
           <td>Donate Blood</td>
         </tr>
+        {/* mapping start here  */}
         {bbData.map((item) => (
           <tr key={item.data().uId}>
             <td>
@@ -124,6 +125,7 @@ const DonateBlood = () => {
             </td>
           </tr>
         ))}
+        {/* mapping end here */}
       </table>):<h3 style={{textAlign:"center"}}> {selectedState  == "" ? <h3>Search For State And District</h3>:<>Ooooooops No Blood Bank Found</>}</h3>}
     </div>
   );
