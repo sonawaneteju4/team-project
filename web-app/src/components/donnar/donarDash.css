@@ -1,4 +1,9 @@
-.userInfo{
+.donorInfo{
   display: flex;
-justify-content: center;
+  justify-content: center;
+}
+.info1{
+  padding: 50px;
+  padding-top: 0px;
+  padding-bottom: 20px;
 }

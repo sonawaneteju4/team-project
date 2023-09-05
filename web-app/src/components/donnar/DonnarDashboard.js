@@ -37,8 +37,8 @@ const DonnarDashboard = () => {
       });
     };
     getUserDetails();
-  }, [usersDataRef]);
-  console.log(userData)
+  }, []);
+  console.log(userData);
   const logout = async () => {
     localStorage.removeItem("userId");
     await signOut(auth);
@@ -47,35 +47,49 @@ const DonnarDashboard = () => {
   };
 
   return (
-    <div className="userInfo">
-     
-          <h3>User Info</h3>
-          <hr />
-          <div className="donarInfo">
+    <div>
+      <h3 style={{ textAlign: "center" }}>User Info</h3>
 
-          <div className="info1">
-            <div>Name: {userData.userName}</div>
-            <div>Aadhar: {userData.aadhar}</div>
-            <div>Address: {userData.address}</div>
-            <div>Age :{userData.age}</div>
-            <div>Blood Group: {userData.bloodGroup}</div>
-            <div>Weight :{userData.weight} Kg</div>
-            <div>Blood Group :{userData.bloodGroup}</div>
-          </div>
-          <div className="info1">
-            <div>Contact :{userData.mobile}</div>
-            <div>Gender :{userData.gender}</div>
-            <div>Weight:{userData.weight}</div>
-            <div>Age:{userData.age}</div>
-            <div>District :{userData.dist}</div>
-            <div>State :{userData.state}</div>
-            <div>Pincode :{userData.pincode}</div>
-          </div>
-          </div>
-          <hr />
-        <Link to='/donateBlood'>Donate Blood</Link>
+      <div className="donorInfo">
+        <div className="info1">
+          <div>Name: {userData.userName}</div>
+
+          <div>Age :{userData.age}</div>
+          <div>Blood Group: {userData.bloodGroup}</div>
+          <div>Weight :{userData.weight} Kg</div>
         </div>
-      
+        <div className="info1">
+          <div>Contact :{userData.mobile}</div>
+          <div>Gender :{userData.gender}</div>
+          <div>District :{userData.dist}</div>
+          <div>State :{userData.state}</div>
+        </div>
+        <div className="info1">
+          <div>Pincode :{userData.pincode}</div>
+          <div>Aadhar: {userData.aadhar}</div>
+          <div>Address: {userData.address}</div>
+        </div>
+        <div className="info1"></div>
+      </div>
+      <hr />
+      <div className="donorInfo">
+        <div>
+          <Link to="/donateBlood">
+            <img src="./image/blood-extraction.png" alt="blood" />
+            Donate Blood
+          </Link>
+        </div>
+        <div>
+          <img src="./image/test.png" alt="bank"></img>
+        </div>
+        <div>
+          <img src="./image/donationprecaution.png" alt=""></img>
+        </div>
+        <div>
+          <img src="" alt=""></img>
+        </div>
+      </div>
+    </div>
   );
 };
 
