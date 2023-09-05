@@ -76,7 +76,8 @@ const DonateBlood = () => {
           Search Bank
         </button>
       </div>
-      {bbData.length > 0 ? (<table>
+      {bbData.length > 0 ? (
+      <table>
         <tr>
           <td>Blood Bank Name</td>
           <td>Email</td>

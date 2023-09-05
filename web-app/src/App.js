@@ -15,6 +15,7 @@ import HospitalRegister from './components/hospital/HospitalRegister';
 import BankRegister from './components/bank/BankRegister';
 import DonateBlood from './components/donnar/DonateBlood';
 import BloodReport from './components/bank/BloodReport';
+import LogoutBar from './components/hospital/LogoutBar';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
   <div>
   <BrowserRouter>
   <Navbar/>
+  <LogoutBar/>
   <Routes>
   
 
