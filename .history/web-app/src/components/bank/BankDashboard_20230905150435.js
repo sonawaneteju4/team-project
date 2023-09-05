@@ -53,7 +53,7 @@ const BankDashboard = () => {
       <hr />
       <div>Blood Don Reqs</div>
       <div>
-        <Link to="/createNewReport">Create New Blood Donotion Form</Link>
+        <Link to="/createNewRep">Create New Blood Donotion Form</Link>
       </div>
       <div>Hospital Req</div>
       <div>Stock Mangement</div>

@@ -9,7 +9,7 @@ import importedData from "./../../json/states.json";
 
 const DonnarReg = () => {
   const [selectedState, setSelectedState] = useState("");
-  const [selectedDistrict, setSelectedDistrict] = useState("");
+  const [selectedDistrict, setSelectedDistrict] = useStatee("");
   const states = importedData.states;
 
   const [regUser, setregUser] = useState({
@@ -30,8 +30,8 @@ const DonnarReg = () => {
   });
   const usersCollectionRef = collection(db, "users");
   const usersDataRef = collection(db, "donnarInfo");
+  
   const navigate = useNavigate();
-
   console.log(regUser.state);
 
   const handleStateChange = (event) => {
