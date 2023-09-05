@@ -93,7 +93,7 @@ const BankRegister = () => {
 
   return (
     <div className="bankReg">
-      <div className="heading">Bank Registration</div>
+      <div className="heading">Blood Bank Registration</div>
       <div className="formOfBank">
         <div  onSubmit={register} className="formDiff">
           <div className="">
