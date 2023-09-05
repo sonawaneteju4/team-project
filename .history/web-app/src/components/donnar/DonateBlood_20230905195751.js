@@ -41,13 +41,13 @@ const DonateBlood = () => {
       console.error(error);
     }
   };
-  const handleDonateBloodRequest = (bbId) => {
-    navigate(`/healthHistory/${bbId}`);
+  const handleClick = () => {
+    navigate(`/healthHistroy/${"uid"}`);
   };
 
   return (
     <div>
-      <h2 style={{ textAlign: "center" }}>Search Blood Bank To Donate Blood </h2>
+      <h2 style={{ textAlign: "center" }}>Search Blood Bank To Donate Blood</h2>
       <div className="phbdMain">
         <div className="phbd">
           <div>

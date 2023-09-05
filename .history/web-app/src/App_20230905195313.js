@@ -16,7 +16,6 @@ import BankRegister from './components/bank/BankRegister';
 import DonateBlood from './components/donnar/DonateBlood';
 import BloodReport from './components/bank/BloodReport';
 import LogoutBar from './components/LogoutBar';
-import DonorForm from './components/donnar/DonorForm';
 
 
 function App() {
@@ -43,7 +42,7 @@ function App() {
     <Route  path='/hospitalDash' element={<HospitalDashboard />}></Route>
     <Route path='/donateBlood' element={<DonateBlood/>}></Route>
     <Route path='/createNewReport' element={<BloodReport/>}></Route>
-    <Route path='/healthHistory/:bbId' element={<DonorForm/>}></Route>
+    <Route path='/healthHistroy' element={<BloodReport/>}></Route>
   
   </Routes>
   </BrowserRouter>  

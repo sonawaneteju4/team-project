@@ -11,7 +11,7 @@ const DonateBlood = () => {
   const [selectedDistrict, setSelectedDistrict] = useState("");
   const [bbData, setbbData] = useState([]);
   const BankDataRef = collection(db, "bankInfo");
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const handleStateChange = (event) => {
     const newState = event.target.value;
     setSelectedState(newState);
@@ -41,13 +41,13 @@ const DonateBlood = () => {
       console.error(error);
     }
   };
-  const handleDonateBloodRequest = (bbId) => {
-    navigate(`/healthHistory/${bbId}`);
-  };
+  const handleClick = () => {
+      navigate(`/healthHistroy/${""}`)
+  }
 
   return (
     <div>
-      <h2 style={{ textAlign: "center" }}>Search Blood Bank To Donate Blood </h2>
+      <h2 style={{ textAlign: "center" }}>Search Blood Bank To Donate Blood</h2>
       <div className="phbdMain">
         <div className="phbd">
           <div>
@@ -82,64 +82,57 @@ const DonateBlood = () => {
         </button>
       </div>
       {bbData.length > 0 ? (
-        <table>
-          <tr>
-            <td>Blood Bank Name</td>
-            <td>Email</td>
-            <td>Address</td>
-            <td>City</td>
-            <td>Contact</td>
-            <td>Pin Code</td>
-            <td>Category</td>
-            <td>apheresisfac</td>
-            <td>componentfac</td>
-            <td>Donate Blood</td>
+      <table>
+        <tr>
+          <td>Blood Bank Name</td>
+          <td>Email</td>
+          <td>Address</td>
+          <td>City</td>
+          <td>Contact</td>
+          <td>Pin Code</td>
+          <td>Category</td>
+          <td>apheresisfac</td>
+          <td>componentfac</td>
+          <td>Donate Blood</td>
+        </tr>
+        {/* mapping start here  */}
+        {bbData.map((item) => (
+          <tr key={item.data().uId}>
+            <td>
+              <p>{item.data().name}</p>
+            </td>
+            <td>
+              <p>{item.data().email}</p>
+            </td>
+            <td>
+              <p>{item.data().address}</p>
+            </td>
+            <td>
+              <p>{item.data().city}</p>
+            </td>
+            <td>
+              <p>{item.data().contact}</p>
+            </td>
+            <td>
+              <p>{item.data().pincode}</p>
+            </td>
+            <td>
+              <p>{item.data().category}</p>
+            </td>
+            <td>
+              <p>{item.data().apheresisfac}</p>
+            </td>
+            <td>
+              <p>{item.data().componentfac}</p>
+            </td>
+            <td>
+              <button className="button" onClick={handleClick}>Donate Blood Request</button>
+            </td>
           </tr>
-          {/* mapping start here  */}
-          {bbData.map((item) => (
-            <tr key={item.data().uId}>
-              <td>
-                <p>{item.data().name}</p>
-              </td>
-              <td>
-                <p>{item.data().email}</p>
-              </td>
-              <td>
-                <p>{item.data().address}</p>
-              </td>
-              <td>
-                <p>{item.data().city}</p>
-              </td>
-              <td>
-                <p>{item.data().contact}</p>
-              </td>
-              <td>
-                <p>{item.data().pincode}</p>
-              </td>
-              <td>
-                <p>{item.data().category}</p>
-              </td>
-              <td>
-                <p>{item.data().apheresisfac}</p>
-              </td>
-              <td>
-                <p>{item.data().componentfac}</p>
-              </td>
-              <td>
-                <button
-                  className="button"
-                  onClick={() => handleDonateBloodRequest(item.data().uId)}
-                >
-                  Donate Blood Request
-                </button>{" "}
-              </td>
-            </tr>
-          ))}
-          {/* mapping end here */}
-        </table>
-      ) : (
-        <h3 style={{ textAlign: "center" }}>Ooooooops No Blood Bank Found</h3>
-      )}
+        ))}
+        {/* mapping end here */}
+
+      </table>):<h3 style={{textAlign:"center"}}>Ooooooops No Blood Bank Found</h3>}
     </div>
   );
 };

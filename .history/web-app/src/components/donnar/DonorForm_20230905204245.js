@@ -60,46 +60,46 @@ const DonorForm = () => {
         <label className="dlabel" htmlFor="">
           Have you done any blood test before ?
         </label>
-        <select className="dselect" name="bloodtestbefore" id="" onChange={handleChange}>
+        <select className="dselect" name="" id="">
           <option value="">Select</option>
           <option value="Yes">Yes</option>
           <option value="No">No</option>
         </select>
 
-       {donorHistory.bloodtestbefore === 'Yes' && (<div>
+       { <div>
           <lable>CBC</lable>
-          <input type="checkbox" name="testname1" id="1" />
+          <input type="checkbox" name="" id="" />
           <lable>HIV</lable>
-          <input type="checkbox" name="testname2" id="2" />
+          <input type="checkbox" name="" id="" />
           <lable>Hephities B</lable>
-          <input type="checkbox" name="testname3" id="3" />
+          <input type="checkbox" name="" id="" />
           <lable>Hephities C</lable>
-          <input type="checkbox" name="testname4" id="4" />
-        </div>)}
+          <input type="checkbox" name="" id="" />
+        </div>}
       </div>
       <div>
         <label className="dlabel" htmlFor="">
           Have you suffering from any disease ?
         </label>
-        <select className="dselect" name="currentlysuffereing" id="" onChange={handleChange}>
+        <select className="dselect" name="" id="">
           <option value="">Select</option>
-          <option value="Yes">Yes</option>
-          <option value="No">No</option>
+          <option value="">Yes</option>
+          <option value="">No</option>
         </select>
-        {donorHistory.currentlysuffereing === 'Yes' && (<div>
+        <div>
           <lable>CBC</lable>
-          <input type="text" name="" id="" />
+          <input type="checkbox" name="" id="" />
           <lable>Fever</lable>
-          <input type="text" name="" id="" />
+          <input type="checkbox" name="" id="" />
           <lable>Cold</lable>
-          <input type="text" name="" id="" />
+          <input type="checkbox" name="" id="" />
           <lable>Flue</lable>
-          <input type="text" name="" id="" />
+          <input type="checkbox" name="" id="" />
           <lable>covid</lable>
-          <input type="text" name="" id="" />
+          <input type="checkbox" name="" id="" />
           <lable>dibeties</lable>
-          <input type="text" name="" id="" />
-        </div>)}
+          <input type="checkbox" name="" id="" />
+        </div>
       </div>
 
       <button className="button">submit</button>

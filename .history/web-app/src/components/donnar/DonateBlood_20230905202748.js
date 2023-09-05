@@ -42,7 +42,7 @@ const DonateBlood = () => {
     }
   };
   const handleDonateBloodRequest = (bbId) => {
-    navigate(`/healthHistory/${bbId}`);
+    navigate('/healthHistory', { state: { bbId } });
   };
 
   return (

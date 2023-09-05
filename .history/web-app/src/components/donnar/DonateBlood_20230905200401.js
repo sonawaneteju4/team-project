@@ -42,12 +42,12 @@ const DonateBlood = () => {
     }
   };
   const handleDonateBloodRequest = (bbId) => {
-    navigate(`/healthHistory/${bbId}`);
+    navigate(`/healthHistroy?${bbId}`);
   };
 
   return (
     <div>
-      <h2 style={{ textAlign: "center" }}>Search Blood Bank To Donate Blood </h2>
+      <h2 style={{ textAlign: "center" }}>Search Blood Bank To Donate Blood</h2>
       <div className="phbdMain">
         <div className="phbd">
           <div>

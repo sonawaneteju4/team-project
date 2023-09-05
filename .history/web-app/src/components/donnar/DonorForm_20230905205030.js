@@ -88,17 +88,17 @@ const DonorForm = () => {
         </select>
         {donorHistory.currentlysuffereing === 'Yes' && (<div>
           <lable>CBC</lable>
-          <input type="text" name="" id="" />
+          <input type="" name="" id="" />
           <lable>Fever</lable>
-          <input type="text" name="" id="" />
+          <input type="checkbox" name="" id="" />
           <lable>Cold</lable>
-          <input type="text" name="" id="" />
+          <input type="checkbox" name="" id="" />
           <lable>Flue</lable>
-          <input type="text" name="" id="" />
+          <input type="checkbox" name="" id="" />
           <lable>covid</lable>
-          <input type="text" name="" id="" />
+          <input type="checkbox" name="" id="" />
           <lable>dibeties</lable>
-          <input type="text" name="" id="" />
+          <input type="checkbox" name="" id="" />
         </div>)}
       </div>
 

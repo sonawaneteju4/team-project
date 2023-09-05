@@ -81,24 +81,24 @@ const DonorForm = () => {
         <label className="dlabel" htmlFor="">
           Have you suffering from any disease ?
         </label>
-        <select className="dselect" name="currentlysuffereing" id="" onChange={handleChange}>
+        <select className="dselect" name="" id="" onChange={handleChange}>
           <option value="">Select</option>
           <option value="Yes">Yes</option>
           <option value="No">No</option>
         </select>
         {donorHistory.currentlysuffereing === 'Yes' && (<div>
           <lable>CBC</lable>
-          <input type="text" name="" id="" />
+          <input type="checkbox" name="" id="" />
           <lable>Fever</lable>
-          <input type="text" name="" id="" />
+          <input type="checkbox" name="" id="" />
           <lable>Cold</lable>
-          <input type="text" name="" id="" />
+          <input type="checkbox" name="" id="" />
           <lable>Flue</lable>
-          <input type="text" name="" id="" />
+          <input type="checkbox" name="" id="" />
           <lable>covid</lable>
-          <input type="text" name="" id="" />
+          <input type="checkbox" name="" id="" />
           <lable>dibeties</lable>
-          <input type="text" name="" id="" />
+          <input type="checkbox" name="" id="" />
         </div>)}
       </div>
 

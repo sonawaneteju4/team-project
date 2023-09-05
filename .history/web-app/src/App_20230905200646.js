@@ -43,7 +43,7 @@ function App() {
     <Route  path='/hospitalDash' element={<HospitalDashboard />}></Route>
     <Route path='/donateBlood' element={<DonateBlood/>}></Route>
     <Route path='/createNewReport' element={<BloodReport/>}></Route>
-    <Route path='/healthHistory/:bbId' element={<DonorForm/>}></Route>
+    <Route path='/healthHistroy/:BBid' element={<DonorForm/>}></Route>
   
   </Routes>
   </BrowserRouter>  
