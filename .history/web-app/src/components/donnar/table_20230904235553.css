@@ -1,0 +1,23 @@
+table {
+    /* width: 100%; */
+    margin: 5%;
+  }
+  .phbd{
+    display: flex;
+    justify-content: center;
+    background: ;
+  }
+  td,
+  th {
+    text-align: center;
+    padding: 10px;
+  }
+  table,
+  th,
+  td {
+    border: 1px solid;
+    border-collapse: collapse;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }

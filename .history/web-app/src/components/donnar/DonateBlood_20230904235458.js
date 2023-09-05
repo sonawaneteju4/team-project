@@ -42,9 +42,9 @@ const DonateBlood = () => {
 
   return (
     <div>
-      <h2 style={{ textAlign: "center" }}>Serch Blood Bank To Donate Blood</h2>
-      <div className="phbdMain">
+      <div>
         <div className="phbd">
+        <div>Serch Blood Bank To <D></D>onate Blood</div>
           <div>
             <label>State:</label>
             <select onChange={handleStateChange} value={selectedState}>
@@ -70,13 +70,11 @@ const DonateBlood = () => {
             </select>
           </div>
         </div>
+        <div className="phbd">
+          <button className="button" onClick={HandleSearch}>Search Bank</button>
+        </div>
       </div>
-      <div className="phbdbtn">
-        <button className="button" onClick={HandleSearch}>
-          Search Bank
-        </button>
-      </div>
-      {bbData.length > 0 ? (<table>
+      <table>
         <tr>
           <td>Blood Bank Name</td>
           <td>Email</td>
@@ -89,8 +87,8 @@ const DonateBlood = () => {
           <td>componentfac</td>
           <td>Donate Blood</td>
         </tr>
-        {bbData.map((item) => (
-          <tr key={item.data().uId}>
+        {bbData.map((item, index) => (
+          <tr>
             <td>
               <p>{item.data().name}</p>
             </td>
@@ -119,11 +117,11 @@ const DonateBlood = () => {
               <p>{item.data().componentfac}</p>
             </td>
             <td>
-              <button className="button" >Donate Blood Request</button>
+              <button>Donate Blood Request</button>
             </td>
           </tr>
         ))}
-      </table>):<h3 style={{textAlign:"center"}}> {selectedState  == "" ? <h3>Search For State And District</h3>:<>Ooooooops No Blood Bank Found</>}</h3>}
+      </table>
     </div>
   );
 };

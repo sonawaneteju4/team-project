@@ -11,7 +11,7 @@
   margin-bottom: 3%;
 }
 input {
-  background-color: rgb(230, 230, 230);
+  background-color: rgb(255, 255, 255);
   min-width: 100%;
   border: none;
   appearance: none;
@@ -20,7 +20,6 @@ input {
 
 select{
   width: 100%;
-  background-color: whiite;
 }
 option{
   width: 100%;
@@ -57,7 +56,6 @@ label {
 
 select {
   background-color: gainsboro;
-
   border: none;
   border-radius: 8px;
   padding: 12px;

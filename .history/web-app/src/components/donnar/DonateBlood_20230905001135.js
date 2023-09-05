@@ -90,7 +90,7 @@ const DonateBlood = () => {
           <td>Donate Blood</td>
         </tr>
         {bbData.map((item) => (
-          <tr key={item.data().uId}>
+          <tr>
             <td>
               <p>{item.data().name}</p>
             </td>
@@ -119,11 +119,11 @@ const DonateBlood = () => {
               <p>{item.data().componentfac}</p>
             </td>
             <td>
-              <button className="button" >Donate Blood Request</button>
+              <button>Donate Blood Request</button>
             </td>
           </tr>
         ))}
-      </table>):<h3 style={{textAlign:"center"}}> {selectedState  == "" ? <h3>Search For State And District</h3>:<>Ooooooops No Blood Bank Found</>}</h3>}
+      </table>):<></>}
     </div>
   );
 };

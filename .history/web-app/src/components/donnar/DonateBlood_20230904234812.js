@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import importedData from "./../../json/states.json";
 import { collection, getDoc, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
-import "./table.css";
+import './table.css'
 const states = importedData.states;
 
 const DonateBlood = () => {
@@ -42,9 +42,9 @@ const DonateBlood = () => {
 
   return (
     <div>
-      <h2 style={{ textAlign: "center" }}>Serch Blood Bank To Donate Blood</h2>
-      <div className="phbdMain">
-        <div className="phbd">
+      <div>Serch Blood Bank To Donate Blood</div>
+      <div>
+        <div className="statesAndDist">
           <div>
             <label>State:</label>
             <select onChange={handleStateChange} value={selectedState}>
@@ -71,26 +71,22 @@ const DonateBlood = () => {
           </div>
         </div>
       </div>
-      <div className="phbdbtn">
-        <button className="button" onClick={HandleSearch}>
-          Search Bank
-        </button>
-      </div>
-      {bbData.length > 0 ? (<table>
-        <tr>
-          <td>Blood Bank Name</td>
-          <td>Email</td>
-          <td>Address</td>
-          <td>City</td>
-          <td>Contact</td>
-          <td>Pin Code</td>
-          <td>Category</td>
-          <td>apheresisfac</td>
-          <td>componentfac</td>
-          <td>Donate Blood</td>
-        </tr>
-        {bbData.map((item) => (
-          <tr key={item.data().uId}>
+      <button onClick={HandleSearch}>Search Bank</button>
+      {bbData.map((item, index) => (
+        <table >
+          <tr>
+            <td>Blood Bank Name</td>
+            <td>Email</td>
+            <td>Address</td>
+            <td>City</td>
+            <td>Contact</td>
+            <td>Pin Code</td>
+            <td>Category</td>
+            <td>apheresisfac</td>
+            <td>componentfac</td>
+            <td>Donate Blood</td>
+          </tr>
+          <tr>
             <td>
               <p>{item.data().name}</p>
             </td>
@@ -119,11 +115,11 @@ const DonateBlood = () => {
               <p>{item.data().componentfac}</p>
             </td>
             <td>
-              <button className="button" >Donate Blood Request</button>
+              <button>Donate Blood Request</button>
             </td>
           </tr>
-        ))}
-      </table>):<h3 style={{textAlign:"center"}}> {selectedState  == "" ? <h3>Search For State And District</h3>:<>Ooooooops No Blood Bank Found</>}</h3>}
+        </table>
+      ))}
     </div>
   );
 };

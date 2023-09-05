@@ -123,7 +123,7 @@ const DonateBlood = () => {
             </td>
           </tr>
         ))}
-      </table>):<h3 style={{textAlign:"center"}}> {selectedState  == "" ? <h3>Search For State And District</h3>:<>Ooooooops No Blood Bank Found</>}</h3>}
+      </table>):<h3 style={{textAlign:"center"}}>Ooooooops No Blood Bank For This Area {selectedState?.}</h3>}
     </div>
   );
 };

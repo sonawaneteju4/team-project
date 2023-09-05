@@ -1,0 +1,35 @@
+table {
+  /* width: 100%; */
+  margin r: 5%;
+}
+.phbdMain {
+  display: flex;
+  justify-content: center;
+}
+.phbd {
+  display: flex;
+  justify-content: center;
+  background: #ffffff;
+    border-radius: 20px;
+    width: 400px;
+  padding: 40px;
+}
+.phbdbtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+td,
+th {
+  text-align: center;
+  padding: 10px;
+}
+table,
+th,
+td {
+  border: 1px solid;
+  border-collapse: collapse;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
