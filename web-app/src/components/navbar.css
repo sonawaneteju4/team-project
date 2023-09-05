@@ -1,12 +1,13 @@
 
 /* logo css */
 .logo{
-  margin-left: 3%;
+  margin-left: 2%;
   margin-right: auto;
 }
 
 .logo img{
- height: 40px;
+ height: 50px;
+ width: 70px;
 }
 
 
@@ -14,7 +15,7 @@
 /* Navbar container */
 .navbar {  
   overflow: hidden;
-  background-color:#a74141;
+  background-color:#3f1515;
   font-family: "Montserrat", sans-serif;
   display: flex;
 justify-content: end;
@@ -28,7 +29,7 @@ padding-right: 40px;
 .navbar a {
   float: left;
   font-size: 16px;
-  color: white;
+  color: rgb(236, 229, 229);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -49,7 +50,7 @@ padding-right: 40px;
 
 /* Add a red background color to navbar links on hover */
 .navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: rgb(240, 217, 217);
+  background-color: rgb(142, 107, 107);
   color: black;
 }
 
