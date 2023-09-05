@@ -31,7 +31,7 @@ const BankReportForm = () => {
 
     const report =async()=>{
         await addDoc(usersCollectionRef,{
-            BloodBankId:localStorage.getItem('userId'),
+            BloodBankId:localStorage.getItem(),
             BloodGroup:regUser.BloodGroup,
             HIV:regUser.HIV,
             Haemoglobin:regUser.Haemoglobin,
