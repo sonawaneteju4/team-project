@@ -50,29 +50,10 @@ const DonorForm = () => {
           <option value="">Yes</option>
           <option value="">No</option>
         </select>
-
-        <div>
-          <lable>CBC</lable><input type="checkbox" name="" id="" />
-          <lable>HIV</lable><input type="checkbox" name="" id="" />
-          <lable>Hephities B</lable><input type="checkbox" name="" id="" />
-          <lable>Hephities C</lable><input type="checkbox" name="" id="" />
-        </div>
       </div>
       <div>
         <label htmlFor="">Have you suffering from any disease ?</label>
-        <select name="" id="">
-          <option value="">Select</option>
-          <option value="">Yes</option>
-          <option value="">No</option>
-        </select>
-        <div>
-        <lable>CBC</lable><input type="checkbox" name="" id="" />
-          <lable>Fever</lable><input type="checkbox" name="" id="" />
-          <lable>Cold</lable><input type="checkbox" name="" id="" />
-          <lable>Flue</lable><input type="checkbox" name="" id="" />
-          <lable>covid</lable><input type="checkbox" name="" id="" />
-          <lable>dibeties</lable><input type="checkbox" name="" id="" />
-        </div>
+        in
       </div>
 
       <button className="button">submit</button>

@@ -68,10 +68,8 @@ const DonorForm = () => {
         <div>
         <lable>CBC</lable><input type="checkbox" name="" id="" />
           <lable>Fever</lable><input type="checkbox" name="" id="" />
-          <lable>Cold</lable><input type="checkbox" name="" id="" />
-          <lable>Flue</lable><input type="checkbox" name="" id="" />
-          <lable>covid</lable><input type="checkbox" name="" id="" />
-          <lable>dibeties</lable><input type="checkbox" name="" id="" />
+          <lable>Cold B</lable><input type="checkbox" name="" id="" />
+          <lable>Hephities C</lable><input type="checkbox" name="" id="" />
         </div>
       </div>
 

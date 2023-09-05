@@ -1,4 +1,4 @@
-import { addDoc, collection } from "firebase/firestore";
+  import { addDoc, collection } from "firebase/firestore";
 import React, { useState } from "react";
 import { auth, db } from "../../firebaseConfig";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
