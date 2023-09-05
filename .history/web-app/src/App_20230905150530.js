@@ -14,7 +14,6 @@ import HospitalDashboard from './components/hospital/HospitalDashboard';
 import HospitalRegister from './components/hospital/HospitalRegister';
 import BankRegister from './components/bank/BankRegister';
 import DonateBlood from './components/donnar/DonateBlood';
-import BloodReport from './components/bank/BloodReport';
 
 
 function App() {
@@ -39,7 +38,7 @@ function App() {
     <Route  path='/bankDash' element={<BankDashboard />}></Route>
     <Route  path='/hospitalDash' element={<HospitalDashboard />}></Route>
     <Route path='/donateBlood' element={<DonateBlood/>}></Route>
-    <Route path='/createNewReport' element={<BloodReport/>}></Route>
+    <Route path='/donateBlood' element={<DonateBlood/>}></Route>
   
   </Routes>
   </BrowserRouter>  

@@ -1,13 +1,13 @@
 import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { auth, db } from "../../firebaseConfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
 const BankDashboard = () => {
   const navigate = useNavigate();
   const bankCollRef = collection(db, "bankInfo");
-  const [BankId, setBankId] = useState("");
+  const [BankId, setBankId] = useState('')
   const [bankData, setbankData] = useState([]);
 
   useEffect(() => {
@@ -23,12 +23,12 @@ const BankDashboard = () => {
         setbankData(items.data());
         console.log("helllo " + bankData);
 
-        setBankId(items.data().uId);
+        setBankId(items.data().uId)
       });
     };
     getInfo();
   }, []);
-  console.log(BankId);
+  console.log(BankId)
 
   const logout = async () => {
     localStorage.removeItem("userId");
@@ -38,25 +38,19 @@ const BankDashboard = () => {
   };
   return (
     <div>
-      <div style={{ display: "flex" }}>
-        BankDashboard
-        <div>Email :{bankData.email}</div>
-        <div>Name : {bankData.name}</div>
-        <div>Id :{bankData.uId}</div>
-        <div>Address: {bankData.address}</div>
-        <div>State :{bankData.state}</div>
-        <div>District:{bankData.district}</div>
-        <div>City:{bankData.city}</div>
-        <div>Contact:{bankData.contact}</div>
-        <div>Category :{bankData.category}</div>
-      </div>
-      <hr />
-      <div>Blood Don Reqs</div>
-      <div>
-        <Link to="/createNewReport">Create New Blood Donotion Form</Link>
-      </div>
-      <div>Hospital Req</div>
-      <div>Stock Mangement</div>
+
+    <div style={{display:"flex"}}>
+      BankDashboard
+      <div>Email :{bankData.email}</div>
+      <div>Name : {bankData.name}</div>
+      <div>Id :{bankData.uId}</div>
+      <div>Address: {bankData.address}</div>
+      <div>State :{bankData.state}</div>
+      <div>District:{bankData.district}</div>
+      <div>City:{bankData.city}</div>
+      <div>Contact:{bankData.contact}</div>
+      <div>Category :{bankData.category}</div>
+    </div>
       <button onClick={logout}>Logout</button>
     </div>
   );

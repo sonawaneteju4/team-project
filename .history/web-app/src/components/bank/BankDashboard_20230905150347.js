@@ -1,6 +1,6 @@
 import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { auth, db } from "../../firebaseConfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
@@ -53,7 +53,7 @@ const BankDashboard = () => {
       <hr />
       <div>Blood Don Reqs</div>
       <div>
-        <Link to="/createNewReport">Create New Blood Donotion Form</Link>
+        
       </div>
       <div>Hospital Req</div>
       <div>Stock Mangement</div>

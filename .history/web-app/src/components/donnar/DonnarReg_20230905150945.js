@@ -9,7 +9,7 @@ import importedData from "./../../json/states.json";
 
 const DonnarReg = () => {
   const [selectedState, setSelectedState] = useState("");
-  const [selectedDistrict, setSelectedDistrict] = useState("");
+  const [selectedDistrict, setSelectedDistrict] = useStatee("");
   const states = importedData.states;
 
   const [regUser, setregUser] = useState({
@@ -31,7 +31,7 @@ const DonnarReg = () => {
   const usersCollectionRef = collection(db, "users");
   const usersDataRef = collection(db, "donnarInfo");
   const navigate = useNavigate();
-
+  
   console.log(regUser.state);
 
   const handleStateChange = (event) => {
@@ -131,7 +131,7 @@ const DonnarReg = () => {
           </div>
           <div className="statesAndDist">
             <div>
-              <label htmlFor="">BloodGroup</label>
+              <label htmlFor="">bloodGroup</label>
               <select name="bloodGroup" onChange={handleChange} id="" required>
                 <option value="">Select Blood Group</option>
                 <option value="A+ve">A+ve</option>

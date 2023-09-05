@@ -131,7 +131,7 @@ const DonnarReg = () => {
           </div>
           <div className="statesAndDist">
             <div>
-              <label htmlFor="">BloodGroup</label>
+              <label htmlFor="">bloodGroup</label>
               <select name="bloodGroup" onChange={handleChange} id="" required>
                 <option value="">Select Blood Group</option>
                 <option value="A+ve">A+ve</option>
