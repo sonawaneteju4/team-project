@@ -23,7 +23,7 @@ function App() {
   <div>
   <BrowserRouter>
   <Navbar/>
-  {/* <LogoutBar/> */}
+  <LogoutBar/>
   <Routes>
   
 

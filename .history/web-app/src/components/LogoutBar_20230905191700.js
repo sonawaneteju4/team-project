@@ -24,8 +24,7 @@ const LogoutBar = () => {
     <div>
       {handleLog &&
 
-        <>
-        </>
+        
       }
     </div>
   )

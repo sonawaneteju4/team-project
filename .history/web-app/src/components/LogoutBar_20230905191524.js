@@ -5,7 +5,7 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import './logout.css'
 const LogoutBar = () => {
   const Navigate = useNavigate()
-  const [handleLog, sethandleLog] = useState();
+  const [handleLog, sethandleLog] = useState(false)
 
   onAuthStateChanged(
     auth,
@@ -18,14 +18,23 @@ const LogoutBar = () => {
   );
 
 
-
+  const logout = async () => {
+    localStorage.removeItem("userId");
+    await signOut(auth);
+    console.log("account LogOut");
+    sethandleLog(false)
+    Navigate("/");
+  };
 
   return (
     <div>
       {handleLog &&
 
-        <>
-        </>
+        <div className="logNav">
+        <button className="button" onClick={logout}>
+          logout
+        </button>
+      </div>
       }
     </div>
   )

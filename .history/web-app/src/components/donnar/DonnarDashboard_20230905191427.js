@@ -38,20 +38,10 @@ const DonnarDashboard = () => {
     };
     getUserDetails();
   }, []);
-  const logout = async () => {
-    localStorage.removeItem("userId");
-    await signOut(auth);
-    console.log("account LogOut");
-    navigate("/");
-  };
 
   return (
     <div>
-      <div className="logNav">
-        <button className="button" onClick={logout}>
-          logout
-        </button>
-      </div>
+      <Logu
       <h3 style={{ textAlign: "center" }}>User Info</h3>
 
       <div className="donorInfo">

@@ -42,7 +42,7 @@ const DonnarDashboard = () => {
     localStorage.removeItem("userId");
     await signOut(auth);
     console.log("account LogOut");
-    navigate("/");
+    Navigate("/");
   };
 
   return (

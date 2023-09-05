@@ -5,6 +5,7 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import "./donarDash.css";
 import SideBar from "./SideBar";
+import LogoutBar from "../LogoutBar";
 
 const DonnarDashboard = () => {
   const [userData, setuserData] = useState([]);
@@ -38,20 +39,10 @@ const DonnarDashboard = () => {
     };
     getUserDetails();
   }, []);
-  const logout = async () => {
-    localStorage.removeItem("userId");
-    await signOut(auth);
-    console.log("account LogOut");
-    navigate("/");
-  };
 
   return (
     <div>
-      <div className="logNav">
-        <button className="button" onClick={logout}>
-          logout
-        </button>
-      </div>
+      <LogoutBar></LogoutBar>
       <h3 style={{ textAlign: "center" }}>User Info</h3>
 
       <div className="donorInfo">

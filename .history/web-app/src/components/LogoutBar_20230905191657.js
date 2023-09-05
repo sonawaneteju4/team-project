@@ -24,8 +24,11 @@ const LogoutBar = () => {
     <div>
       {handleLog &&
 
-        <>
-        </>
+        <div className="logNav">
+        <button className="button" onClick={logout}>
+          logout
+        </button>
+      </div>
       }
     </div>
   )

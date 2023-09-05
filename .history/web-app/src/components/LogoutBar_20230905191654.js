@@ -18,14 +18,22 @@ const LogoutBar = () => {
   );
 
 
-
+  const logout = async () => {
+    localStorage.removeItem("userId");
+    await signOut(auth);
+    console.log("account LogOut");
+    Navigate("/");
+  };
 
   return (
     <div>
       {handleLog &&
 
-        <>
-        </>
+        <div className="logNav">
+        <button className="button" onClick={logout}>
+          logout
+        </button>
+      </div>
       }
     </div>
   )
