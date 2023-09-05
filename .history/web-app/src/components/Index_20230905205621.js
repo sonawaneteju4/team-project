@@ -7,7 +7,7 @@ const Index = () => {
   return (
    <div>
     <DonorForm/>
-    <BankReportForm/>
+    <BankReportForm
    </div>
   )
 }

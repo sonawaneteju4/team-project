@@ -21,7 +21,7 @@ const BankReportForm = () => {
         hepatitiesC:" ",
     });
     const usersCollectionRef=collection(db,"BloodReports");
-    const usersDataRef=collection(db,"BankReportForm");  //he collection nahiye db made???
+    const usersDataRef=collection(db,"BankReportForm");
     const navigate=useNavigate();
     console.log(regUser.state);
 

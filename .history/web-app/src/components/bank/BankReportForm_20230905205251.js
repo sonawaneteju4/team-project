@@ -20,8 +20,8 @@ const BankReportForm = () => {
         hepatitiesB:"",
         hepatitiesC:" ",
     });
-    const usersCollectionRef=collection(db,"BloodReports");
-    const usersDataRef=collection(db,"BankReportForm");  //he collection nahiye db made???
+    const usersCollectionRef=collection(db,"BloodReports ");
+    const usersDataRef=collection(db,"BankReportForm");
     const navigate=useNavigate();
     console.log(regUser.state);
 
@@ -30,7 +30,7 @@ const BankReportForm = () => {
     };
 
     const report =async()=>{
-        await addDoc(usersCollectionRef,{
+        await addDoc(usersDataRef,{
             BloodBankId:regUser.BloodBankId,
             BloodGroup:regUser.BloodGroup,
             HIV:regUser.HIV,
