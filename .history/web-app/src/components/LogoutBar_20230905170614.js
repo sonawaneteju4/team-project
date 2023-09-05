@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebaseConfig';
 import { onAuthStateChanged, signOut } from "firebase/auth";
@@ -30,7 +30,7 @@ const LogoutBar = () => {
       {handleLog &&
 
         <div className="logNav">
-        <button className="button" onClick={logout}>
+        <button className="logoutBtn" onClick={logout}>
           logout
         </button>
       </div>

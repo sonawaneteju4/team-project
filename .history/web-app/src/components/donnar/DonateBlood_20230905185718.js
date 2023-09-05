@@ -126,8 +126,7 @@ const DonateBlood = () => {
           </tr>
         ))}
         {/* mapping end here */}
-
-      </table>):<h3 style={{textAlign:"center"}}>Ooooooops No Blood Bank Found</h3>}
+      </table>):<h3 style={{textAlign:"center"}}>Ooooooops No Blood Bank Found</>}</h3>}
     </div>
   );
 };

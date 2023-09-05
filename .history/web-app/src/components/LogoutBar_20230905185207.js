@@ -17,13 +17,16 @@ const LogoutBar = () => {
     []
   );
 
-
+useEffect(() => {
   const logout = async () => {
     localStorage.removeItem("userId");
     await signOut(auth);
     console.log("account LogOut");
     Navigate("/");
   };
+  return logout()
+}, [])
+
 
   return (
     <div>

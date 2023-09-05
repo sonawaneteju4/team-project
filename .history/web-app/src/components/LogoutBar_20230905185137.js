@@ -17,6 +17,8 @@ const LogoutBar = () => {
     []
   );
 
+useEffect(() => {
+  first
 
   const logout = async () => {
     localStorage.removeItem("userId");
@@ -24,6 +26,8 @@ const LogoutBar = () => {
     console.log("account LogOut");
     Navigate("/");
   };
+}, [])
+
 
   return (
     <div>
