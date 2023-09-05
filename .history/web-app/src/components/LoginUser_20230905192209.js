@@ -102,7 +102,7 @@ const LoginUser = () => {
 
           <form className="form" onSubmit={Login}>
             <label htmlFor="">Email</label>
-            <input type="email" name="email" onChange={onHandleChange} required/>
+            <input type="e" name="email" onChange={onHandleChange} required/>
             <label htmlFor="">Password</label>
             <input type="password" name="password" onChange={onHandleChange} required/>
             <button className="button" >
