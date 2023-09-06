@@ -27,7 +27,7 @@ const HandleReq = ({ stausId }) => {
   const nav = useNavigate();
   const handleReport = () => {
     localStorage.setItem("CurrentUserId", userId);
-    nav("/bloodReportsGenration");
+    nav("bloodReportsGenration");
   };
 
   return (
