@@ -11,29 +11,24 @@ const DonationReq = () => {
     const donationReq = async () => {
       const q = query(
         DataRef,
-        where("bankId", "==", localStorage.getItem('userId'))
+        where("bankId", "==", localStorage.getItem("userId"))
       );
       const data = await getDocs(q);
-      setReqData(data.docs);
+      // setReqData(data.docs);
+
+      data.forEach((items) => {
+        setReqData(items.data());
+        console.log("helllo " + rq);
+      });
       console.log("req data is here" + ReqData);
       console.log(ReqData);
     };
     donationReq();
   }, []);
 
-  return (
-    <div>
-      {ReqData.map((item) => (
-        <div>
-
-        {item.id}
-
-
-        <HandleReq stausId={item.id}></HandleReq>
-        </div>
-      ))}
-    </div>
-  );
+  return <div>
+    {ReqData.uId}
+  </div>;
 };
 
 export default DonationReq;

@@ -18,6 +18,9 @@ const HandleReq = ({stausId}) => {
       data.forEach((item) => {
         console.log(item.data());
         setuserData(item.data());
+        localStorage.setItem("userDocId" , item.id)
+        sessionStorage.setItem("BloodGroup" , item.data().bloodGroup)
+        console.log("userData  " + userData);
       });
     };
     getUserDetails();
@@ -45,7 +48,7 @@ const HandleReq = ({stausId}) => {
           <div>Address: {userData.address}</div>
         </div>
         <div className="info1"></div>
-      </div>  
+      </div>
       </div>;
 
 };

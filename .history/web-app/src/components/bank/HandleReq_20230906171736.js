@@ -18,6 +18,8 @@ const HandleReq = ({stausId}) => {
       data.forEach((item) => {
         console.log(item.data());
         setuserData(item.data());
+        localStorage.setItem("userDocId" , item.id)
+              ]        console.log("userData  " + userData);
       });
     };
     getUserDetails();

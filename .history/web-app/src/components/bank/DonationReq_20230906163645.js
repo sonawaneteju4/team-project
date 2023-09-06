@@ -26,10 +26,10 @@ const DonationReq = () => {
       {ReqData.map((item) => (
         <div>
 
-        {item.id}
+        {}
 
 
-        <HandleReq stausId={item.id}></HandleReq>
+        <HandleReq stausId={item.data().id}></HandleReq>
         </div>
       ))}
     </div>

@@ -10,24 +10,25 @@ const BankDashboard = () => {
   const [BankId, setBankId] = useState("");
   const [bankData, setbankData] = useState([]);
 
-  useEffect(() => {
-    const q = query(
-      bankCollRef,
-      where("uId", "==", localStorage.getItem("userId"))
-    );
-    const getInfo = async () => {
-      const data = await getDocs(q);
-      console.log("heeeee" + data);
-      setbankData(data);
-      data.forEach((items) => {
-        setbankData(items.data());
-        console.log("helllo " + bankData);
-        sessionStorage.setItem("BankEmail", items.data().email);
-        setBankId(items.data().uId);
-      });
-    };
-    getInfo();
-  }, []);
+  const q2 = query(
+    usersDataRef,
+    where("uId", "==", localStorage.getItem("userId"))
+  );
+  const getUserDetails = async () => {
+    const data = await getDocs(q2);      
+    // setuserData(data)
+    data.forEach((item) => {
+      console.log(item.data());
+      setuserData(item.data());
+      localStorage.setItem("userDocId" , item.id)
+      sessionStorage.setItem("BloodGroup" , item.data().bloodGroup)
+      console.log("userData  " + userData);
+    });
+  };
+  getUserDetails();
+}, []);
+  console.log(BankId);
+
   const logout = async () => {
     localStorage.removeItem("userId");
     await signOut(auth);

@@ -28,6 +28,7 @@ const BankDashboard = () => {
     };
     getInfo();
   }, []);
+
   const logout = async () => {
     localStorage.removeItem("userId");
     await signOut(auth);
