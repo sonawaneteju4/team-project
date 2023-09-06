@@ -13,13 +13,14 @@ const DonorForm = () => {
     hiv: "",
     hephitiesb: "",
     hephitiesc: "",
+    currentlysuffereing: "",
     fever: "",
     cold: "",
     flue: "",
     dibeties: "",
   });
-  const collectionName = "donnarInfo";
-  const userId = localStorage.getItem("userId");
+  const collectionName = 'donnarInfo'
+  const userId = localStorage.getItem('userId');
   const navigate = useNavigate();
   console.log(donorHistory.state);
   const { bbId } = useParams();
@@ -29,12 +30,8 @@ const DonorForm = () => {
     setdonorHistory({ ...donorHistory, [e.target.name]: e.target.value });
   };
 
-
   const donor = async (userId) => {
-    const documentRef = collection(db, "donnarInfo", userId);
-    console.log("Document Reference:", documentRef); // Check the document reference
-try {
-  
+    const documentRef = collection(db, "donnarInfo" , userId);
     await updateDoc(documentRef, {
       donatebloodbefore: donorHistory.donatebloodbefore,
       lastdonatedate: donorHistory.lastdonatedate,
@@ -44,17 +41,16 @@ try {
       hiv: donorHistory.hiv,
       hephitiesb: donorHistory.hephitiesb,
       hephitiesc: donorHistory.hephitiesc,
+      currentlysuffereing: donorHistory.currentlysuffereing,
       fever: donorHistory.fever,
       cold: donorHistory.cold,
       flue: donorHistory.flue,
-      dibeties: donorHistory.dibeties,
+      dibeties: donorHistory.dibeties
     });
     navigate("/");
-  } catch (error) {
-  alert(error)
-  console.log(error)
-  }
-  
+
+
+
   };
   return (
     <div className="dhForm">
@@ -214,9 +210,7 @@ try {
         )}
       </div>
 
-      <button className="button" onClick={donor}>
-        submit
-      </button>
+      <button className="button" onClick={donor}>submit</button>
     </div>
   );
 };

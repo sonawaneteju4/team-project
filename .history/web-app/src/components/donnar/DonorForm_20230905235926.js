@@ -32,9 +32,20 @@ const DonorForm = () => {
 
   const donor = async (userId) => {
     const documentRef = collection(db, "donnarInfo", userId);
-    console.log("Document Reference:", documentRef); // Check the document reference
-try {
-  
+    {
+      donatebloodbefore: donorHistory.donatebloodbefore,
+      lastdonatedate: donorHistory.lastdonatedate,
+      bloodtestbefore: donorHistory.bloodtestbefore,
+      currentlysuffereing: donorHistory.currentlysuffereing,
+      cbc: donorHistory.cbc,
+      hiv: donorHistory.hiv,
+      hephitiesb: donorHistory.hephitiesb,
+      hephitiesc: donorHistory.hephitiesc,
+      fever: donorHistory.fever,
+      cold: donorHistory.cold,
+      flue: donorHistory.flue,
+      dibeties: donorHistory.dibeties,
+    }
     await updateDoc(documentRef, {
       donatebloodbefore: donorHistory.donatebloodbefore,
       lastdonatedate: donorHistory.lastdonatedate,
@@ -50,11 +61,6 @@ try {
       dibeties: donorHistory.dibeties,
     });
     navigate("/");
-  } catch (error) {
-  alert(error)
-  console.log(error)
-  }
-  
   };
   return (
     <div className="dhForm">

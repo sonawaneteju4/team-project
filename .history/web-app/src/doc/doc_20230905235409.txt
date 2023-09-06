@@ -17,8 +17,6 @@ onAuthStateChanged(auth, (user) => {
 
 const donor = async (userId) => {
   const documentRef = collection(db, collectionName).doc(userId); // Assuming 'userId' is the document ID
-    console.log("Document Reference:", documentRef); // Check the document reference
-
   try {
     await setDoc(documentRef, {
       donatebloodbefore: donorHistory.donatebloodbefore,

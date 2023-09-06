@@ -13,6 +13,7 @@ const DonorForm = () => {
     hiv: "",
     hephitiesb: "",
     hephitiesc: "",
+    currentlysuffereing: "",
     fever: "",
     cold: "",
     flue: "",
@@ -29,32 +30,32 @@ const DonorForm = () => {
     setdonorHistory({ ...donorHistory, [e.target.name]: e.target.value });
   };
 
+  const donnorData = {
+    donatebloodbefore: donorHistory.donatebloodbefore,
+    lastdonatedate: donorHistory.lastdonatedate,
+    bloodtestbefore: donorHistory.bloodtestbefore,
+    currentlysuffereing: donorHistory.currentlysuffereing,
+    cbc: donorHistory.cbc,
+    hiv: donorHistory.hiv,
+    hephitiesb: donorHistory.hephitiesb,
+    hephitiesc: donorHistory.hephitiesc,
+    currentlysuffereing: donorHistory.currentlysuffereing,
+    fever: donorHistory.fever,
+    cold: donorHistory.cold,
+    flue: donorHistory.flue,
+    dibeties: donorHistory.dibeties,
+  };
 
   const donor = async (userId) => {
     const documentRef = collection(db, "donnarInfo", userId);
-    console.log("Document Reference:", documentRef); // Check the document reference
-try {
-  
-    await updateDoc(documentRef, {
-      donatebloodbefore: donorHistory.donatebloodbefore,
-      lastdonatedate: donorHistory.lastdonatedate,
-      bloodtestbefore: donorHistory.bloodtestbefore,
-      currentlysuffereing: donorHistory.currentlysuffereing,
-      cbc: donorHistory.cbc,
-      hiv: donorHistory.hiv,
-      hephitiesb: donorHistory.hephitiesb,
-      hephitiesc: donorHistory.hephitiesc,
-      fever: donorHistory.fever,
-      cold: donorHistory.cold,
-      flue: donorHistory.flue,
-      dibeties: donorHistory.dibeties,
-    });
+    const updateData = {};
+    for (const field in donorDataSchema) {
+      if (donorHistory[field]) {
+        updateData[donorDataSchema[field]] = donorHistory[field];
+      }
+    }
+    await updateDoc(documentRef);
     navigate("/");
-  } catch (error) {
-  alert(error)
-  console.log(error)
-  }
-  
   };
   return (
     <div className="dhForm">

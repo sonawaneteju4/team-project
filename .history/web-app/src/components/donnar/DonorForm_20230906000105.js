@@ -50,11 +50,6 @@ try {
       dibeties: donorHistory.dibeties,
     });
     navigate("/");
-  } catch (error) {
-  alert(error)
-  console.log(error)
-  }
-  
   };
   return (
     <div className="dhForm">
