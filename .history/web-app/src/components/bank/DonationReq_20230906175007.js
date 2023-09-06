@@ -16,7 +16,6 @@ const DonationReq = () => {
     const donationReq = async () => {
       const data = await getDocs(q);
       setReqData(data.docs);
-      localStorage.setItem('CurrentUserId')
       console.log("req data is here" + ReqData);
       console.log(ReqData);
     };
@@ -27,9 +26,10 @@ const DonationReq = () => {
     <div>
       {ReqData.map((item) => (
         <div>
+          {item.data().userId}
           {/* {item.bankId} */}
           <HandleReq stausId={item.data().userId}></HandleReq>
-          <Link to="/bloodReportsGenration" className="button">Create Report</Link> 
+          <Link to="/bloodReportsGenration/" className="button">Create Report</Link> 
         </div>
       ))}
     </div>

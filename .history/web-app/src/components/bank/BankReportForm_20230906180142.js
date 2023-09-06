@@ -44,7 +44,7 @@ const BankReportForm = () => {
       hepatitiesB: regUser.hepatitiesB,
       hepatitiesC: regUser.hepatitiesC,
     });
-    localStorage.removeItem("CurrentUserId");
+    localStorage.removeItem("CurrentUserId", user.uid);
     navigate("/bankDash");
   };
 

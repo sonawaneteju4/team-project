@@ -2,7 +2,6 @@ import { collection, getDoc, getDocs, query, where } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { db } from "../../firebaseConfig";
 import HandleReq from "./HandleReq";
-import { Link } from "react-router-dom";
 
 const DonationReq = () => {
   const [ReqData, setReqData] = useState([]);
@@ -16,7 +15,6 @@ const DonationReq = () => {
     const donationReq = async () => {
       const data = await getDocs(q);
       setReqData(data.docs);
-      localStorage.setItem('CurrentUserId')
       console.log("req data is here" + ReqData);
       console.log(ReqData);
     };
@@ -27,9 +25,10 @@ const DonationReq = () => {
     <div>
       {ReqData.map((item) => (
         <div>
+          {item.data().userId}
           {/* {item.bankId} */}
           <HandleReq stausId={item.data().userId}></HandleReq>
-          <Link to="/bloodReportsGenration" className="button">Create Report</Link> 
+          <button 
         </div>
       ))}
     </div>
