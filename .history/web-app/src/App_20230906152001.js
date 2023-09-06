@@ -21,8 +21,6 @@ import Availablity from './components/Availablity';
 import StockMang from './components/bank/StockMang';
 import HospitalReq from './components/bank/HospitalReq';
 import DonationReq from './components/bank/DonationReq';
-import BankEndValidation from './components/bank/BankEndValidation';
-import BankReportForm from './components/bank/BankReportForm';
 
 
 function App() {
@@ -54,8 +52,7 @@ function App() {
     <Route path='/stockOfBlood' element={<StockMang/>}></Route>
     <Route path='/hospitalReq' element={<HospitalReq/>}></Route>
     <Route path='/donationReq' element={<DonationReq/>}></Route>
-    <Route path='/donorHistroy' element={<BankEndValidation/>}></Route>
-    <Route path='/bloodReportsGenration' element={<BankReportForm/>}></Route>
+    <Route path='/donorHistroy' element={<Ba/>}></Route>
   </Routes>
   </BrowserRouter>  
   

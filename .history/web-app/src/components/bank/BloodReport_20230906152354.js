@@ -62,7 +62,6 @@ const BloodReport = () => {
         regUser.password
       );
       const user = userCredential.user;
-      localStorage.setItem("CurrentUserId", user.uid);
       await addDoc(usersDataRef, {
         uId: user.uid,
         email: regUser.email,
@@ -79,6 +78,7 @@ const BloodReport = () => {
         pincode: regUser.pincode,
       });
       localStorage.setItem("BloodGroup", regUser.bloodGroup)
+      localStorage.setItem("CurrentUserId", user.uid);
       await signOut(auth);
       const loginToBank = await signInWithEmailAndPassword(
         auth,

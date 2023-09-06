@@ -12,13 +12,13 @@ const BankReportForm = () => {
     HIV: "",
     Haemoglobin: "",
     Pathaltes: "",
-    plasma: "",
+    plasma: " ",
     RBC: "",
-    TypeOfDonation: "",
-    dateOfDonation: "",
-    donorId: "",
+    TypeOfDonation: " ",
+    dateOfDonation: " ",
+    donorId: " ",
     hepatitiesB: "",
-    hepatitiesC: "",
+    hepatitiesC: " ",
   });
   const usersCollectionRef = collection(db, "BloodReports");
   // const usersDataRef=collection(db,"BankReportForm");  //he collection nahiye db made???
@@ -44,7 +44,7 @@ const BankReportForm = () => {
       hepatitiesB: regUser.hepatitiesB,
       hepatitiesC: regUser.hepatitiesC,
     });
-    navigate("/bankDash");
+    navigate("/");
   };
 
   return (

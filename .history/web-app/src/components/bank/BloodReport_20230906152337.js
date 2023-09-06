@@ -78,7 +78,7 @@ const BloodReport = () => {
         dist: regUser.dist,
         pincode: regUser.pincode,
       });
-      localStorage.setItem("BloodGroup", regUser.bloodGroup)
+      localStorage.setItem("BloodGroup", regUser.b)
       await signOut(auth);
       const loginToBank = await signInWithEmailAndPassword(
         auth,
