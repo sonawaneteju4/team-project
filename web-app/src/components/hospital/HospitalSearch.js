@@ -1,12 +1,10 @@
-import React, { useState } from 'react'
 import importedData from "./../json/states.json";
-import { collection } from "firebase/firestore";
-import { getDocs, query, where } from "firebase/firestore";
-import { db } from '../firebaseConfig';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { db } from '../../firebaseConfig';
 
-
-const Availablity = () => {
+const HospitalSearch = () => {
     const [selectedState, setSelectedState] = useState("");
     const [selectedDistrict, setSelectedDistrict] = useState("");
     const [bbData, setbbData] = useState([]);
@@ -22,7 +20,6 @@ const Availablity = () => {
             const newDistrict = event.target.value;
             setSelectedDistrict(newDistrict);
           };
-          //Query For Handle Bank Search
           const SerchBankQ = query(
             BankDataRef,
             where("state", "==", selectedState),
@@ -43,8 +40,8 @@ const Availablity = () => {
           const handleDonateBloodRequest = (bbId) => {
             navigate(`/healthHistory/${bbId}`);
           };
-        
-return (
+
+  return (
     <>
     <div>
     <div>
@@ -132,5 +129,4 @@ return (
     </>
   );
 };
-
-export default Availablity;
+export default HospitalSearch
