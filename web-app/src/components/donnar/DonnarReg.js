@@ -101,32 +101,32 @@ const DonnarReg = () => {
   // https://firebase.google.com/docs/firestore/query-data/queries?hl=en&authuser=0&_gl=1*cebiw7*_ga*ODAxMjEzNzYuMTY5Mjg1NDU5NA..*_ga_CW55HF8NVT*MTY5MzU5MTQ5Ny4xNy4xLjE2OTM1OTMxOTYuMC4wLjA.
 
   return (
-    <div className="bankReg">
+    <form className="bankReg" onSubmit={register}>
       <div className="heading">Donor Registration</div>
 
       <div className="formOfBank">
         <div className="formDiff">
           <div>
             <label htmlFor="">Email</label>
-            <input type="email" name="email" onChange={handleChange} />
+            <input type="email" name="email" onChange={handleChange} required />
           </div>
           <div>
             <label htmlFor="">password</label>
-            <input type="password" name="password" onChange={handleChange} />
+            <input type="password" name="password" onChange={handleChange} required />
           </div>
           <div>
             <label htmlFor="">Name</label>
-            <input type="text" name="userName" onChange={handleChange} />
+            <input type="text" name="userName" onChange={handleChange} required />
           </div>
           <div className="statesAndDist">
             <div>
               <label htmlFor="">age</label>
-              <input type="number" name="age" onChange={handleChange} />
+              <input type="number" name="age" onChange={handleChange} required />
             </div>
 
             <div className="distcss">
               <label htmlFor="">weight</label>
-              <input type="number" name="weight" onChange={handleChange} />
+              <input type="number" name="weight" onChange={handleChange} required />
             </div>
           </div>
           <div className="statesAndDist">
@@ -147,7 +147,7 @@ const DonnarReg = () => {
             <div className="distcss">
               <label htmlFor="">Gender</label>
               {/* <input type="text" name="gender"/> */}
-              <select name="gender" onChange={handleChange} id="" >
+              <select name="gender" onChange={handleChange} id="" required>
                 <option value="male">male</option>
                 <option value="female">female</option>
                 <option value="other">other</option>
@@ -158,20 +158,20 @@ const DonnarReg = () => {
         <div className="formDiff">
         <div>
         <label htmlFor="">Contact Number</label>
-        <input type="number" name="mobile" onChange={handleChange} />
+        <input type="number" name="mobile" onChange={handleChange} required />
       </div>
       <div>
         <label htmlFor="">Aadhar number</label>
-        <input type="number" name="aadhar" onChange={handleChange} />
+        <input type="number" name="aadhar" onChange={handleChange} required />
       </div>
       <div>
         <label htmlFor="">Address</label>
-        <input type="text" name="address" onChange={handleChange} />
+        <input type="text" name="address" onChange={handleChange} required />
       </div>
       <div className="statesAndDist">
         <div>
           <label>State:</label>
-          <select onChange={handleStateChange} value={selectedState}>
+          <select onChange={handleStateChange} value={selectedState} required>
             <option value="">Select State</option>
             {states.map((stateData, index) => (
               <option key={index} value={stateData.state}>
@@ -182,7 +182,7 @@ const DonnarReg = () => {
         </div>
         <div className="distcss">
           <label>District:</label>
-          <select onChange={handleDistrictChange} value={selectedDistrict}>
+          <select onChange={handleDistrictChange} value={selectedDistrict} required>
             <option value="">Select District</option>
             {states
               .find((stateData) => stateData.state === selectedState)
@@ -196,15 +196,15 @@ const DonnarReg = () => {
       </div>
       <div>
         <label htmlFor="">Pincode</label>
-        <input type="number" name="pincode" onChange={handleChange} />
+        <input type="number" name="pincode" onChange={handleChange} required />
       </div>
         </div>
       </div>
 
       <div className="regBtn">
-      <button className="button" onClick={register}>Register</button>
+      <button className="button" type="submit" >Register</button>
       </div>
-    </div>
+    </form>
   );
 };
 

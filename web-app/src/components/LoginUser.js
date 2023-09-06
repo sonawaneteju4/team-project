@@ -108,7 +108,7 @@ const LoginUser = () => {
             <button className="button" >
               Login
             </button>
-            <button className="button" onClick={handleCreateAccount}>
+            <button className="button">
               Create New Account
             </button>
           </form>

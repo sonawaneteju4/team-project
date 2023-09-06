@@ -92,17 +92,17 @@ const BankRegister = () => {
   };
 
   return (
-    <div className="bankReg">
+    <form className="bankReg" onSubmit={register}>
       <div className="heading">Blood Bank Registration</div>
       <div className="formOfBank">
         <div  onSubmit={register} className="formDiff">
           <div className="">
             <label htmlFor="">email</label>
-            <input type="email" name="email" onChange={handleChange} />
+            <input type="email" name="email" onChange={handleChange} required />
           </div>
           <div>
             <label htmlFor="">password</label>
-            <input type="password" name="password" onChange={handleChange} />
+            <input type="password" name="password" onChange={handleChange} required />
           </div>
 
           <div>
@@ -112,7 +112,7 @@ const BankRegister = () => {
           <div className="statesAndDist">
             <div>
               <label htmlFor="">contact</label>
-              <input type="number" name="contact" onChange={handleChange} />
+              <input type="number" name="contact" onChange={handleChange} required />
             </div>
             <div className="distcss">
               <label htmlFor="">category</label>
@@ -130,7 +130,7 @@ const BankRegister = () => {
         <div className="formDiff">
           <div>
             <label htmlFor="">address</label>
-            <input type="text" name="address" onChange={handleChange} />
+            <input type="text" name="address" onChange={handleChange} required />
           </div>
           <div className="statesAndDist">
             <div>
@@ -200,11 +200,11 @@ const BankRegister = () => {
         </div>
       </div>
       <div className="regBtn">
-        <button className="button" onClick={register}>
+        <button className="button" type="submit">
           Register
         </button>
       </div>
-    </div>
+    </form>
   );
 };
 

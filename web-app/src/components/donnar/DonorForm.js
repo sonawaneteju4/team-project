@@ -62,7 +62,7 @@ const DonorForm = () => {
     }
   };
   return (
-    <div className="dhForm">
+    <form className="dhForm" onSubmit={donor}>
       <div>Donor Form</div>
       <div>
         <label className="dlabel" htmlFor="">
@@ -84,7 +84,7 @@ const DonorForm = () => {
           <label className="dlabel" htmlFor="">
             Last Donate Date{" "}
           </label>
-          <input type="date" name="lastdonatedate" onChange={handleChange} />
+          <input type="date" name="lastdonatedate" onChange={handleChange} required/>
         </div>
       )}
       <div>
@@ -123,7 +123,7 @@ const DonorForm = () => {
               name="hiv"
               id=""
               onChange={handleChange}
-            >
+            required>
               <option value="">Select</option>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
@@ -228,10 +228,10 @@ const DonorForm = () => {
         )}
       </div>
 
-      <button className="button" onClick={donor}>
+      <button className="button" type="submit">
         submit
       </button>
-    </div>
+    </form>
   );
 };
 export default DonorForm;
