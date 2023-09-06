@@ -1,4 +1,4 @@
-import { addDoc, collection, updateDoc } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 import React, { useState } from "react";
 import { db } from "../../firebaseConfig";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
@@ -9,17 +9,9 @@ const DonorForm = () => {
     lastdonatedate: "",
     bloodtestbefore: " ",
     currentlysuffereing: " ",
-    cbc: "",
-    hiv: "",
-    hephitiesb: "",
-    hephitiesc: "",
-    fever: "",
-    cold: "",
-    flue: "",
-    dibeties: "",
   });
-  const collectionName = "donnarInfo";
-  const userId = localStorage.getItem("userId");
+  const usersCollectionRef = collection(db, "users");
+  const usersDataRef = collection(db, "donorForm");
   const navigate = useNavigate();
   console.log(donorHistory.state);
   const { bbId } = useParams();
@@ -29,32 +21,14 @@ const DonorForm = () => {
     setdonorHistory({ ...donorHistory, [e.target.name]: e.target.value });
   };
 
-
-  const donor = async (userId) => {
-    const documentRef = collection(db, "donnarInfo", userId);
-    console.log("Document Reference:", documentRef); // Check the document reference
-try {
-  
-    await updateDoc(documentRef, {
+  const donor = async () => {
+    await addDoc(usersDataRef, {
       donatebloodbefore: donorHistory.donatebloodbefore,
       lastdonatedate: donorHistory.lastdonatedate,
       bloodtestbefore: donorHistory.bloodtestbefore,
       currentlysuffereing: donorHistory.currentlysuffereing,
-      cbc: donorHistory.cbc,
-      hiv: donorHistory.hiv,
-      hephitiesb: donorHistory.hephitiesb,
-      hephitiesc: donorHistory.hephitiesc,
-      fever: donorHistory.fever,
-      cold: donorHistory.cold,
-      flue: donorHistory.flue,
-      dibeties: donorHistory.dibeties,
     });
     navigate("/");
-  } catch (error) {
-  alert(error)
-  console.log(error)
-  }
-  
   };
   return (
     <div className="dhForm">
@@ -202,7 +176,7 @@ try {
             <lable>dibeties</lable>
             <select
               className="dselect"
-              name="dibeties"
+              name="dibeties  "
               id=""
               onChange={handleChange}
             >
@@ -214,9 +188,7 @@ try {
         )}
       </div>
 
-      <button className="button" onClick={donor}>
-        submit
-      </button>
+      <button className="button">submit</button>
     </div>
   );
 };

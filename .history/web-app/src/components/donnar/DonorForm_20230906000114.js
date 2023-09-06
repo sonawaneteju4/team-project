@@ -52,7 +52,6 @@ try {
     navigate("/");
   } catch (error) {
   alert(error)
-  console.log(error)
   }
   
   };
