@@ -18,6 +18,9 @@ const HandleReq = ({stausId}) => {
       data.forEach((item) => {
         console.log(item.data());
         setuserData(item.data());
+        localStorage.setItem("userDocId" , item.id)
+        sessionStorage.setItem("BloodGroup" , item.data().bloodGroup)
+        console.log("userData  " + userData);
       });
     };
     getUserDetails();
@@ -25,27 +28,8 @@ const HandleReq = ({stausId}) => {
 
 
   return <div>
-     <div className="donorInfo">
-        <div className="info1">
-          <div>Name: {userData.userName}</div>
-
-          <div>Age :{userData.age}</div>
-          <div>Blood Group: {userData.bloodGroup}</div>
-          <div>Weight :{userData.weight} Kg</div>
-        </div>
-        <div className="info1">
-          <div>Contact :{userData.mobile}</div>
-          <div>Gender :{userData.gender}</div>
-          <div>District :{userData.dist}</div>
-          <div>State :{userData.state}</div>
-        </div>
-        <div className="info1">
-          <div>Pincode :{userData.pincode}</div>
-          <div>Aadhar: {userData.aadhar}</div>
-          <div>Address: {userData.address}</div>
-        </div>
-        <div className="info1"></div>
-      </div>  
+    {userData.uId}
+    {/* {userData.userName} */}
       </div>;
 
 };

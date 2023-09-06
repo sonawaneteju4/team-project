@@ -1,0 +1,12 @@
+import { collection } from "firebase/firestore";
+import React, { useState } from "react";
+import { db } from "../../firebaseConfig";
+
+const HandleReq = ({stausId}) => {
+  const [userData, setuserData] = useState([])
+  const colRef = collection(db, "donnarInfo")
+  return <div>HandleReq{stausId}</div>;
+
+};
+
+export default HandleReq;

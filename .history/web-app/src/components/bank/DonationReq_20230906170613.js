@@ -15,6 +15,10 @@ const DonationReq = () => {
       );
       const data = await getDocs(q);
       setReqData(data.docs);
+
+      data.forEach((items) => {
+        setReqData(items.data());
+        console.log("helllo " + bankData);      });
       console.log("req data is here" + ReqData);
       console.log(ReqData);
     };
@@ -23,15 +27,7 @@ const DonationReq = () => {
 
   return (
     <div>
-      {ReqData.map((item) => (
-        <div>
-
-        {item.id}
-
-
-        <HandleReq stausId={item.id}></HandleReq>
-        </div>
-      ))}
+      
     </div>
   );
 };

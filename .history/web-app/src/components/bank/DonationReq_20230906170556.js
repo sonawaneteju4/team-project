@@ -23,15 +23,12 @@ const DonationReq = () => {
 
   return (
     <div>
-      {ReqData.map((item) => (
-        <div>
-
-        {item.id}
-
-
-        <HandleReq stausId={item.id}></HandleReq>
-        </div>
-      ))}
+       data.forEach((items) => {
+        setbankData(items.data());
+        console.log("helllo " + bankData);
+        sessionStorage.setItem("BankEmail", items.data().email);
+        setBankId(items.data().uId);
+      });
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import { collection, getDoc, getDocs, query, where } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { db } from "../../firebaseConfig";
-import HandleReq from "./HandleReq";
 
 const DonationReq = () => {
   const [ReqData, setReqData] = useState([]);
@@ -24,13 +23,7 @@ const DonationReq = () => {
   return (
     <div>
       {ReqData.map((item) => (
-        <div>
-
-        {item.id}
-
-
-        <HandleReq stausId={item.id}></HandleReq>
-        </div>
+        <Hna>{item.id}</Hna>
       ))}
     </div>
   );

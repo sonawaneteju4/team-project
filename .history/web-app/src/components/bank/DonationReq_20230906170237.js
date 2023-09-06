@@ -14,9 +14,13 @@ const DonationReq = () => {
         where("bankId", "==", localStorage.getItem('userId'))
       );
       const data = await getDocs(q);
-      setReqData(data.docs);
-      console.log("req data is here" + ReqData);
-      console.log(ReqData);
+      // setReqData(data.docs);
+      data.forEach((items) => {
+        setReqData(items.data());
+        console.log("helllo " + bankData);
+        sessionStorage.setItem("BankEmail", items.data().email);
+        setBankId(items.data().uId);
+      });      console.log(ReqData);
     };
     donationReq();
   }, []);

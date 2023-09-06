@@ -24,13 +24,7 @@ const DonationReq = () => {
   return (
     <div>
       {ReqData.map((item) => (
-        <div>
-
-        {item.id}
-
-
-        <HandleReq stausId={item.id}></HandleReq>
-        </div>
+        <HandleReq stausId={{item.data().id}}></HandleReq>
       ))}
     </div>
   );

@@ -11,11 +11,15 @@ const DonationReq = () => {
     const donationReq = async () => {
       const q = query(
         DataRef,
-        where("bankId", "==", localStorage.getItem('userId'))
+        where("bankId", "==", localStorage.getItem("userId"))
       );
       const data = await getDocs(q);
-      setReqData(data.docs);
-      console.log("req data is here" + ReqData);
+      // setReqData(data.docs);
+      data.forEach((items) => {
+        setReqData(items.data());
+        console.log("helllo " + bankData);
+        setBankId(items.data().uId);
+      });
       console.log(ReqData);
     };
     donationReq();
@@ -25,11 +29,9 @@ const DonationReq = () => {
     <div>
       {ReqData.map((item) => (
         <div>
+          {item.id}
 
-        {item.id}
-
-
-        <HandleReq stausId={item.id}></HandleReq>
+          <HandleReq stausId={item.id}></HandleReq>
         </div>
       ))}
     </div>
