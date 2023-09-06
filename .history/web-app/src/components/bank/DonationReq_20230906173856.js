@@ -28,7 +28,7 @@ const DonationReq = () => {
           {item.data().userId}
           {/* {item.bankId} */}
 
-          <HandleReq stausId={item.data().userId}></HandleReq>
+          <HandleReq stausId={item.data().bankId}></HandleReq>
         </div>
       ))}
     </div>

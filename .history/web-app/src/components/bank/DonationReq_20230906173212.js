@@ -10,7 +10,7 @@ const DonationReq = () => {
   useEffect(() => {
     const q = query(
       DataRef,
-      where("bankId", "==", localStorage.getItem("userId"))
+      where("bankId", "==", localStorage.getItem('userId'))
     );
     const donationReq = async () => {
       const data = await getDocs(q);
@@ -25,11 +25,11 @@ const DonationReq = () => {
     <div>
       {ReqData.map((item) => (
         <div>
-          {item.data().userId}
-          {/* {item.bankId} */}
 
-          <HandleReq stausId={item.data().userId}></HandleReq>
-        </div>
+        {item.id}
+
+
+          </div>
       ))}
     </div>
   );
