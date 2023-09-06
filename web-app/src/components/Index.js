@@ -1,16 +1,15 @@
 import React from 'react'
 import './font.css'
-import DonorForm from './donnar/DonorForm'
-import BankReportForm from './bank/BankReportForm'
-import HospitalSearch from './hospital/HospitalSearch'
+import BloodBankRepo from './bank/BloodBankRepo'
 
 const Index = () => {
   return (
    <div>
     {/* <DonorForm/>
      */}
-     <HospitalSearch/>
-    <BankReportForm/>
+     
+     <BloodBankRepo/>
+    
    </div>
   )
 }

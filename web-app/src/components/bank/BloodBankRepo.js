@@ -1,9 +1,11 @@
 import React from "react";
+import "./BloodBankRepo.css";
 
 const BloodBankRepo = () => {
   return (
     <>
       <div>
+        <div>
         <div className="main">
           <div>BloodBankRepo</div>
           <div className="t1">
@@ -19,6 +21,8 @@ const BloodBankRepo = () => {
             <p>Pincode</p>
           </div>
         </div>
+        </div>
+        <div>
         <div className="main">
           <div className="main">donorinfor</div>
           <div className="t1">
@@ -37,6 +41,7 @@ const BloodBankRepo = () => {
             <p>Blood Test Before</p>
             <p> Blood Group</p>
           </div>
+        </div>
         </div>
 
         <div className="main">

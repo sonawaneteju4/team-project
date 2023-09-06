@@ -1,0 +1,9 @@
+.main{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.t1,t2{
+    padding-left: 3px;
+    margin: 2px;
+}
