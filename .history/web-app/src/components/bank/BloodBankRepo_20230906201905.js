@@ -18,8 +18,9 @@ const BloodBankRepo = () => {
             <p>City</p>
             <p>Pincode</p>
           </div>
-        </div>
-        <div className="main">
+</div>
+<div className="main">
+
           <div className="main">donorinfor</div>
           <div className="t1">
             <p>Name </p>
@@ -37,10 +38,9 @@ const BloodBankRepo = () => {
             <p>Blood Test Before</p>
             <p> Blood Group</p>
           </div>
-        </div>
+</div>
 
-        <div className="main">
-            <div>Title Here</div>
+          <div className="main"></div>
           <div className="t1">
             <p>Blood Bank Id</p>
             <p>Blood Group</p>

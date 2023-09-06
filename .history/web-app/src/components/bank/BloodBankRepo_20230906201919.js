@@ -40,7 +40,6 @@ const BloodBankRepo = () => {
         </div>
 
         <div className="main">
-            <div>Title Here</div>
           <div className="t1">
             <p>Blood Bank Id</p>
             <p>Blood Group</p>
