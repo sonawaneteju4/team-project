@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 const Availablity = () => {
     const [selectedState, setSelectedState] = useState("");
     const [selectedDistrict, setSelectedDistrict] = useState("");
-    const [selectedBloodType,setSelectedBloodType]=useState(" ");
+    
     const [bbData, setbbData] = useState([]);
     const states = importedData.states;
         const BankDataRef = collection(db, "bankInfo");
@@ -18,23 +18,18 @@ const Availablity = () => {
           const newState = event.target.value;
           setSelectedState(newState);
           setSelectedDistrict(""); // Reset the district when the state changes
-          setSelectedBloodType("");
+    
         };
         const handleDistrictChange = (event) => {
             const newDistrict = event.target.value;
             setSelectedDistrict(newDistrict);
           };
-          const handleBloodTypeChange=(event)=>{
-            const newBloodType=event.target.value;
-            setSelectedBloodType(newBloodType);
-
-          }
           //Query For Handle Bank Search
           const SerchBankQ = query(
             BankDataRef,
             where("state", "==", selectedState),
             where("district", "==", selectedDistrict),
-            // where("bloodGroup","==".selectedBloodType)
+            
           );
           const HandleSearch = async () => {
             try {
@@ -82,19 +77,6 @@ return (
                 ))}
             </select>
           </div>
-          <div>
-            <label>Blood Group</label>
-            <select id="bloodTypeSelect" value={selectedBloodType}
-        onChange={handleBloodTypeChange}>
-        <option value="">Select Blood Types</option>
-        <option value="o+">O+</option>
-        <option value="a+">A+</option>
-        <option value="o-">O-</option>
-        <option value="b+">B+</option>
-        <option value="b-">B-</option>
-        {/* Add more options for other blood types */}
-      </select>
-          </div>
           </div>
       <div className="phbdbtn">
         <button className="button" onClick={HandleSearch}>
@@ -111,6 +93,7 @@ return (
             <td>Contact</td>
             <td>Pin Code</td>
             <td>Category</td>
+            <td>Blood Group</td>
             <td>Apheresis facility</td>
             <td>Component facility</td>
           </tr>
@@ -143,6 +126,9 @@ return (
               </td>
               <td>
                 <p>{item.data().componentfac}</p>
+              </td>
+              <td>
+                <p>{item.data().bl}</p>
               </td>
             </tr>
           ))}
