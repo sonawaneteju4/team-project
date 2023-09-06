@@ -9,7 +9,7 @@ const Availablity = () => {
   const [selectedState, setSelectedState] = useState("");
   const [selectedDistrict, setSelectedDistrict] = useState("");
   const [bloodGroup, setbloodGroup] = useState('B-ve');
-  const [bloodBankIds, setBloodBankIds] = useState([]);
+  const [bloodBankIds, setBloodBankIds] = useState([V8DWOfb6iyM8svTdIKSjoN8ZWYa2x]);
 
   const [bbData, setbbData] = useState([]);
   const states = importedData.states;
@@ -54,14 +54,14 @@ const Availablity = () => {
     checkForBlood();
   }, [bloodGroup]);
   //Query For Handle Bank Search
+  
+  const SerchBankQ = query(
+    BankDataRef,
+    where("state", "==", selectedState),
+    where("district", "==", selectedDistrict),
+    where("uId", "in", bloodBankIds)  
+  );  
   const HandleSearch = async () => {
-    
-    const SerchBankQ = query(
-      BankDataRef,
-      where("state", "==", selectedState),
-      where("district", "==", selectedDistrict),
-      where("uId", "in", bloodBankIds)  
-    );  
     try {
       const data = await getDocs(SerchBankQ);
       console.log(data);

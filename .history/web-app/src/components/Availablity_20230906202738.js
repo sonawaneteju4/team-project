@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import importedData from "./../json/states.json";
 import { collection } from "firebase/firestore";
 import { getDocs, query, where } from "firebase/firestore";
@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const Availablity = () => {
   const [selectedState, setSelectedState] = useState("");
   const [selectedDistrict, setSelectedDistrict] = useState("");
-  const [bloodGroup, setbloodGroup] = useState('B-ve');
+  const [bloodGroup, setbloodGroup] = useState("");
   const [bloodBankIds, setBloodBankIds] = useState([]);
 
   const [bbData, setbbData] = useState([]);
@@ -26,42 +26,33 @@ const Availablity = () => {
     const newDistrict = event.target.value;
     setSelectedDistrict(newDistrict);
   };
+  const q = query(bloodDataRef, where("BloodGroup", "==", bloodGroup));
+  
+  const checkForBlood = async () => {
+    try {
+      const querySnapshot = await getDocs(q);
+      clientInformation
+      const idsArray = [];
 
-  const handleChange = (event) => {
-    const bloodGroup = event.target.value;
-    console.log('Selected blood group:', bloodGroup);
-    setbloodGroup(bloodGroup);
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        if (data.BloodBankId) {
+          idsArray.push(data.BloodBankId);
+        }
+      });
+
+      setBloodBankIds(idsArray);
+      console.log('------------>', bloodBankIds)
+    } catch (error) {}
   };
 
-  
-  useEffect(() => {
-    const checkForBlood = async () => {
-      try {
-        const q = query(bloodDataRef, where("BloodGroup", "==", bloodGroup ));
-        const querySnapshot = await getDocs(q);
-        console.log(querySnapshot);
-        const idsArray = [];
-
-        querySnapshot.forEach((doc) => {
-          const data = doc.data();
-          idsArray.push(data.BloodBankId);
-        });
-
-        setBloodBankIds(idsArray);
-        console.log("------------>", bloodBankIds);
-      } catch (error) {}
-    };
-    checkForBlood();
-  }, [bloodGroup]);
   //Query For Handle Bank Search
+  const SerchBankQ = query(
+    BankDataRef,
+    where("state", "==", selectedState),
+    where("district", "==", selectedDistrict)
+  );
   const HandleSearch = async () => {
-    
-    const SerchBankQ = query(
-      BankDataRef,
-      where("state", "==", selectedState),
-      where("district", "==", selectedDistrict),
-      where("uId", "in", bloodBankIds)  
-    );  
     try {
       const data = await getDocs(SerchBankQ);
       console.log(data);
@@ -72,6 +63,10 @@ const Availablity = () => {
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const handleChange = (e) => {
+    setbloodGroup({ ...bloodGroup, [e.target.name]: e.target.value });
   };
 
   const handleDonateBloodRequest = (bbId) => {
@@ -117,7 +112,7 @@ const Availablity = () => {
             <option value="A+ve">A+ve</option>
             <option value="A-ve">A-ve</option>
             <option value="B+ve">B+ve</option>
-            <option selected value="B-ve">B-ve</option>
+            <option value="B-ve">B-ve</option>
             <option value="O+ve">O+ve</option>
             <option value="O-ve">O-ve</option>
             <option value="AB+ve">AB+ve</option>
@@ -126,7 +121,7 @@ const Availablity = () => {
         </div>
       </div>
       <div className="phbdbtn">
-        <button className="button" onClick={HandleSearch}>
+        <button className="button" onClick={checkForBlood}>
           Search Bank
         </button>
       </div>

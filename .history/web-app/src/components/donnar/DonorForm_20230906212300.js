@@ -29,7 +29,7 @@ const DonorForm = () => {
   };
 
   const donor = async (e) => {
-    e.preventDefault();
+    
     console.log("Donor function called");
     const collectionRef = collection(db, "donnarInfo"); // Reference to the collection
     const reqColRef = collection(db, "DonationReq")

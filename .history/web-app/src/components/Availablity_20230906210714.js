@@ -28,9 +28,9 @@ const Availablity = () => {
   };
 
   const handleChange = (event) => {
-    const bloodGroup = event.target.value;
-    console.log('Selected blood group:', bloodGroup);
-    setbloodGroup(bloodGroup);
+    const selectedBloodGroup = event.target.value;
+    console.log('Selected blood group:', selectedBloodGroup);
+    setbloodGroup(selectedBloodGroup);
   };
 
   
@@ -52,16 +52,16 @@ const Availablity = () => {
       } catch (error) {}
     };
     checkForBlood();
-  }, [bloodGroup]);
+  }, []);
   //Query For Handle Bank Search
+  
+  const SerchBankQ = query(
+    BankDataRef,
+    where("state", "==", selectedState),
+    where("district", "==", selectedDistrict),
+    // where("uId", "in", bloodBankIds)
+  );  
   const HandleSearch = async () => {
-    
-    const SerchBankQ = query(
-      BankDataRef,
-      where("state", "==", selectedState),
-      where("district", "==", selectedDistrict),
-      where("uId", "in", bloodBankIds)  
-    );  
     try {
       const data = await getDocs(SerchBankQ);
       console.log(data);
@@ -117,7 +117,7 @@ const Availablity = () => {
             <option value="A+ve">A+ve</option>
             <option value="A-ve">A-ve</option>
             <option value="B+ve">B+ve</option>
-            <option selected value="B-ve">B-ve</option>
+            <option value="B-ve">B-ve</option>
             <option value="O+ve">O+ve</option>
             <option value="O-ve">O-ve</option>
             <option value="AB+ve">AB+ve</option>
