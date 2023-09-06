@@ -27,17 +27,15 @@ const Availablity = () => {
     setSelectedDistrict(newDistrict);
   };
 
-  const handleChange = (event) => {
-    const bloodGroup = event.target.value;
-    console.log('Selected blood group:', bloodGroup);
-    setbloodGroup(bloodGroup);
+  const handleChange = (e) => {
+    setbloodGroup({ ...bloodGroup, [e.target.name]: e.target.value });
   };
 
-  
+  let 
+  const q = query(bloodDataRef, where("BloodGroup", "==", bloodGroup ));
   useEffect(() => {
     const checkForBlood = async () => {
       try {
-        const q = query(bloodDataRef, where("BloodGroup", "==", bloodGroup ));
         const querySnapshot = await getDocs(q);
         console.log(querySnapshot);
         const idsArray = [];
@@ -54,14 +52,13 @@ const Availablity = () => {
     checkForBlood();
   }, [bloodGroup]);
   //Query For Handle Bank Search
+  const SerchBankQ = query(
+    BankDataRef,
+    where("state", "==", selectedState),
+    where("district", "==", selectedDistrict),
+    // where("uId", "in", bloodBankIds)
+  );
   const HandleSearch = async () => {
-    
-    const SerchBankQ = query(
-      BankDataRef,
-      where("state", "==", selectedState),
-      where("district", "==", selectedDistrict),
-      where("uId", "in", bloodBankIds)  
-    );  
     try {
       const data = await getDocs(SerchBankQ);
       console.log(data);
@@ -117,7 +114,7 @@ const Availablity = () => {
             <option value="A+ve">A+ve</option>
             <option value="A-ve">A-ve</option>
             <option value="B+ve">B+ve</option>
-            <option selected value="B-ve">B-ve</option>
+            <option value="B-ve">B-ve</option>
             <option value="O+ve">O+ve</option>
             <option value="O-ve">O-ve</option>
             <option value="AB+ve">AB+ve</option>

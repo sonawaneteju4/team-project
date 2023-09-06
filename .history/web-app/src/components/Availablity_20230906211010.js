@@ -54,14 +54,14 @@ const Availablity = () => {
     checkForBlood();
   }, [bloodGroup]);
   //Query For Handle Bank Search
+  
+  const SerchBankQ = query(
+    BankDataRef,
+    where("state", "==", selectedState),
+    where("district", "==", selectedDistrict),
+    // where("uId", "in", bloodBankIds)
+  );  
   const HandleSearch = async () => {
-    
-    const SerchBankQ = query(
-      BankDataRef,
-      where("state", "==", selectedState),
-      where("district", "==", selectedDistrict),
-      where("uId", "in", bloodBankIds)  
-    );  
     try {
       const data = await getDocs(SerchBankQ);
       console.log(data);
