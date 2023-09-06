@@ -87,40 +87,40 @@ const HospitalRegister = () => {
 
   return (
     <>
-      <div className="hospReg">
+      <form className="hospReg"onSubmit={register}>
         <div className="heading">Hospital Register</div>
         <div className="formOfBank">
           <div className="formDiff">
             <div className=" ">
               <label htmlFor="">Email </label>
-              <input type="email" name="email" onChange={handleChange} />
+              <input type="email" name="email" onChange={handleChange} required/>
             </div>
 
             <div>
               <label htmlFor="">Password </label>
-              <input type="password" name="password" onChange={handleChange} />
+              <input type="password" name="password" onChange={handleChange} required />
             </div>
 
             <div>
               <label htmlFor="">Hospital Name</label>
-              <input type="text" name="hospName" onChange={handleChange} />
+              <input type="text" name="hospName" onChange={handleChange} required />
             </div>
 
             <div>
               <label htmlFor="">Hospital Type</label>
-              <input type="type" name="type" onChange={handleChange} />
+              <input type="type" name="type" onChange={handleChange} required />
             </div>
           </div>
 
           <div className="formDiff">
             <div>
               <label htmlFor="">Contact number</label>
-              <input type="number" name="contact" onChange={handleChange} />
+              <input type="number" name="contact" onChange={handleChange} required />
             </div>
 
             <div>
               <label htmlFor="">Address</label>
-              <input type="text" name="address" onChange={handleChange} />
+              <input type="text" name="address" onChange={handleChange} required />
             </div>
 
             <div className="statesAndDist">
@@ -174,13 +174,13 @@ const HospitalRegister = () => {
             </div>
 
             <div className="regBtn">
-              <button className="button" onClick={register}>
+              <button className="button" type="submit">
                 Register
               </button>
             </div>
           </div>
         </div>
-      </div>
+      </form>
     </>
   );
 };
