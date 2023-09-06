@@ -6,8 +6,8 @@ const BloodBankRepo = () => {
     <>
       <div>
         <div>
-          <h1>BloodBankRepo</h1>
         <div className="main">
+          <h1>BloodBankRepo</h1>
           <div className="t1">
             <p>Name</p>
             <p>Contact</p>
