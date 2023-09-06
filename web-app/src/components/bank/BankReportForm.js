@@ -57,6 +57,11 @@ return (
 
     </div>
     <div>
+        <label htmlFor=" ">Date Of Donation</label>
+        <input type="date" name="dateOfDonation " onChange={handleChange} />
+
+    </div>
+    <div>
         <label htmlFor=" ">Blood Group</label>
         <select name="bloodGroup" onChange={handleChange} id="" required>
                 <option value="">Select Blood Group</option>
@@ -92,6 +97,16 @@ return (
 
     </div>
     <div>
+        <label htmlFor=" ">Hepatities B</label>
+        <input type="number" name="hepatitiesB" onChange={handleChange} />
+
+    </div>
+    <div>
+        <label htmlFor=" ">HepatitiesC</label>
+        <input type="number" name="hepatitiesC " onChange={handleChange} />
+
+    </div>
+    <div>
         <label htmlFor=" ">RBC Count</label>
         <input type="number" name="RBC " onChange={handleChange} />
 
@@ -100,12 +115,13 @@ return (
         <label htmlFor=" ">Type Of Donation</label>
         <select name="TypeOfDonation" onChange={handleChange} id="" required>
                 <option value="">Select Type</option>
-                <option value="A+ve">A+ve</option>
-                <option value="A-ve">A-ve</option>
-                <option value="B+ve">B+ve</option>
+                <option value="whole blood">Whole Blood</option>
+                <option value="plasma">Plasma</option>
+                <option value="platelets">platelets</option>
                 </select>
 
     </div>
+
     </>
   )
 }
