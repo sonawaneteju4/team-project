@@ -92,10 +92,10 @@ const BankRegister = () => {
   };
 
   return (
-    <div className="bankReg" onSubmit={register}>
+    <form className="bankReg" onSubmit={register}>
       <div className="heading">Blood Bank Registration</div>
       <div className="formOfBank">
-        <div  className="formDiff">
+        <form  onSubmit={register} className="formDiff">
           <div className="">
             <label htmlFor="">email</label>
             <input type="email" name="email" onChange={handleChange} required />
@@ -126,7 +126,7 @@ const BankRegister = () => {
               </select>
             </div>
           </div>
-        </div>
+        </form>
         <div className="formDiff">
           <div>
             <label htmlFor="">address</label>
@@ -200,11 +200,11 @@ const BankRegister = () => {
         </div>
       </div>
       <div className="regBtn">
-        <button className="button" type="submit" onClick={register}>
+        <button className="button" type="submit">
           Register
         </button>
       </div>
-    </div>
+    </form>
   );
 };
 

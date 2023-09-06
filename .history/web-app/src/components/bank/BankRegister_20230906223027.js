@@ -92,7 +92,7 @@ const BankRegister = () => {
   };
 
   return (
-    <div className="bankReg" onSubmit={register}>
+    <form className="bankReg" onSubmit={register}>
       <div className="heading">Blood Bank Registration</div>
       <div className="formOfBank">
         <div  className="formDiff">
@@ -200,11 +200,11 @@ const BankRegister = () => {
         </div>
       </div>
       <div className="regBtn">
-        <button className="button" type="submit" onClick={register}>
+        <button className="button" type="submit">
           Register
         </button>
       </div>
-    </div>
+    </form>
   );
 };
 

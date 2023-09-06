@@ -200,7 +200,7 @@ const BankRegister = () => {
         </div>
       </div>
       <div className="regBtn">
-        <button className="button" type="submit" onClick={register}>
+        <button className="button" type="submit" onClick={handleChange}>
           Register
         </button>
       </div>

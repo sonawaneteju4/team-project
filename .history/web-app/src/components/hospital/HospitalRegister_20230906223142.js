@@ -87,7 +87,7 @@ const HospitalRegister = () => {
 
   return (
     <>
-      <div className="hospReg">
+      <div className="hospReg"onSubmit={register}>
         <div className="heading">Hospital Register</div>
         <div className="formOfBank">
           <div className="formDiff">

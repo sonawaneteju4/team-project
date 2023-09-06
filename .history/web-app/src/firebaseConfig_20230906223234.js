@@ -15,8 +15,9 @@ const firebaseConfig = {
   projectId: "bloodbankums",
   storageBucket: "bloodbankums.appspot.com",
   messagingSenderId: "128330346430",
-  appId: "1:128330346430:web:4bb0dce0edbe6b73d9d3ef",
-  measurementId: "G-4BRK7R5TLP"};
+  appId: "1:128330346430:web:d62ff9f4643bc81fd9d3ef",
+  measurementId: "G-GFLG6JLME7"
+};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

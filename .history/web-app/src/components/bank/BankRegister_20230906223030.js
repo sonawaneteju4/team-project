@@ -200,11 +200,11 @@ const BankRegister = () => {
         </div>
       </div>
       <div className="regBtn">
-        <button className="button" type="submit" onClick={register}>
+        <button className="button" type="submit">
           Register
         </button>
       </div>
-    </div>
+    </d>
   );
 };
 
