@@ -16,9 +16,8 @@ const DonationReq = () => {
     const donationReq = async () => {
       const data = await getDocs(q);
       setReqData(data.docs);
-      data.forEach((items) => {
-      });
-
+      localStorage.setItem('CurrentUserId', req.data().userId)
+      console.log("req data is here" + ReqData);
       console.log(ReqData);
     };
     donationReq();

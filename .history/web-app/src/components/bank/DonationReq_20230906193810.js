@@ -18,7 +18,6 @@ const DonationReq = () => {
       setReqData(data.docs);
       data.forEach((items) => {
       });
-
       console.log(ReqData);
     };
     donationReq();

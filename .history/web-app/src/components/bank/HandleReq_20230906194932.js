@@ -17,7 +17,7 @@ const HandleReq = ({ stausId }) => {
       data.forEach((item) => {
         console.log(item.data());
 
-        setuserId(item.data().uId);
+        setuserId(<item></item>.data().uId);
         setuserData(item.data());
       });
     };
@@ -26,8 +26,8 @@ const HandleReq = ({ stausId }) => {
 
   const nav = useNavigate();
   const handleReport = () => {
-    localStorage.setItem("CurrentUserId", userId);
-    nav("/bloodReportsGenration");
+    nav("bloodReportsGenration");
+    localStorage.setItem("CurrentUserId");
   };
 
   return (

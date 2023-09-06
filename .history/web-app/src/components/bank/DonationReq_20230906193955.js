@@ -18,7 +18,6 @@ const DonationReq = () => {
       setReqData(data.docs);
       data.forEach((items) => {
       });
-
       console.log(ReqData);
     };
     donationReq();
@@ -30,7 +29,6 @@ const DonationReq = () => {
         <div>
           {/* {item.bankId} */}
           <HandleReq stausId={item.data().userId}></HandleReq>
-          <Link to="/bloodReportsGenration" className="button">Create Report</Link> 
         </div>
       ))}
     </div>

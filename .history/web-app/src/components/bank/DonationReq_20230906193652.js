@@ -17,8 +17,11 @@ const DonationReq = () => {
       const data = await getDocs(q);
       setReqData(data.docs);
       data.forEach((items) => {
+        console.log("helllo " + bankData);
+        localStorage.setItem("BankEmail", items.data().email);
       });
 
+      console.log("req data is here" + ReqData);
       console.log(ReqData);
     };
     donationReq();
