@@ -29,19 +29,12 @@ const Availablity = () => {
             setSelectedDistrict(newDistrict);
           };
 
-          
-          const checkForBlood = async() =>{
-            const q = query(bloodDataRef , where("BloodGroup", "==" , bloodGroup))
-            try {
-              const bloodData = await getDocs(q);
-              
-              
-            } catch (error) {
-              
-            }
-            
+          const q = query(bloodDataRef , where(""))
+
+          const checkForBlood = () =>{
+
           }
-          
+
           //Query For Handle Bank Search
           const SerchBankQ = query(
             BankDataRef,

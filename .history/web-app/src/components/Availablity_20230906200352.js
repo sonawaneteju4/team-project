@@ -9,13 +9,11 @@ import { useNavigate } from 'react-router-dom';
 const Availablity = () => {
     const [selectedState, setSelectedState] = useState("");
     const [selectedDistrict, setSelectedDistrict] = useState("");
-    const [bloodGroup, setbloodGroup] = useState('')
-    
+    const [bloodGrou[], setbloodGrou[]] = useState(second)
     
     const [bbData, setbbData] = useState([]);
     const states = importedData.states;
         const BankDataRef = collection(db, "bankInfo");
-        const bloodDataRef = collection(db, "BloodReports");
         const navigate = useNavigate();
         const handleStateChange = (event) => {
           const newState = event.target.value;
@@ -23,25 +21,10 @@ const Availablity = () => {
           setSelectedDistrict(""); // Reset the district when the state changes
     
         };
-
         const handleDistrictChange = (event) => {
             const newDistrict = event.target.value;
             setSelectedDistrict(newDistrict);
           };
-
-          
-          const checkForBlood = async() =>{
-            const q = query(bloodDataRef , where("BloodGroup", "==" , bloodGroup))
-            try {
-              const bloodData = await getDocs(q);
-              
-              
-            } catch (error) {
-              
-            }
-            
-          }
-          
           //Query For Handle Bank Search
           const SerchBankQ = query(
             BankDataRef,
@@ -62,10 +45,9 @@ const Availablity = () => {
             }
           };
 
-          const handleChange = (e) =>{
-            setbloodGroup( {...bloodGroup, [e.target.name] : e.target.value})
+          const handleChange = () =>{
+            
           }
-        
           const handleDonateBloodRequest = (bbId) => {
             navigate(`/healthHistory/${bbId}`);
           };

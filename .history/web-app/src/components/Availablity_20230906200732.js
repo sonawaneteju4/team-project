@@ -15,7 +15,7 @@ const Availablity = () => {
     const [bbData, setbbData] = useState([]);
     const states = importedData.states;
         const BankDataRef = collection(db, "bankInfo");
-        const bloodDataRef = collection(db, "BloodReports");
+        const BankDataRef = collection(db, "bankInfo");
         const navigate = useNavigate();
         const handleStateChange = (event) => {
           const newState = event.target.value;
@@ -30,18 +30,11 @@ const Availablity = () => {
           };
 
           
-          const checkForBlood = async() =>{
-            const q = query(bloodDataRef , where("BloodGroup", "==" , bloodGroup))
-            try {
-              const bloodData = await getDocs(q);
-              
-              
-            } catch (error) {
-              
-            }
-            
+
+          const checkForBlood = () =>{
+
           }
-          
+
           //Query For Handle Bank Search
           const SerchBankQ = query(
             BankDataRef,

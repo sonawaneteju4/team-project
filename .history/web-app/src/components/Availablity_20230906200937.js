@@ -30,15 +30,8 @@ const Availablity = () => {
           };
 
           
-          const checkForBlood = async() =>{
+          const checkForBlood = () =>{
             const q = query(bloodDataRef , where("BloodGroup", "==" , bloodGroup))
-            try {
-              const bloodData = await getDocs(q);
-              
-              
-            } catch (error) {
-              
-            }
             
           }
           

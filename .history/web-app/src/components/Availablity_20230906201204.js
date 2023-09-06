@@ -35,7 +35,6 @@ const Availablity = () => {
             try {
               const bloodData = await getDocs(q);
               
-              
             } catch (error) {
               
             }
