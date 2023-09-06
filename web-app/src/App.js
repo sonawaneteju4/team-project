@@ -17,6 +17,7 @@ import DonateBlood from './components/donnar/DonateBlood';
 import BloodReport from './components/bank/BloodReport';
 import LogoutBar from './components/LogoutBar';
 import DonorForm from './components/donnar/DonorForm';
+import Availablity from './components/Availablity';
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
     <Route path='/donateBlood' element={<DonateBlood/>}></Route>
     <Route path='/createNewReport' element={<BloodReport/>}></Route>
     <Route path='/healthHistory/:bbId' element={<DonorForm/>}></Route>
+    <Route path='/searchblood' element={<Availablity/>}></Route>
   
   </Routes>
   </BrowserRouter>  

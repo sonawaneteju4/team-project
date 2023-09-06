@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
-import importedData from "./../../json/states.json";
+import importedData from "./../json/states.json";
 import { collection } from "firebase/firestore";
 import { getDocs, query, where } from "firebase/firestore";
 import { db } from '../firebaseConfig';
 import { useNavigate } from 'react-router-dom';
 
-const states = importedData.states;
 
 const Availablity = () => {
-        const [selectedState, setSelectedState] = useState("");
-        const [selectedDistrict, setSelectedDistrict] = useState("");
-        const [bbData, setbbData] = useState([]);
+    const [selectedState, setSelectedState] = useState("");
+    const [selectedDistrict, setSelectedDistrict] = useState("");
+    const [bbData, setbbData] = useState([]);
+    const states = importedData.states;
         const BankDataRef = collection(db, "bankInfo");
         const navigate = useNavigate();
         const handleStateChange = (event) => {
@@ -92,7 +92,6 @@ return (
             <td>Category</td>
             <td>apheresisfac</td>
             <td>componentfac</td>
-            <td>Donate Blood</td>
           </tr>
           {/* mapping start here  */}
           {bbData.map((item) => (
