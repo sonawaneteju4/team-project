@@ -13,7 +13,7 @@ const BloodBankRepo = () => {
         <p>Category</p>
 
     </div>
-    <div className='t1'>
+    <div className='t2'>
         <p>State</p>
         <p>District</p>
         <p>City</p>
