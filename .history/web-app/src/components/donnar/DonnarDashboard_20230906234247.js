@@ -57,7 +57,7 @@ const DonnarDashboard = () => {
       <h3 style={{ textAlign: "center" }}>User Info</h3>
       <div className="userDetail">
         <div className="demoImg">
-          <img className="userImg" src="./image/usericon.png" alt="" />
+          <img src="./image/usericon.png" alt="" />
         </div>
         <div className="donorInfo">
           <div className="info1">

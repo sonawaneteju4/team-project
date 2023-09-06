@@ -229,7 +229,7 @@ const DonorForm = () => {
         )}
       </div>
 
-      <button className="button" onClick={donor}>
+      <button className="button" type="submit">
         submit
       </button>
     </div>

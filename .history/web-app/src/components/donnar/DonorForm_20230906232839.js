@@ -63,7 +63,7 @@ const DonorForm = () => {
     }
   };
   return (
-    <div className="dhForm" >
+    <div className="dhForm" onSubmit={donor}>
       <div>Donor Form</div>
       <div>
         <label className="dlabel" htmlFor="">
@@ -229,7 +229,7 @@ const DonorForm = () => {
         )}
       </div>
 
-      <button className="button" onClick={donor}>
+      <button className="button" type="submit">
         submit
       </button>
     </div>
