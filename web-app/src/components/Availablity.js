@@ -124,16 +124,10 @@ return (
               <td>
                 <p>{item.data().componentfac}</p>
               </td>
-              <td>
-                <button className="button"
-                onClick={() => handleDonateBloodRequest(item.data().uId)}>
-                  Donate Blood Request
-                </button>{" "}
-              </td>
             </tr>
           ))}
           </table>
-      ):( <h3 style={{ textAlign: "center" }}>Ooooooops No Blood Bank Found</h3>
+      ):( <h3 style={{ textAlign: "center" }}>Ooooops No Blood Bank Found !</h3>
       )}
       
     </>
