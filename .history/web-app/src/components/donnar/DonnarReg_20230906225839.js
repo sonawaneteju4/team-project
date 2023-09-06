@@ -26,8 +26,8 @@ const DonnarReg = () => {
     dist: "",
     pincode: "",
   });
-  const usersCollectionRef = collection(db, "user");
-  const usersDataRef = collection(db, "donnarInfo");
+  const usersCollectionRef = collection(db, "usersInfo");
+  const usersDataRef = collection(db, "donarInfo");
   const navigate = useNavigate();
 
   console.log(regUser.state);
@@ -247,7 +247,7 @@ const DonnarReg = () => {
       </div>
 
       <div className="regBtn">
-        <button className="button" onClick={register} >
+        <button className="button"  >
           Register
         </button>
       </div>

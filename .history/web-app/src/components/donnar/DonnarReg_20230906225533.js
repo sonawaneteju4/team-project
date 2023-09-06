@@ -1,9 +1,11 @@
 import { addDoc, collection } from "firebase/firestore";
 import React, { useState } from "react";
 import { auth, db } from "../../firebaseConfig";
-import { createUserWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import importedData from "./../../json/states.json";
+
+
 
 const DonnarReg = () => {
   const [selectedState, setSelectedState] = useState("");
@@ -26,8 +28,8 @@ const DonnarReg = () => {
     dist: "",
     pincode: "",
   });
-  const usersCollectionRef = collection(db, "user");
-  const usersDataRef = collection(db, "donnarInfo");
+  const usersCollectionRef = collection(db, "usersInfo");
+  const usersDataRef = collection(db, "donarInfo");
   const navigate = useNavigate();
 
   console.log(regUser.state);
@@ -56,8 +58,7 @@ const DonnarReg = () => {
 
   const register = async () => {
     try {
-      await signOut(auth);
-
+      web-app/src/components/donnar/DonnarDashboard.js
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         regUser.email,
@@ -76,7 +77,7 @@ const DonnarReg = () => {
 
       await addDoc(usersDataRef, {
         uId: user.uid,
-        email: regUser.email,
+        email:regUser.email,
         userName: regUser.userName,
         age: regUser.age,
         weight: regUser.weight,
@@ -95,10 +96,13 @@ const DonnarReg = () => {
     }
   };
 
+  
+  
+
   // https://firebase.google.com/docs/firestore/query-data/queries?hl=en&authuser=0&_gl=1*cebiw7*_ga*ODAxMjEzNzYuMTY5Mjg1NDU5NA..*_ga_CW55HF8NVT*MTY5MzU5MTQ5Ny4xNy4xLjE2OTM1OTMxOTYuMC4wLjA.
 
   return (
-    <div className="bankReg" >
+    <form className="bankReg" onSubmit={register}>
       <div className="heading">Donor Registration</div>
 
       <div className="formOfBank">
@@ -109,41 +113,21 @@ const DonnarReg = () => {
           </div>
           <div>
             <label htmlFor="">password</label>
-            <input
-              type="password"
-              name="password"
-              onChange={handleChange}
-              required
-            />
+            <input type="password" name="password" onChange={handleChange} required />
           </div>
           <div>
             <label htmlFor="">Name</label>
-            <input
-              type="text"
-              name="userName"
-              onChange={handleChange}
-              required
-            />
+            <input type="text" name="userName" onChange={handleChange} required />
           </div>
           <div className="statesAndDist">
             <div>
               <label htmlFor="">age</label>
-              <input
-                type="number"
-                name="age"
-                onChange={handleChange}
-                required
-              />
+              <input type="number" name="age" onChange={handleChange} required />
             </div>
 
             <div className="distcss">
               <label htmlFor="">weight</label>
-              <input
-                type="number"
-                name="weight"
-                onChange={handleChange}
-                required
-              />
+              <input type="number" name="weight" onChange={handleChange} required />
             </div>
           </div>
           <div className="statesAndDist">
@@ -173,85 +157,55 @@ const DonnarReg = () => {
           </div>
         </div>
         <div className="formDiff">
-          <div>
-            <label htmlFor="">Contact Number</label>
-            <input
-              type="number"
-              name="mobile"
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="">Aadhar number</label>
-            <input
-              type="number"
-              name="aadhar"
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="">Address</label>
-            <input
-              type="text"
-              name="address"
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="statesAndDist">
-            <div>
-              <label>State:</label>
-              <select
-                onChange={handleStateChange}
-                value={selectedState}
-                required
-              >
-                <option value="">Select State</option>
-                {states.map((stateData, index) => (
-                  <option key={index} value={stateData.state}>
-                    {stateData.state}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="distcss">
-              <label>District:</label>
-              <select
-                onChange={handleDistrictChange}
-                value={selectedDistrict}
-                required
-              >
-                <option value="">Select District</option>
-                {states
-                  .find((stateData) => stateData.state === selectedState)
-                  ?.districts.map((district, index) => (
-                    <option key={index} value={district}>
-                      {district}
-                    </option>
-                  ))}
-              </select>
-            </div>
-          </div>
-          <div>
-            <label htmlFor="">Pincode</label>
-            <input
-              type="number"
-              name="pincode"
-              onChange={handleChange}
-              required
-            />
-          </div>
+        <div>
+        <label htmlFor="">Contact Number</label>
+        <input type="number" name="mobile" onChange={handleChange} required />
+      </div>
+      <div>
+        <label htmlFor="">Aadhar number</label>
+        <input type="number" name="aadhar" onChange={handleChange} required />
+      </div>
+      <div>
+        <label htmlFor="">Address</label>
+        <input type="text" name="address" onChange={handleChange} required />
+      </div>
+      <div className="statesAndDist">
+        <div>
+          <label>State:</label>
+          <select onChange={handleStateChange} value={selectedState} required>
+            <option value="">Select State</option>
+            {states.map((stateData, index) => (
+              <option key={index} value={stateData.state}>
+                {stateData.state}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="distcss">
+          <label>District:</label>
+          <select onChange={handleDistrictChange} value={selectedDistrict} required>
+            <option value="">Select District</option>
+            {states
+              .find((stateData) => stateData.state === selectedState)
+              ?.districts.map((district, index) => (
+                <option key={index} value={district}>
+                  {district}
+                </option>
+              ))}
+          </select>
+        </div>
+      </div>
+      <div>
+        <label htmlFor="">Pincode</label>
+        <input type="number" name="pincode" onChange={handleChange} required />
+      </div>
         </div>
       </div>
 
       <div className="regBtn">
-        <button className="button" onClick={register} >
-          Register
-        </button>
+      <button className="button" type="submit" >Register</button>
       </div>
-    </div>
+    </form>
   );
 };
 

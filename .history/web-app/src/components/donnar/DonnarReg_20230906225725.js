@@ -26,8 +26,8 @@ const DonnarReg = () => {
     dist: "",
     pincode: "",
   });
-  const usersCollectionRef = collection(db, "user");
-  const usersDataRef = collection(db, "donnarInfo");
+  const usersCollectionRef = collection(db, "usersInfo");
+  const usersDataRef = collection(db, "donarInfo");
   const navigate = useNavigate();
 
   console.log(regUser.state);
@@ -98,7 +98,7 @@ const DonnarReg = () => {
   // https://firebase.google.com/docs/firestore/query-data/queries?hl=en&authuser=0&_gl=1*cebiw7*_ga*ODAxMjEzNzYuMTY5Mjg1NDU5NA..*_ga_CW55HF8NVT*MTY5MzU5MTQ5Ny4xNy4xLjE2OTM1OTMxOTYuMC4wLjA.
 
   return (
-    <div className="bankReg" >
+    <form className="bankReg" onSubmit={register}>
       <div className="heading">Donor Registration</div>
 
       <div className="formOfBank">
@@ -247,11 +247,11 @@ const DonnarReg = () => {
       </div>
 
       <div className="regBtn">
-        <button className="button" onClick={register} >
+        <button className="button" \="submit">
           Register
         </button>
       </div>
-    </div>
+    </form>
   );
 };
 

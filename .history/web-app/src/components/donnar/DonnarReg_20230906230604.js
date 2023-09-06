@@ -27,7 +27,7 @@ const DonnarReg = () => {
     pincode: "",
   });
   const usersCollectionRef = collection(db, "user");
-  const usersDataRef = collection(db, "donnarInfo");
+  const usersDataRef = collection(db, "donarInfo");
   const navigate = useNavigate();
 
   console.log(regUser.state);
