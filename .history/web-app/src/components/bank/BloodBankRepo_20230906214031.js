@@ -6,7 +6,7 @@ const BloodBankRepo = () => {
     <>
       <div>
         <div>
-          <h3>BloodBankRepo</h3>
+          <h5>BloodBankRepo</h5>
         <div className="main">
           <div className="t1">
             <p>Name</p>
@@ -23,7 +23,7 @@ const BloodBankRepo = () => {
         </div>
         </div>
         <div>
-          <h3 className="main">donorinfor</h3>
+          <h5 className="main">donorinfor</h5>
         <div className="main">
           <div className="t1">
             <p>Name </p>
@@ -44,7 +44,7 @@ const BloodBankRepo = () => {
         </div>
         </div>
 
-            <h3>Title Here</h3>
+            <h5>Title Here</h5>
         <div className="main">
           <div className="t1">
             <p>Blood Bank Id</p>
