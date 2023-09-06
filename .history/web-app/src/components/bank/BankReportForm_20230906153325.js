@@ -8,17 +8,17 @@ import { useNavigate } from "react-router-dom";
 const BankReportForm = () => {
   const [regUser, setregUser] = useState({
     BloodBankId: "",
-    BloodGroup: "",
-    HIV: "",
-    Haemoglobin: "",
-    Pathaltes: "",
-    plasma: "",
+    BloodGroup: " ",
+    HIV: " ",
+    Haemoglobin: " ",
+    Pathaltes: " ",
+    plasma: " ",
     RBC: "",
-    TypeOfDonation: "",
-    dateOfDonation: "",
-    donorId: "",
+    TypeOfDonation: " ",
+    dateOfDonation: " ",
+    donorId: " ",
     hepatitiesB: "",
-    hepatitiesC: "",
+    hepatitiesC: " ",
   });
   const usersCollectionRef = collection(db, "BloodReports");
   // const usersDataRef=collection(db,"BankReportForm");  //he collection nahiye db made???
@@ -44,16 +44,19 @@ const BankReportForm = () => {
       hepatitiesB: regUser.hepatitiesB,
       hepatitiesC: regUser.hepatitiesC,
     });
-    navigate("/bankDash");
+    navigate("/");
   };
 
   return (
     <>
       <div>BankReportForm</div>
-     
+      <div>
+        <label htmlFor=" ">Blood Bank Id</label>
+        <input type="number" name="BloodBankId " onChange={handleChange} />
+      </div>
       <div>
         <label htmlFor=" ">Date Of Donation</label>
-        <input type="date" name="dateOfDonation" onChange={handleChange} />
+        <input type="date" name="dateOfDonation " onChange={handleChange} />
       </div>
 
       <div>
@@ -66,7 +69,7 @@ const BankReportForm = () => {
       </div>
       <div>
         <label htmlFor=" ">Haemoglobin</label>
-        <input type="number" name="Haemoglobin" onChange={handleChange} />
+        <input type="number" name="Haemoglobin " onChange={handleChange} />
       </div>
       <div>
         <label htmlFor=" ">Platelet Count</label>
@@ -82,11 +85,11 @@ const BankReportForm = () => {
       </div>
       <div>
         <label htmlFor=" ">HepatitiesC</label>
-        <input type="number" name="hepatitiesC" onChange={handleChange} />
+        <input type="number" name="hepatitiesC " onChange={handleChange} />
       </div>
       <div>
         <label htmlFor=" ">RBC Count</label>
-        <input type="number" name="RBC" onChange={handleChange} />
+        <input type="number" name="RBC " onChange={handleChange} />
       </div>
       <div>
         <label htmlFor=" ">Type Of Donation</label>
@@ -96,8 +99,6 @@ const BankReportForm = () => {
           <option value="plasma">Plasma</option>
           <option value="platelets">platelets</option>
         </select>
-
-        <button className="button" onClick={report}>Genrate New Report</button>
       </div>
     </>
   );

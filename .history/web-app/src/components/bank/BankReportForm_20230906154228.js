@@ -44,7 +44,7 @@ const BankReportForm = () => {
       hepatitiesB: regUser.hepatitiesB,
       hepatitiesC: regUser.hepatitiesC,
     });
-    navigate("/bankDash");
+    navigate("/don");
   };
 
   return (

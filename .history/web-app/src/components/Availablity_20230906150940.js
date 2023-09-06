@@ -146,7 +146,7 @@ return (
               </td>
             </tr>
           ))}
-          {/* ends here */}
+          ends here
           </table>
       ):( <h3 style={{ textAlign: "center" }}>Ooooops No Blood Bank Found !</h3>
       )}
