@@ -28,12 +28,12 @@ const DonnarDashboard = () => {
       where("uId", "==", localStorage.getItem("userId"))
     );
     const getUserDetails = async () => {
-      const data = await getDocs(q2);      
+      const data = await getDocs(q2);
       // setuserData(data)
       data.forEach((item) => {
         console.log(item.data());
         setuserData(item.data());
-        localStorage.setItem("userDocId" , item.id)
+        localStorage.setItem("dbUserId")
         console.log("userData  " + userData);
       });
     };

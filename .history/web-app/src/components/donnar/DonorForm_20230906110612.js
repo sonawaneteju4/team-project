@@ -33,20 +33,9 @@ const DonorForm = () => {
   const donor = async () => {
     console.log("Donor function called");
     const collectionRef = collection(db, "donnarInfo"); // Reference to the collection
-    const documentRef = doc(collectionRef, userId); // Reference to the specific document
+    const documentRef = doc(collectionRef, "kHHMlx5ChpUyXbybw6cD"); // Reference to the specific document
     try {
-      await updateDoc(documentRef,{donatebloodbefore: donorHistory.donatebloodbefore,
-        lastdonatedate: donorHistory.lastdonatedate,
-        bloodtestbefore: donorHistory.bloodtestbefore,
-        currentlysuffereing: donorHistory.currentlysuffereing,
-        cbc: donorHistory.cbc,
-        hiv: donorHistory.hiv,
-        hephitiesb: donorHistory.hephitiesb,
-        hephitiesc: donorHistory.hephitiesc,
-        fever: donorHistory.fever,
-        cold: donorHistory.cold,
-        flue: donorHistory.flue,
-        dibeties: donorHistory.dibeties,} );
+      await updateDoc(documentRef,{fever : 32} );
       navigate("/");
     } catch (error) {
       alert(error);

@@ -19,7 +19,7 @@ const DonorForm = () => {
     dibeties: "",
   });
   const collectionName = "donnarInfo";
-  const userId = localStorage.getItem("userDocId");
+  const userId = localStorage.getItem("userId");
   const navigate = useNavigate();
   console.log(donorHistory.state);
   const { bbId } = useParams();
@@ -33,20 +33,9 @@ const DonorForm = () => {
   const donor = async () => {
     console.log("Donor function called");
     const collectionRef = collection(db, "donnarInfo"); // Reference to the collection
-    const documentRef = doc(collectionRef, userId); // Reference to the specific document
+    const documentRef = doc(collectionRef,); // Reference to the specific document
     try {
-      await updateDoc(documentRef,{donatebloodbefore: donorHistory.donatebloodbefore,
-        lastdonatedate: donorHistory.lastdonatedate,
-        bloodtestbefore: donorHistory.bloodtestbefore,
-        currentlysuffereing: donorHistory.currentlysuffereing,
-        cbc: donorHistory.cbc,
-        hiv: donorHistory.hiv,
-        hephitiesb: donorHistory.hephitiesb,
-        hephitiesc: donorHistory.hephitiesc,
-        fever: donorHistory.fever,
-        cold: donorHistory.cold,
-        flue: donorHistory.flue,
-        dibeties: donorHistory.dibeties,} );
+      await updateDoc(documentRef,{fever : 32} );
       navigate("/");
     } catch (error) {
       alert(error);

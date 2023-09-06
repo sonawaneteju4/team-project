@@ -45,7 +45,7 @@ const DonorForm = () => {
         hephitiesc: donorHistory.hephitiesc,
         fever: donorHistory.fever,
         cold: donorHistory.cold,
-        flue: donorHistory.flue,
+        flue: d,
         dibeties: donorHistory.dibeties,} );
       navigate("/");
     } catch (error) {

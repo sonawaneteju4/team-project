@@ -28,12 +28,14 @@ const DonnarDashboard = () => {
       where("uId", "==", localStorage.getItem("userId"))
     );
     const getUserDetails = async () => {
-      const data = await getDocs(q2);      
+      const data = await getDocs(q2);
+      snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
+      
       // setuserData(data)
       data.forEach((item) => {
         console.log(item.data());
         setuserData(item.data());
-        localStorage.setItem("userDocId" , item.id)
+        localStorage.setItem("userDocId" , item.data().id)
         console.log("userData  " + userData);
       });
     };

@@ -1,12 +1,15 @@
-import importedData from './../../json/states.json';
-import { collection, getDocs, query, where } from 'firebase/firestore';
 import React, { useState } from 'react'
+import importedData from "./../json/states.json";
+import { collection } from "firebase/firestore";
+import { getDocs, query, where } from "firebase/firestore";
+import { db } from '../firebaseConfig';
 import { useNavigate } from 'react-router-dom';
-import { db } from '../../firebaseConfig';
 
-const HospitalSearch = () => {
+
+const Availablity = () => {
     const [selectedState, setSelectedState] = useState("");
     const [selectedDistrict, setSelectedDistrict] = useState("");
+    const [selectedBloodType,setSelectedBloodType]=useState(" ");
     const [bbData, setbbData] = useState([]);
     const states = importedData.states;
         const BankDataRef = collection(db, "bankInfo");
@@ -15,15 +18,23 @@ const HospitalSearch = () => {
           const newState = event.target.value;
           setSelectedState(newState);
           setSelectedDistrict(""); // Reset the district when the state changes
+          setSelectedBloodType("");
         };
         const handleDistrictChange = (event) => {
             const newDistrict = event.target.value;
             setSelectedDistrict(newDistrict);
           };
+          const handleBloodTypeChange=(event)=>{
+            const newBloodType=event.target.value;
+            setSelectedBloodType(newBloodType);
+
+          }
+          //Query For Handle Bank Search
           const SerchBankQ = query(
             BankDataRef,
             where("state", "==", selectedState),
-            where("district", "==", selectedDistrict)
+            where("district", "==", selectedDistrict),
+            where("bloodGroup","==".selectedBloodType)
           );
           const HandleSearch = async () => {
             try {
@@ -40,8 +51,8 @@ const HospitalSearch = () => {
           const handleDonateBloodRequest = (bbId) => {
             navigate(`/healthHistory/${bbId}`);
           };
-
-  return (
+        
+return (
     <>
     <div>
     <div>
@@ -70,6 +81,19 @@ const HospitalSearch = () => {
                   </option>
                 ))}
             </select>
+          </div>
+          <div>
+            <label>Blood Group</label>
+            <select id="bloodTypeSelect" value={selectedBloodType}
+        onChange={handleBloodTypeChange}>
+        <option value="">Select Blood Types</option>
+        <option value="o+">O+</option>
+        <option value="a+">A+</option>
+        <option value="o-">O-</option>
+        <option value="b+">B+</option>
+        <option value="b-">B-</option>
+        {/* Add more options for other blood types */}
+      </select>
           </div>
           </div>
       <div className="phbdbtn">
@@ -129,4 +153,5 @@ const HospitalSearch = () => {
     </>
   );
 };
-export default HospitalSearch
+
+export default Availablity;

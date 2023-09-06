@@ -1,4 +1,4 @@
-import importedData from './../../json/states.json';
+import importedData from './../../json';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';

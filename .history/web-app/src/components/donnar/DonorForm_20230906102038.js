@@ -1,4 +1,4 @@
-import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
+import { addDoc, collection, updateDoc } from "firebase/firestore";
 import React, { useState } from "react";
 import { db } from "../../firebaseConfig";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
@@ -19,7 +19,7 @@ const DonorForm = () => {
     dibeties: "",
   });
   const collectionName = "donnarInfo";
-  const userId = localStorage.getItem("userDocId");
+  const userId = localStorage.getItem("userId");
   const navigate = useNavigate();
   console.log(donorHistory.state);
   const { bbId } = useParams();
@@ -30,28 +30,31 @@ const DonorForm = () => {
   };
 
 
-  const donor = async () => {
-    console.log("Donor function called");
-    const collectionRef = collection(db, "donnarInfo"); // Reference to the collection
-    const documentRef = doc(collectionRef, userId); // Reference to the specific document
-    try {
-      await updateDoc(documentRef,{donatebloodbefore: donorHistory.donatebloodbefore,
-        lastdonatedate: donorHistory.lastdonatedate,
-        bloodtestbefore: donorHistory.bloodtestbefore,
-        currentlysuffereing: donorHistory.currentlysuffereing,
-        cbc: donorHistory.cbc,
-        hiv: donorHistory.hiv,
-        hephitiesb: donorHistory.hephitiesb,
-        hephitiesc: donorHistory.hephitiesc,
-        fever: donorHistory.fever,
-        cold: donorHistory.cold,
-        flue: donorHistory.flue,
-        dibeties: donorHistory.dibeties,} );
-      navigate("/");
-    } catch (error) {
-      alert(error);
-      console.log(error);
-    }
+  const donor = async (userId) => {
+    const documentRef = collection(db, "donnarInfo", userId);
+    console.log("Document Reference:", documentRef); // Check the document reference
+try {
+  
+    await updateDoc(documentRef, {
+      donatebloodbefore: donorHistory.donatebloodbefore,
+      lastdonatedate: donorHistory.lastdonatedate,
+      bloodtestbefore: donorHistory.bloodtestbefore,
+      currentlysuffereing: donorHistory.currentlysuffereing,
+      cbc: donorHistory.cbc,
+      hiv: donorHistory.hiv,
+      hephitiesb: donorHistory.hephitiesb,
+      hephitiesc: donorHistory.hephitiesc,
+      fever: donorHistory.fever,
+      cold: donorHistory.cold,
+      flue: donorHistory.flue,
+      dibeties: donorHistory.dibeties,
+    });
+    navigate("/");
+  } catch (error) {
+  alert(error)
+  console.log(error)
+  }
+  
   };
   return (
     <div className="dhForm">
@@ -195,16 +198,7 @@ const DonorForm = () => {
               <option value="No">No</option>
             </select>{" "}
             <lable>covid</lable>
-            <select
-              className="dselect"
-              name="covid"
-              id=""
-              onChange={handleChange}
-            >
-              <option value="">Select</option>
-              <option value="Yes">Yes</option>
-              <option value="No">No</option>
-            </select>{" "}
+            <input type="text" name="" id="" />
             <lable>dibeties</lable>
             <select
               className="dselect"

@@ -33,7 +33,7 @@ const DonnarDashboard = () => {
       data.forEach((item) => {
         console.log(item.data());
         setuserData(item.data());
-        localStorage.setItem("userDocId" , item.id)
+        localStorage.setItem("userDocId" , doc.id, ...doc.data())
         console.log("userData  " + userData);
       });
     };
