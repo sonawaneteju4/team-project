@@ -8,7 +8,7 @@ const Index = () => {
   const slides = [
 
      
-    { image: "./image/image1.webp", caption: "Car Wraping" },
+   
     { image: "./image/image2.jpg", caption: "Bike Wraping" },
     { image: ".//image/image3.jpg", caption: "Mobile Wraping" },
     { image: "./image/image4.jpg", caption: "Alloy Painting" },
