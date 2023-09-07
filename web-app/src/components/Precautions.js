@@ -4,11 +4,21 @@ import './precautions.css'
 const Precautions = () => {
   return (
     <>
+<<<<<<< Updated upstream
       <div>
         <div  className="phead">Precautions Before Blood Donation</div>
         <hr />
         <div className="a1">
           <p>Before Blood Donation</p>
+=======
+    <div>
+        <div>Precautions Before Blood Donation</div>
+    <div>
+        <p>Drink extra fluids</p>
+    </div>
+    <div>
+        <p></p>
+>>>>>>> Stashed changes
         </div>
         <div className="img1">
           <img src="./image/commonResource_1517314124_68648.jpg" alt="" />
