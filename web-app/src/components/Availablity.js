@@ -5,6 +5,7 @@ import { getDocs, query, where } from "firebase/firestore";
 import { db } from "../firebaseConfig";
 import { useNavigate } from "react-router-dom";
 
+
 const Availablity = () => {
   const [selectedState, setSelectedState] = useState("");
   const [selectedDistrict, setSelectedDistrict] = useState("");
@@ -80,12 +81,14 @@ const Availablity = () => {
 
   return (
     <>
+    <div className="hospReg">
       <div>
         <div>
           <h2 style={{ textAlign: "center" }}>
             Search Blood Bank To Donate Blood{" "}
           </h2>
         </div>
+
         <div>
           <label>State:</label>
           <select onChange={handleStateChange} value={selectedState}>
@@ -184,6 +187,7 @@ const Availablity = () => {
       ) : (
         <h3 style={{ textAlign: "center" }}>Ooooops No Blood Bank Found !</h3>
       )}
+      </div>
     </>
   );
 };
