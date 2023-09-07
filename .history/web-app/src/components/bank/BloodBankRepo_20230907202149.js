@@ -18,8 +18,8 @@ const BloodBankRepo = () => {
   const [userReport, setuserReport] = useState([]);
   const [userPer, setuserPer] = useState([]);
   const docRef = doc(db, "BloodReports", localStorage.getItem("reportId"));
-  const usersDataRef = collection(db, "donnarInfo");
-  const BankRef = collection(db, "bankInfo");
+  const DataRef = collection(db, "donnarInfo");
+  const usersDataRef = collection(db, "bankInfo");
   useEffect(() => {
     const getReport = async () => {
       const docSnap = await getDoc(docRef);
@@ -36,13 +36,16 @@ const BloodBankRepo = () => {
         console.log("Document does not exist");
       }
     };
+    const q = query(DataRef, where("uId", "==", localStorage.getItem('Ixxuqowvtm6mcH5QPfm7')));
 
+    
     const q2 = query(
       usersDataRef,
       where("uId", "==", localStorage.getItem("userId"))
     );
     const getUserDetails = async () => {
       const data = await getDocs(q2);
+      // setuserData(data)
       data.forEach((item) => {
         console.log(item.data());
         setuserData(item.data());
@@ -53,21 +56,20 @@ const BloodBankRepo = () => {
       });
     };
     getUserDetails();
-    const qb = query(BankRef, where("uId", "==", userId));
-
     const bank = async () => {
       try {
         const BankInfo = await getDocs(qb);
-        console.log(BankInfo);
+        console.log(BankInfo)
         const data = BankInfo;
         data.forEach((item) => {
           console.log(item.data());
           setBankInfoReport(item.data());
-          console.log("bank Indo" + BankInfoReport);
+          console.log("bank Indo"+BankInfoReport);
         });
       } catch (error) {}
     };
     getReport();
+    user();
     bank();
   }, []);
 

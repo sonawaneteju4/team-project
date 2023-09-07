@@ -10,15 +10,12 @@ import {
 } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
 const BloodBankRepo = () => {
-  const [userData, setuserData] = useState([]);
-
   const [userId, setuserId] = useState("");
   const [bankId, setbankId] = useState("");
-  const [BankInfoReport, setBankInfoReport] = useState([]);
   const [userReport, setuserReport] = useState([]);
   const [userPer, setuserPer] = useState([]);
   const docRef = doc(db, "BloodReports", localStorage.getItem("reportId"));
-  const usersDataRef = collection(db, "donnarInfo");
+  const DataRef = collection(db, "donnarInfo");
   const BankRef = collection(db, "bankInfo");
   useEffect(() => {
     const getReport = async () => {
@@ -28,47 +25,42 @@ const BloodBankRepo = () => {
         setuserReport(snapData.data());
         console.log(snapData.data());
         // console.log("Report"+userReport);
-        setuserId(snapData.data().BloodBankId);
-        // setbankId(snapData.data().BloodBankId);
-        // console.log(bankId)
+        setuserId(snapData.data().donorId);
+        setbankId(snapData.data().BloodBankId);
         console.log(userId);
       } else {
         console.log("Document does not exist");
       }
     };
 
-    const q2 = query(
-      usersDataRef,
-      where("uId", "==", localStorage.getItem("userId"))
-    );
-    const getUserDetails = async () => {
-      const data = await getDocs(q2);
-      data.forEach((item) => {
-        console.log(item.data());
-        setuserData(item.data());
-        localStorage.setItem("userDocId", item.id);
-        localStorage.setItem("donorInfo", userData);
-        sessionStorage.setItem("BloodGroup", item.data().bloodGroup);
-        console.log("userData  " + userData);
-      });
-    };
-    getUserDetails();
+    const q = query(DataRef, where("uId", "==", userId));
     const qb = query(BankRef, where("uId", "==", userId));
-
-    const bank = async () => {
+    const user = async () => {
       try {
-        const BankInfo = await getDocs(qb);
-        console.log(BankInfo);
-        const data = BankInfo;
+        const userInfo = await getDocs(q);
+        const data = userInfo;
         data.forEach((item) => {
           console.log(item.data());
-          setBankInfoReport(item.data());
-          console.log("bank Indo" + BankInfoReport);
+          setuserPer(item.data());
+
+          console.log("userData  " + userPer);
+        });
+      } catch (error) {}
+    };
+    const bank = async () => {
+      try {
+        const BankInfo = await getDocs(q);
+        const data = userInfo;
+        data.forEach((item) => {
+          console.log(item.data());
+          setuserPer(item.data());
+
+          console.log("userData  " + userPer);
         });
       } catch (error) {}
     };
     getReport();
-    bank();
+    user();
   }, []);
 
   return (
@@ -78,16 +70,16 @@ const BloodBankRepo = () => {
           <h3>BloodBankRepo</h3>
           <div className="main">
             <div className="t1">
-              <p>Name : {BankInfoReport.name}</p>
-              <p>Contact : {BankInfoReport.contact}</p>
-              <p>Address : {BankInfoReport.address}</p>
-              <p>Category : {BankInfoReport.category}</p>
+              <p>Name : {userPer.userName}</p>
+              <p>Contact : {userPer.mobile}</p>
+              <p>Address : {userPer.address}</p>
+              <p>Category : {userPer.userName}</p>
             </div>
             <div className="t2">
-              <p>State : {BankInfoReport.state}</p>
-              <p>District : {BankInfoReport.district}</p>
-              <p>City :{BankInfoReport.city}</p>
-              <p>Pincode {BankInfoReport.pincode}</p>
+              <p>State</p>
+              <p>District</p>
+              <p>City</p>
+              <p>Pincode</p>
             </div>
           </div>
         </div>
@@ -95,7 +87,7 @@ const BloodBankRepo = () => {
           <h3 className="main">donorinfor</h3>
           <div className="main">
             <div className="t1">
-              <p>Name {userPer.userName}</p>
+              <p>Name </p>
               <p>Address </p>
               <p>Contact No</p>
               <p>State</p>

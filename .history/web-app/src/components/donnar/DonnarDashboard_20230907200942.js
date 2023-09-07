@@ -34,7 +34,7 @@ const DonnarDashboard = () => {
         console.log(item.data());
         setuserData(item.data());
         localStorage.setItem("userDocId", item.id);
-        localStorage.setItem("donorInfo", userData);
+        localStorage.setItem("donorInfo", item.Data);
         sessionStorage.setItem("BloodGroup", item.data().bloodGroup);
         console.log("userData  " + userData);
       });

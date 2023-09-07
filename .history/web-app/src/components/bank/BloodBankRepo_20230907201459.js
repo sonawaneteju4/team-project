@@ -10,15 +10,13 @@ import {
 } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
 const BloodBankRepo = () => {
-  const [userData, setuserData] = useState([]);
-
   const [userId, setuserId] = useState("");
   const [bankId, setbankId] = useState("");
-  const [BankInfoReport, setBankInfoReport] = useState([]);
+  const [donorInfo, setdonorInfo] = useState([]);
   const [userReport, setuserReport] = useState([]);
   const [userPer, setuserPer] = useState([]);
   const docRef = doc(db, "BloodReports", localStorage.getItem("reportId"));
-  const usersDataRef = collection(db, "donnarInfo");
+  const DataRef = collection(db, "donnarInfo");
   const BankRef = collection(db, "bankInfo");
   useEffect(() => {
     const getReport = async () => {
@@ -31,45 +29,31 @@ const BloodBankRepo = () => {
         setuserId(snapData.data().BloodBankId);
         // setbankId(snapData.data().BloodBankId);
         // console.log(bankId)
+        setdonorInfo(localStorage.getItem('donorInfo'))
+        setdonorInfo(localStorage.getItem('donorInfo'))
         console.log(userId);
       } else {
         console.log("Document does not exist");
       }
     };
 
-    const q2 = query(
-      usersDataRef,
-      where("uId", "==", localStorage.getItem("userId"))
-    );
-    const getUserDetails = async () => {
-      const data = await getDocs(q2);
-      data.forEach((item) => {
-        console.log(item.data());
-        setuserData(item.data());
-        localStorage.setItem("userDocId", item.id);
-        localStorage.setItem("donorInfo", userData);
-        sessionStorage.setItem("BloodGroup", item.data().bloodGroup);
-        console.log("userData  " + userData);
-      });
-    };
-    getUserDetails();
+    
     const qb = query(BankRef, where("uId", "==", userId));
-
-    const bank = async () => {
+    const user = async () => {
       try {
-        const BankInfo = await getDocs(qb);
-        console.log(BankInfo);
-        const data = BankInfo;
+        const userInfo = await getDocs(qb);
+        const data = userInfo;
         data.forEach((item) => {
           console.log(item.data());
-          setBankInfoReport(item.data());
-          console.log("bank Indo" + BankInfoReport);
+          setuserPer(item.data());
+          
+          console.log("userData  " + userPer);
         });
       } catch (error) {}
     };
     getReport();
-    bank();
-  }, []);
+    user();
+  }, [userPer, userReport]);
 
   return (
     <>
@@ -78,16 +62,16 @@ const BloodBankRepo = () => {
           <h3>BloodBankRepo</h3>
           <div className="main">
             <div className="t1">
-              <p>Name : {BankInfoReport.name}</p>
-              <p>Contact : {BankInfoReport.contact}</p>
-              <p>Address : {BankInfoReport.address}</p>
-              <p>Category : {BankInfoReport.category}</p>
+              <p>Name : {userPer.name}</p>
+              <p>Contact : {userPer.contact}</p>
+              <p>Address : {userPer.address}</p>
+              <p>Category : {userPer.category}</p>
             </div>
             <div className="t2">
-              <p>State : {BankInfoReport.state}</p>
-              <p>District : {BankInfoReport.district}</p>
-              <p>City :{BankInfoReport.city}</p>
-              <p>Pincode {BankInfoReport.pincode}</p>
+              <p>State : {userPer.state}</p>
+              <p>District : {userPer.district}</p>
+              <p>City :{userPer.city}</p>
+              <p>Pincode {userPer.pincode}</p>
             </div>
           </div>
         </div>
@@ -95,7 +79,7 @@ const BloodBankRepo = () => {
           <h3 className="main">donorinfor</h3>
           <div className="main">
             <div className="t1">
-              <p>Name {userPer.userName}</p>
+              <p>Name : </p>
               <p>Address </p>
               <p>Contact No</p>
               <p>State</p>

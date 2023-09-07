@@ -36,6 +36,10 @@ const BloodBankRepo = () => {
         console.log("Document does not exist");
       }
     };
+    const q = query(
+      DataRef,
+      where("uId", "==", localStorage.getItem("Ixxuqowvtm6mcH5QPfm7"))
+    );
 
     const q2 = query(
       usersDataRef,
@@ -43,6 +47,7 @@ const BloodBankRepo = () => {
     );
     const getUserDetails = async () => {
       const data = await getDocs(q2);
+      // setuserData(data)
       data.forEach((item) => {
         console.log(item.data());
         setuserData(item.data());
@@ -68,6 +73,7 @@ const BloodBankRepo = () => {
       } catch (error) {}
     };
     getReport();
+    user();
     bank();
   }, []);
 

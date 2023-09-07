@@ -68,6 +68,7 @@ const BloodBankRepo = () => {
       } catch (error) {}
     };
     getReport();
+    user();
     bank();
   }, []);
 
