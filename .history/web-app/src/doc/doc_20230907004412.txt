@@ -1,0 +1,87 @@
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
+const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/auth.user
+    const uid = user.uid;
+    // ...
+  } else {
+    // User is signed out
+    // ...
+  }
+});
+
+
+
+const donor = async (userId) => {
+  const documentRef = collection(db, collectionName).doc(userId); // Assuming 'userId' is the document ID
+    console.log("Document Reference:", documentRef); // Check the document reference
+
+  try {
+    await setDoc(documentRef, {
+      donatebloodbefore: donorHistory.donatebloodbefore,
+      lastdonatedate: donorHistory.lastdonatedate,
+      bloodtestbefore: donorHistory.bloodtestbefore,
+      currentlysuffereing: donorHistory.currentlysuffereing,
+      cbc: donorHistory.cbc,
+      hiv: donorHistory.hiv,
+      hephitiesb: donorHistory.hephitiesb,
+      hephitiesc: donorHistory.hephitiesc,
+      fever: donorHistory.fever,
+      cold: donorHistory.cold,
+      flue: donorHistory.flue,
+      dibeties: donorHistory.dibeties,
+    });
+    navigate("/");
+  } catch (error) {
+    console.error("Error updating document:", error);
+  }
+};
+
+
+
+
+
+
+auto genrated password
+
+import { getAuth, updatePassword } from "firebase/auth";
+
+const auth = getAuth();
+
+const user = auth.currentUser;
+const newPassword = getASecureRandomPassword();
+
+updatePassword(user, newPassword).then(() => {
+  // Update successful.
+}).catch((error) => {
+  // An error ocurred
+  // ...
+});
+
+
+
+
+import { doc, getDoc } from 'firebase/firestore';
+
+// Define the document ID you want to search for
+const documentId = 'your-document-id';
+
+// Create a reference to the document
+const documentRef = doc(db, 'your-collection-name', documentId);
+
+// Use getDoc to retrieve the document
+try {
+  const documentSnapshot = await getDoc(documentRef);
+  if (documentSnapshot.exists()) {
+    // Document exists, you can access its data
+    const documentData = documentSnapshot.data();
+    console.log('Document data:', documentData);
+  } else {
+    console.log('Document does not exist.');
+  }
+} catch (error) {
+  console.error('Error getting document:', error);
+}

@@ -1,0 +1,6 @@
+.logNav {
+    background-color: rgb(248, 244, 244);
+    padding: 8px;
+    display: flex;
+    justify-content: end;
+  }
