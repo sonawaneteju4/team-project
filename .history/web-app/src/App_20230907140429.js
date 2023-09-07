@@ -57,7 +57,7 @@ function App() {
     <Route path='/createNewReport' element={<BloodReport/>}></Route>
     <Route path='/healthHistory/:bbId' element={<DonorForm/>}></Route>
     {/* <Route path='/searchblood' element={<BloodAvb />}></Route> */}
-    <Route path='/searchBloodByBloodGroup' element={<BloodAvb />}></Route>
+    <Route path='/searchblood' element={<BloodAvb />}></Route>
     <Route path='/stockOfBlood' element={<StockMang/>}></Route>
     <Route path='/hospitalReq' element={<HospitalReq/>}></Route>
     <Route path='/donationReq' element={<DonationReq/>}></Route>

@@ -1,0 +1,13 @@
+
+.mainSearch{
+  width: 30%;
+  margin: auto;
+}
+
+.stateOfSearch{
+  width: 60%;
+}
+.searchState{
+  display: flex;
+  justify-content: space-between;
+}

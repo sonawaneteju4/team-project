@@ -17,7 +17,6 @@ import DonateBlood from './components/donnar/DonateBlood';
 import BloodReport from './components/bank/BloodReport';
 import LogoutBar from './components/LogoutBar';
 import DonorForm from './components/donnar/DonorForm';
-import Availablity from './components/Availablity';
 import StockMang from './components/bank/StockMang';
 import HospitalReq from './components/bank/HospitalReq';
 import DonationReq from './components/bank/DonationReq';
@@ -56,8 +55,7 @@ function App() {
     <Route path='/donateBlood' element={<DonateBlood/>}></Route>
     <Route path='/createNewReport' element={<BloodReport/>}></Route>
     <Route path='/healthHistory/:bbId' element={<DonorForm/>}></Route>
-    {/* <Route path='/searchblood' element={<BloodAvb />}></Route> */}
-    <Route path='/searchBloodByBloodGroup' element={<BloodAvb />}></Route>
+    <Route path='/searchblood' element={<BloodAvb />}></Route>
     <Route path='/stockOfBlood' element={<StockMang/>}></Route>
     <Route path='/hospitalReq' element={<HospitalReq/>}></Route>
     <Route path='/donationReq' element={<DonationReq/>}></Route>

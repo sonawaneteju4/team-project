@@ -26,7 +26,6 @@ import BankReportForm from './components/bank/BankReportForm';
 import ReportsD from './components/donnar/ReportsD';
 import SearchBlood from './components/hospital/SearchBlood';
 import Precautions from './components/Precautions';
-import BloodAvb from './components/BloodAvb';
 
 
 
@@ -56,8 +55,7 @@ function App() {
     <Route path='/donateBlood' element={<DonateBlood/>}></Route>
     <Route path='/createNewReport' element={<BloodReport/>}></Route>
     <Route path='/healthHistory/:bbId' element={<DonorForm/>}></Route>
-    {/* <Route path='/searchblood' element={<BloodAvb />}></Route> */}
-    <Route path='/searchBloodByBloodGroup' element={<BloodAvb />}></Route>
+    <Route path='/searchblood' element={<Blo/>}></Route>
     <Route path='/stockOfBlood' element={<StockMang/>}></Route>
     <Route path='/hospitalReq' element={<HospitalReq/>}></Route>
     <Route path='/donationReq' element={<DonationReq/>}></Route>
