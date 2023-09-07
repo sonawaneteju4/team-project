@@ -23,8 +23,6 @@ body {
 /* Hide the scrollbar for specific elements */
 .your-element-class-or-id::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
- 
-  opacity: 1;
 }
 
 code {
@@ -32,5 +30,5 @@ code {
     monospace;
 }
 .reportD{
-  text-align: center;
+  
 }

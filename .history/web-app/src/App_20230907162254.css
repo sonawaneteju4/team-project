@@ -1,0 +1,12 @@
+body{
+    background-color: white;
+}
+.bgImg{
+    background-image: url('../public/image/bgimg2.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    h
+}

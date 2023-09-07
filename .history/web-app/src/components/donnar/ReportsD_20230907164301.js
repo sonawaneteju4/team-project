@@ -36,10 +36,10 @@ const ReportsD = () => {
         {reports.map((report, index) => (
           <div key={index} className="reportD">
             {/* Render your report data here */}
-            <div>Report iD : {report.donorId}</div>
-            <div>Bank Id: {report.BloodBankId}</div>
-            <div>Report Date :{report.dateOfDonation}</div>
-            <div>Type Of Donation: {report.TypeOfDonation}</div>
+            <div>Report :{report.donorId}</div>
+            <div>{report.BloodBankId}</div>
+            <div>{report.dateOfDonation}</div>
+            <div>{report.TypeOfDonation}</div>
             <button 
             className="button"
               key={report.id}

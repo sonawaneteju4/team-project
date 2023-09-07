@@ -38,8 +38,8 @@ const ReportsD = () => {
             {/* Render your report data here */}
             <div>Report iD : {report.donorId}</div>
             <div>Bank Id: {report.BloodBankId}</div>
-            <div>Report Date :{report.dateOfDonation}</div>
-            <div>Type Of Donation: {report.TypeOfDonation}</div>
+            <div>{report.dateOfDonation}</div>
+            <div>{report.TypeOfDonation}</div>
             <button 
             className="button"
               key={report.id}

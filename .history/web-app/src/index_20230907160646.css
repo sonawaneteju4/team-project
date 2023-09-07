@@ -5,32 +5,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('../public/image/bgimage3.jpg');
+  background-image: url('../public/image/bgimg3.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
   background-attachment: fixed;
 
-  opacity: 1;
-
-  
-}
-
-/* Hide the scrollbar for all elements */
-::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
-}
-
-/* Hide the scrollbar for specific elements */
-.your-element-class-or-id::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
- 
-  opacity: 1;
+  opacity: 0.7;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-.reportD{
-  text-align: center;
 }
