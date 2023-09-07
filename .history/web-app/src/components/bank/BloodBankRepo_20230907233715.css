@@ -1,0 +1,20 @@
+.main{
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    
+}
+h3{
+    text-align: center;
+    color: white;
+}
+.t1,t2{
+    padding-left: 3px;
+    margin: 2px;
+}
+.spanOfBBTititle{
+    font-weight: 800;
+}
+.repoBody{
+    
+}
