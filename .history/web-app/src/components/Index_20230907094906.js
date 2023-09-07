@@ -8,7 +8,7 @@ const Index = () => {
    <div>
     {/* <DonorForm/>
      */}
-      <Loading/>    
+      <Loading    
    </div>
   )
 }
