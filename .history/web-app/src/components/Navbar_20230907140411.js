@@ -14,7 +14,7 @@ const Navbar = () => {
       </div>
     <div className="navbar">
       <div>
-        <Link  to="/searchBloodByBloodGroup">Search Blood</Link >
+        <Link  to="/searchBloodBy">Search Blood</Link >
       </div>
       <div className="dropdown">
         <button className="dropbtn">

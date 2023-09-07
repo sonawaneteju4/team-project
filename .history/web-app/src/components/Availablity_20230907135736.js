@@ -9,8 +9,8 @@ import  './Availablity.css';
 const Availablity = () => {
  
 
-return (
-<></>
+  return (
+
   );
 };
 
