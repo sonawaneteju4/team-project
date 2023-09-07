@@ -1,0 +1,34 @@
+.phead{
+    text-align: center;
+    margin-top: 15px;
+    font-size: 30px;
+    font-weight: 800;
+    color: white;
+}
+.img1{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.a1{
+    text-align: center;
+    color: white;
+    font-weight: 900;
+    font-size: larger;
+}
+.img1 img{
+    width: 500px;
+    padding: 20px;
+    border-radius: 40px;
+    opacity: 3  ;
+}
+
+.headingP{
+ text-align: center;
+    color: white;
+    font-weight: 900;
+    font-size: 30px;
+}
+.imgDoDont{
+
+}

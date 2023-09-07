@@ -1,0 +1,15 @@
+.phead{
+    text-align: center;
+    margin-top: 15px;
+    font-size: 30px;
+    font-weight: 800;
+    color: white;
+}
+.img1{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.img1 img{
+    width: 300px;
+}
