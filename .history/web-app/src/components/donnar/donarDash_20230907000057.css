@@ -1,0 +1,18 @@
+.donorInfo {
+  display: flex;
+  justify-content: center;
+  gap: ;
+}
+
+.userDetail {
+  display: flex;
+  justify-content: center;
+  background: white;
+  width: 80%;
+  padding: 30px;
+  padding-bottom: 10px;
+  gap: 5%;
+}
+.userImg {
+  height: 90px;
+}
