@@ -4,7 +4,6 @@ import './precautions.css'
 const Precautions = () => {
   return (
     <>
-<<<<<<< Updated upstream
       <div>
         <div  className="phead">Precautions Before Blood Donation</div>
         <hr />
