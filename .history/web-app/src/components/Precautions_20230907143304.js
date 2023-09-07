@@ -3,12 +3,19 @@ import './precautions.css'
 
 const Precautions = () => {
   return (
-    <>
+    <div>
       <div>
         <div  className="phead">Precautions Before Blood Donation</div>
         <hr />
         <div className="a1">
           <p>Before Blood Donation</p>
+    <div>
+        <div>Precautions Before Blood Donation</div>
+    <div>
+        <p>Drink extra fluids</p>
+    </div>
+    <div>
+        <p></p>
         </div>
         <div className="img1">
           <img src="./image/commonResource_1517314124_68648.jpg" alt="" />
@@ -20,7 +27,8 @@ const Precautions = () => {
           <img className="imgDoDont" src="./image/Preparing-to-donate.jpg" alt="" />
         </div>
       </div>
-    </>
+      </div>
+    </div>
   );
 };
 
