@@ -51,7 +51,7 @@ const DonnarDashboard = () => {
     <div>
       <div className="logNav">
         <div className="heading" style={{ textAlign: "start" }}>
-          <span style={{ fontFamily: "Montserrat" , color:'white'}}>{userData.userName} </span>
+          <span style={{ fontFamily: "Open Sans" , color:'white'}}>{userData.userName} </span>
         </div>
         <button
           className="button"
