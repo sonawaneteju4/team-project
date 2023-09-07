@@ -6,11 +6,10 @@
 .userDetail {
   display: flex;
   justify-content: center;
+  background: white;
   padding: 30px;
   gap: 5%;
-  background-color: rgba(255, 255, 255, 0.4);
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
+  margin-top: -10px;
   
 }
 .compDiv{
@@ -18,9 +17,9 @@
     padding: 30px;
     border-radius: 20px;
     margin: 4%;
-    background-color: rgba(255, 255, 255, 0.4);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);    
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    
 }
 .spanOftitile{
   font-weight: 600;

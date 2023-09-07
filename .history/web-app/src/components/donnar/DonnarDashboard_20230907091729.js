@@ -50,14 +50,8 @@ const DonnarDashboard = () => {
   return (
     <div>
       <div className="logNav">
-        <div className="heading" style={{ textAlign: "start" }}>
-          User Info
-        </div>
-        <button
-          className="button"
-          style={{ backgroundColor: "black" }}
-          onClick={logout}
-        >
+      <div className="heading" style={{ textAlign: "start" }}>User Info</div>
+        <button className="button" style={{backgroundColor : "black"}} onClick={logout}>
           logout
         </button>
       </div>
@@ -67,88 +61,55 @@ const DonnarDashboard = () => {
         </div>
         <div className="donorInfo">
           <div className="info1">
-            <div>
-              <span className="spanOftitile">Name:</span>
-              {userData.userName}
-            </div>
+            <div>Name: {userData.userName}</div>
 
-            <div>
-              <span className="spanOftitile">Age :</span>
-              {userData.age}
-            </div>
-            <div>
-              <span className="spanOftitile">Blood Group:</span>
-              {userData.bloodGroup}
-            </div>
-            <div>
-              <span className="spanOftitile">Weight :</span>
-              {userData.weight} Kg
-            </div>
+            <div>Age :{userData.age}</div>
+            <div>Blood Group: {userData.bloodGroup}</div>
+            <div>Weight :{userData.weight} Kg</div>
           </div>
           <div className="info1">
-            <div>
-              <span className="spanOftitile">Contact :</span>
-              {userData.mobile}
-            </div>
-            <div>
-              <span className="spanOftitile">Gender :</span>
-              {userData.gender}
-            </div>
-            <div>
-              <span className="spanOftitile">District :</span>
-              {userData.dist}
-            </div>
-            <div>
-              <span className="spanOftitile">State :</span>
-              {userData.state}
-            </div>
+            <div>Contact :{userData.mobile}</div>
+            <div>Gender :{userData.gender}</div>
+            <div>District :{userData.dist}</div>
+            <div>State :{userData.state}</div>
           </div>
           <div className="info1">
-            <div>
-              <span className="spanOftitile">Pincode</span>
-              {userData.pincode}
-            </div>
-            <div>
-              <span className="spanOftitile">Aadhar:</span>
-              {userData.aadhar}
-            </div>
-            <div>
-              <span className="spanOftitile">Address:</span>
-              {userData.address}
-            </div>
+            <div>Pincode :{userData.pincode}</div>
+            <div>Aadhar: {userData.aadhar}</div>
+            <div>Address: {userData.address}</div>
           </div>
           <div className="info1"></div>
         </div>
       </div>
+      <hr />
       <div className="donorInfo">
         <div className="compDiv">
           <Link to="/donateBlood">
             <img
-              height={"200px"}
+              height={"200px"}  
               src="./image/blood-extraction.png"
               alt="blood"
             />
-            <p className="pOfInof">Donate Blood</p>
+            Donate Blood
           </Link>
         </div>
         <div className="compDiv">
-          <Link to="/reports">
-            <img height={"200px"} src="./image/test.png" alt="bank"></img>
-            <p className="pOfInof">Reports</p>
-          </Link>
+          <Link to='/reports'>Reports
+          <img
+            height={"200px"}
+           
+            src="./image/test.png"
+            alt="bank"
+          ></img>
+          </Link> 
         </div>
         <div className="compDiv">
-          <Link to="/">
-            <img
-              height={"200px"}
-              src="./image/donationprecaution.png"
-              alt=""
+          <img
+            height={"200px"}
+           
+            src="./image/donationprecaution.png"
+            alt=""
             ></img>
-            <p className="pOfInof">
-              Precocious before <br />
-              donating blood
-            </p>
-          </Link>
         </div>
         <div>
           <img src="" alt=""></img>

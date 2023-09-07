@@ -48,7 +48,7 @@ const DonateBlood = () => {
 
   return (
     <div>
-      <h2 style={{ textAlign: "center" , color : "white"}}>Search Blood Bank To Donate Blood </h2>
+      <h2 style={{ textAlign: "center" , }}>Search Blood Bank To Donate Blood </h2>
       <div className="phbdMain">
         <div className="phbd">
           <div>
