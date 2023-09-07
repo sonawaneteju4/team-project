@@ -8,7 +8,10 @@ const Index = () => {
   const slides = [
 
     // itha img tak ani caption khi tri quote tak  
-    { image: "./image/national-cancer-institute-XknuBmnjbKg-unsplash.jpg", caption: "Car Wraping" },
+    { image: "./image/national-cancer-institute-XknuBmnjbKg-unsplash
+    
+    
+    .jpg", caption: "Car Wraping" },
     { image: "./image/hush-naidoo-jade-photography-Zp7ebyti3MU-unsplash.jpg", caption: "Bike Wraping" },
     { image: ".//image/national-cancer-institute-XknuBmnjbKg-unsplash.jpg.jpg", caption: "Mobile Wraping" },
     { image: "./image/testalize-me-ZdToNCVLpOg-unsplash.jpg", caption: "Alloy Painting" },
