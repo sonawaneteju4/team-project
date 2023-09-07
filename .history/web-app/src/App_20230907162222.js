@@ -36,7 +36,7 @@ function App() {
       <BrowserRouter>
         <Navbar />
         {/* <LogoutBar/> */}
-          <div className="bgImg"></div>
+          <div className="bgImg">
         <Routes>
             <Route path="/" element={<Index />}></Route>
             <Route path="/bankLogin" element={<LoginUser />}></Route>

@@ -36,7 +36,8 @@ function App() {
       <BrowserRouter>
         <Navbar />
         {/* <LogoutBar/> */}
-          <div className="bgImg"></div>
+          <div className="bgImg">
+      </div>
         <Routes>
             <Route path="/" element={<Index />}></Route>
             <Route path="/bankLogin" element={<LoginUser />}></Route>
@@ -59,7 +60,7 @@ function App() {
             <Route
               path="/searchBloodByBloodGroup"
               element={<BloodAvb />}
-              ></Route>
+            ></Route>
             <Route path="/stockOfBlood" element={<StockMang />}></Route>
             <Route path="/hospitalReq" element={<HospitalReq />}></Route>
             <Route path="/donationReq" element={<DonationReq />}></Route>
@@ -67,12 +68,11 @@ function App() {
             <Route
               path="/bloodReportsGenration"
               element={<BankReportForm />}
-              ></Route>
+            ></Route>
             <Route path="/reports" element={<ReportsD />}></Route>
             <Route path="/precaution" element={<Precautions />}></Route>
             <Route path="/userReport" element={<BloodBankRepo />}></Route>
         </Routes>
-              
       </BrowserRouter>
     </div>
   );

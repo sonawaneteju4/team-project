@@ -1,0 +1,11 @@
+body{
+    background-color: white;
+
+    background-image: url('../public/image/bgimg2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    opacity: -1;
+}
