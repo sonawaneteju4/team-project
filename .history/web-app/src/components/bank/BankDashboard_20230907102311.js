@@ -54,7 +54,7 @@ const BankDashboard = () => {
 
         <div className="info1">
           <div>
-            <span style={{fontSize:"18px", fontStyle : "bold"}} className="spanOfBBTititle">Email :</span>
+            <span style={{fontSize:"18px"}} className="spanOfBBTititle">Email :</span>
             {bankData.email}
           </div>
           <div>
