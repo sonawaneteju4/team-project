@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, db } from "../../firebaseConfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
+import '../bank/bankReg.css'
 const BankDashboard = () => {
   const navigate = useNavigate();
   const bankCollRef = collection(db, "bankInfo");
@@ -54,7 +55,7 @@ const BankDashboard = () => {
 
         <div className="info1">
           <div>
-            <span style={{fontSize:"18px", fontStyle : "bold"}} className="spanOfBBTititle">Email :</span>
+            <span className="spanOfBBTititle">Email :</span>
             {bankData.email}
           </div>
           <div>

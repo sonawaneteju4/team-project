@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, db } from "../../firebaseConfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
+
 const BankDashboard = () => {
   const navigate = useNavigate();
   const bankCollRef = collection(db, "bankInfo");
@@ -37,7 +38,7 @@ const BankDashboard = () => {
     <div>
       <div className="logNav">
         <div className="heading" style={{ textAlign: "start" }}>
-          Bank Dashboard <span className="spanOfBBTititle"></span>
+          Bank Dashboard <span className="spanOftitile"></span>
         </div>
         <button
           className="button"
@@ -54,41 +55,41 @@ const BankDashboard = () => {
 
         <div className="info1">
           <div>
-            <span style={{fontSize:"18px", fontStyle : "bold"}} className="spanOfBBTititle">Email :</span>
+            <span className="spanOftitile">Email :</span>
             {bankData.email}
           </div>
           <div>
-            <span className="spanOfBBTititle">Name :</span>
+            <span className="spanOftitile">Name :</span>
             {bankData.name}
           </div>
           <div>
-            <span className="spanOfBBTititle">Id :</span>
+            <span className="spanOftitile">Id :</span>
             {bankData.uId}
           </div>
           <div>
-            <span className="spanOfBBTititle">Address:</span>
+            <span className="spanOftitile">Address:</span>
             {bankData.address}
           </div>
         </div>
         <div>
           <div>
-            <span className="spanOfBBTititle">State :</span>
+            <span className="spanOftitile">State :</span>
             {bankData.state}
           </div>
           <div>
-            <span className="spanOfBBTititle">District:</span>
+            <span className="spanOftitile">District:</span>
             {bankData.district}
           </div>
           <div>
-            <span className="spanOfBBTititle">City:</span>
+            <span className="spanOftitile">City:</span>
             {bankData.city}
           </div>
           <div>
-            <span className="spanOfBBTititle">Contact:</span>
+            <span className="spanOftitile">Contact:</span>
             {bankData.contact}
           </div>
           <div>
-            <span className="spanOfBBTititle">Category :</span>
+            <span className="spanOftitile">Category :</span>
             {bankData.category}
           </div>
         </div>
@@ -104,7 +105,7 @@ const BankDashboard = () => {
       <div className="compDiv">
         <Link to="/createNewReport">
           {" "}
-          <img height={"200px"} src="./image/newdonor.png" alt="bank"></img>
+          <img height={"200px"} src="./image/new.png" alt="bank"></img>
           <p className="pOfInof">Create New Blood
           <br /> Donotion Form</p>
         </Link>
@@ -119,7 +120,7 @@ const BankDashboard = () => {
       <div className="compDiv">
         <Link to="/stockOfBlood">
           {" "}
-          <img height={"200px"} src="./image/stockmanagement.png" alt="bank"></img>
+          <img height={"200px"} src="./image/test.png" alt="bank"></img>
           <p className="pOfInof">Stock</p>
         </Link>
       </div>
