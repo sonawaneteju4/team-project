@@ -8,7 +8,7 @@
   justify-content: center;
   padding: 30px;
   gap: 5%;
-  background-color: rgba(142, 141, 141, 0.176);
+  background-color: rgba(81, 81, 81, 0.4);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   
@@ -18,7 +18,7 @@
     padding: 30px;
     border-radius: 20px;
     margin: 4%;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(81, 81, 81, 0.4);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);    
 }
@@ -43,7 +43,7 @@ a{
 .info1{
   /* padding-left: 50px; */
   padding-right: 60px;
-  color: white;
+  c
 }
 .heading{
   color: black;

@@ -36,7 +36,7 @@ const BankDashboard = () => {
   return (
     <div>
       <div className="logNav">
-        <div className="heading" style={{ textAlign: "start", fontSize: "25px" }}>
+        <div className="heading" style={{ textAlign: "start", fontSize: "30px" }}>
         {bankData.name}
 <span className="spanOfBBTititle"></span>
         </div>

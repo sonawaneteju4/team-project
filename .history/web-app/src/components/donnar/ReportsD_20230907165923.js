@@ -31,11 +31,10 @@ const ReportsD = () => {
   };
   return (
     <div>
-        <h2 style={{textAlign:"center",fontFamily : "Open Sans", color :"white"}}>Reports</h2>
-        <hr />
+      ReportsD
       <div>
         {reports.map((report, index) => (
-          <div key={index} className="reportD">
+          <div key={index} className="">
             {/* Render your report data here */}
             <div>Report iD : {report.donorId}</div>
             <div>Bank Id: {report.BloodBankId}</div>
