@@ -1,8 +1,9 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
   background-color: #ddd;
+  font-weight: bold;
 }
 
 .container {
@@ -24,7 +25,7 @@ body {
 }
 
 h2 {
-  color: #221f1f;
+  color: #080808;
   margin-bottom: 20px;
 }
 
@@ -48,7 +49,7 @@ input {
 
 .button {
   padding: 10px;
-  background-color: #9a4141;
+  background-color: #5e1414;
   color: #fff;
   border: none;
   border-radius: 5px;
