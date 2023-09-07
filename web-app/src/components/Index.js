@@ -7,7 +7,7 @@ const Index = () => {
    <div>
     {/* <DonorForm/>
      */}
-     
+    
      <BloodBankRepo/>
     
    </div>
