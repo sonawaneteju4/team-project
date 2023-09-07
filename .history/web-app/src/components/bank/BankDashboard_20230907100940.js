@@ -94,36 +94,10 @@ const BankDashboard = () => {
           </div>
         </div>
       </div>
+      <hr />
       <div className="donorInfo">
-      <div className="compDiv">
-        <Link to="/donationReq">
-          {" "}
-          <img height={"200px"} src="./image/test.png" alt="bank"></img>
-          <p className="pOfInof">Donation Req</p>
-        </Link>
-      </div>
-      <div className="compDiv">
-        <Link to="/createNewReport">
-          {" "}
-          <img height={"200px"} src="./image/test.png" alt="bank"></img>
-          <p className="pOfInof">Create New Blood
-          <br /> Donotion Form</p>
-        </Link>
-      </div>
-      <div className="compDiv">
-        <Link to="/hospitalReq">
-          {" "}
-          <img height={"200px"} src="./image/test.png" alt="bank"></img>
-          <p className="pOfInof">Hospital Req</p>
-        </Link>
-      </div>
-      <div className="compDiv">
-        <Link to="/stockOfBlood">
-          {" "}
-          <img height={"200px"} src="./image/test.png" alt="bank"></img>
-          <p className="pOfInof">Stock</p>
-        </Link>
-      </div>
+      
+
       </div>
     </div>
   );

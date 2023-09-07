@@ -38,7 +38,7 @@ const BankDashboard = () => {
     <div>
       <div className="logNav">
         <div className="heading" style={{ textAlign: "start" }}>
-          Bank Dashboard <span className="spanOftitile"></span>
+          Bank Dashboard <span className="snapOfTitile"></span>
         </div>
         <button
           className="button"
@@ -53,78 +53,63 @@ const BankDashboard = () => {
           <img className="userImg" src="./image/usericon.png" alt="" />
         </div>
 
-        <div className="info1">
+        <div className="">
           <div>
-            <span className="spanOftitile">Email :</span>
+            <span className="snapOfTitile"></span>
+            Email :
             {bankData.email}
           </div>
           <div>
-            <span className="spanOftitile">Name :</span>
-            {bankData.name}
+            <span className="snapOfTitile"></span>
+            Name : {bankData.name}
           </div>
           <div>
-            <span className="spanOftitile">Id :</span>
-            {bankData.uId}
+            <span className="snapOfTitile"></span>
+            Id :{bankData.uId}
           </div>
           <div>
-            <span className="spanOftitile">Address:</span>
-            {bankData.address}
+            <span className="snapOfTitile"></span>
+            Address: {bankData.address}
           </div>
         </div>
         <div>
           <div>
-            <span className="spanOftitile">State :</span>
-            {bankData.state}
+            <span className="snapOfTitile"></span>
+            State :{bankData.state}
           </div>
           <div>
-            <span className="spanOftitile">District:</span>
-            {bankData.district}
+            <span className="snapOfTitile"></span>
+            District:{bankData.district}
           </div>
           <div>
-            <span className="spanOftitile">City:</span>
-            {bankData.city}
+            <span className="snapOfTitile"></span>
+            City:{bankData.city}
           </div>
           <div>
-            <span className="spanOftitile">Contact:</span>
-            {bankData.contact}
+            <span className="snapOfTitile"></span>
+            Contact:{bankData.contact}
           </div>
           <div>
-            <span className="spanOftitile">Category :</span>
-            {bankData.category}
+            <span className="snapOfTitile"></span>
+            Category :{bankData.category}
           </div>
         </div>
       </div>
-      <div className="donorInfo">
-      <div className="compDiv">
-        <Link to="/donationReq">
-          {" "}
-          <img height={"200px"} src="./image/test.png" alt="bank"></img>
-          <p className="pOfInof">Donation Req</p>
-        </Link>
+      <hr />
+      <div>
+        <Link to="/donationReq">Donation Req</Link>
       </div>
-      <div className="compDiv">
-        <Link to="/createNewReport">
-          {" "}
-          <img height={"200px"} src="./image/test.png" alt="bank"></img>
-          <p className="pOfInof">Create New Blood
-          <br /> Donotion Form</p>
-        </Link>
+      <div>
+        <Link to="/createNewReport">Create New Blood Donotion Form</Link>
       </div>
-      <div className="compDiv">
-        <Link to="/hospitalReq">
-          {" "}
-          <img height={"200px"} src="./image/test.png" alt="bank"></img>
-          <p className="pOfInof">Hospital Req</p>
-        </Link>
+      <div>
+        <Link to="/hospitalReq">Hospital Req</Link>
       </div>
-      <div className="compDiv">
-        <Link to="/stockOfBlood">
-          {" "}
-          <img height={"200px"} src="./image/test.png" alt="bank"></img>
-          <p className="pOfInof">Stock</p>
-        </Link>
+      <div></div>
+      <div>
+        <Link to="/stockOfBlood">Stock</Link>
       </div>
-      </div>
+      <button onClick={logout}>Logout</button>
     </div>
   );
 };

@@ -38,7 +38,7 @@ const BankDashboard = () => {
     <div>
       <div className="logNav">
         <div className="heading" style={{ textAlign: "start" }}>
-          Bank Dashboard <span className="spanOftitile"></span>
+          Bank Dashboard <span className="snapOftitile"></span>
         </div>
         <button
           className="button"
@@ -55,76 +55,60 @@ const BankDashboard = () => {
 
         <div className="info1">
           <div>
-            <span className="spanOftitile">Email :</span>
+            <span className="snapOftitile">Email :</span>
             {bankData.email}
           </div>
           <div>
-            <span className="spanOftitile">Name :</span>
+            <span className="snapOftitile">Name :</span>
             {bankData.name}
           </div>
           <div>
-            <span className="spanOftitile">Id :</span>
+            <span className="snapOftitile">Id :</span>
             {bankData.uId}
           </div>
           <div>
-            <span className="spanOftitile">Address:</span>
+            <span className="snapOftitile">Address:</span>
             {bankData.address}
           </div>
         </div>
         <div>
           <div>
-            <span className="spanOftitile">State :</span>
+            <span className="snapOftitile">State :</span>
             {bankData.state}
           </div>
           <div>
-            <span className="spanOftitile">District:</span>
+            <span className="snapOftitile">District:</span>
             {bankData.district}
           </div>
           <div>
-            <span className="spanOftitile">City:</span>
+            <span className="snapOftitile">City:</span>
             {bankData.city}
           </div>
           <div>
-            <span className="spanOftitile">Contact:</span>
+            <span className="snapOftitile">Contact:</span>
             {bankData.contact}
           </div>
           <div>
-            <span className="spanOftitile">Category :</span>
+            <span className="snapOftitile">Category :</span>
             {bankData.category}
           </div>
         </div>
       </div>
-      <div className="donorInfo">
-      <div className="compDiv">
-        <Link to="/donationReq">
-          {" "}
-          <img height={"200px"} src="./image/test.png" alt="bank"></img>
-          <p className="pOfInof">Donation Req</p>
-        </Link>
+      <hr />
+      <div>
+        <Link to="/donationReq">Donation Req</Link>
       </div>
-      <div className="compDiv">
-        <Link to="/createNewReport">
-          {" "}
-          <img height={"200px"} src="./image/test.png" alt="bank"></img>
-          <p className="pOfInof">Create New Blood
-          <br /> Donotion Form</p>
-        </Link>
+      <div>
+        <Link to="/createNewReport">Create New Blood Donotion Form</Link>
       </div>
-      <div className="compDiv">
-        <Link to="/hospitalReq">
-          {" "}
-          <img height={"200px"} src="./image/test.png" alt="bank"></img>
-          <p className="pOfInof">Hospital Req</p>
-        </Link>
+      <div>
+        <Link to="/hospitalReq">Hospital Req</Link>
       </div>
-      <div className="compDiv">
-        <Link to="/stockOfBlood">
-          {" "}
-          <img height={"200px"} src="./image/test.png" alt="bank"></img>
-          <p className="pOfInof">Stock</p>
-        </Link>
+      <div></div>
+      <div>
+        <Link to="/stockOfBlood">Stock</Link>
       </div>
-      </div>
+      <button onClick={logout}>Logout</button>
     </div>
   );
 };
