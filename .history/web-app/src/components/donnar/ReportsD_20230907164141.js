@@ -34,12 +34,12 @@ const ReportsD = () => {
       ReportsD
       <div>
         {reports.map((report, index) => (
-          <div key={index} className="reportD">
+          <div key={index}>
             {/* Render your report data here */}
-            <div>Report iD : {report.donorId}</div>
-            <div>Bank Id: {report.BloodBankId}</div>
-            <div>Report Date :{report.dateOfDonation}</div>
-            <div>Type Of Donation: {report.TypeOfDonation}</div>
+            <div>{report.donorId}</div>
+            <div>{report.BloodBankId}</div>
+            <div>{report.dateOfDonation}</div>
+            <div>{report.TypeOfDonation}</div>
             <button 
             className="button"
               key={report.id}
@@ -48,7 +48,6 @@ const ReportsD = () => {
               Get Report{" "}
             </button>{" "}
             {/* Add more fields as needed */}
-            <hr />
           </div>
         ))}
       </div>

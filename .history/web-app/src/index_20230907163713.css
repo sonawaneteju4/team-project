@@ -11,24 +11,9 @@ body {
   background-attachment: fixed;
 
   opacity: 1;
-
-  
-}
-
-/* Hide the scrollbar for all elements */
-::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
-}
-
-/* Hide the scrollbar for specific elements */
-.your-element-class-or-id::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-.reportD{
-  text-align: center;
 }
