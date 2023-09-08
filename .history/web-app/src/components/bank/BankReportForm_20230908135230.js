@@ -80,11 +80,11 @@ const BankReportForm = () => {
       </div>
       <div>
         <label htmlFor=" ">Hepatities B</label>
-        <input type="text" name="hepatitiesB" onChange={handleChange} />
+        <input type="t" name="hepatitiesB" onChange={handleChange} />
       </div>
       <div>
         <label htmlFor=" ">HepatitiesC</label>
-        <input type="text" name="hepatitiesC" onChange={handleChange} />
+        <input type="number" name="hepatitiesC" onChange={handleChange} />
       </div>
       <div>
         <label htmlFor=" ">RBC Count</label>

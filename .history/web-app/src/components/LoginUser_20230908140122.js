@@ -110,7 +110,7 @@ const LoginUser = () => {
             </button>
             
           </form>
-          <h5>Forget Password... <button className="button" onClick={handleResetPass}>
+          <h5>Forget Password... <button onClick={handleResetPass}>
           
           click here
           </button>

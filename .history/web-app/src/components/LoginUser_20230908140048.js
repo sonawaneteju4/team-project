@@ -54,7 +54,7 @@ const LoginUser = () => {
 
 
 
-  const handleResetPass= async() =>{
+  const resetPass= async() =>{
     try {
       const reset = sendPasswordResetEmail(auth, loginUser.email)
       alert("Password Reset Link Send To Your Email")
@@ -110,11 +110,9 @@ const LoginUser = () => {
             </button>
             
           </form>
-          <h5>Forget Password... <button className="button" onClick={handleResetPass}>
+          <h5>Forget Password... <>
           
-          click here
-          </button>
-          </h5>
+          </>click here</h5>
         </div>
         {modalShow && <Modal error={errorMessage} onClose={handleCloseModal} />}
       </div>
