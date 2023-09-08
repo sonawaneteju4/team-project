@@ -39,10 +39,5 @@ font-family: 'Vollkorn', serif; */
   border-radius: 20px;
 }
 .indexOFImg{
-  display: flex;
-  justify-content: center;
-  margin-left: 200px;
-}
-.img2{
-  width: 73%;
+  display: f;
 }

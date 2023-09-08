@@ -40,8 +40,7 @@ const Index = () => {
       <div>
         <ServiceCarsoul slides={slides} />
       </div>
-      <hr />
-      <h1 style={{textAlign : 'center', color : 'black'}}>Learn About Donation</h1>
+      <h1 style={{textAlign : 'center', color : 'white'}}>Learn About Donation</h1>
       <div className="indexOFImg">
         <div>
           <img src="./image/donationFact.webp" alt="" />

@@ -41,8 +41,7 @@ font-family: 'Vollkorn', serif; */
 .indexOFImg{
   display: flex;
   justify-content: center;
-  margin-left: 200px;
 }
 .img2{
-  width: 73%;
+  height: 50%;
 }

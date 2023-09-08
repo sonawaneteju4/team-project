@@ -40,9 +40,9 @@ font-family: 'Vollkorn', serif; */
 }
 .indexOFImg{
   display: flex;
-  justify-content: center;
-  margin-left: 200px;
+  width: 100%;
+  j
 }
 .img2{
-  width: 73%;
+  height: 50%;
 }
