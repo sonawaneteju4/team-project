@@ -40,10 +40,8 @@ const Index = () => {
       <div>
         <ServiceCarsoul slides={slides} />
       </div>
-      
       <div>
-        <div></div>
-        <div></div>
+        
       </div>
     </div>
   );
